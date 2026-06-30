@@ -640,8 +640,7 @@
   let currentCert = null;
   let questions = [];
   let current = 0;
-  let score = 0;
-  let answered = 0;
+  let results = [];   // 문항 위치별 결과: { selected, isCorrect } | null(미응답)
   let selected = [];
   let submitted = false;
   let examMode = false;
@@ -793,7 +792,7 @@
 
     if (questions.length === 0) return;
 
-    current = 0; score = 0; answered = 0;
+    current = 0; results = new Array(questions.length).fill(null);
     document.getElementById('start-screen').classList.add('hidden');
     document.getElementById('end-screen').style.display = 'none';
     document.getElementById('quiz-screen').classList.remove('hidden');
@@ -847,17 +846,30 @@
     startQuiz();
   }
 
+  // 문항 위치별 결과를 합산 (중복 없음 — 문항당 최대 1회)
+  function tally() {
+    let s = 0, a = 0;
+    results.forEach(r => { if (r) { a++; if (r.isCorrect) s++; } });
+    return { score: s, answered: a };
+  }
+
+  function updateHeaderScore() {
+    const t = tally();
+    document.getElementById('header-score').textContent = `점수: ${t.score} / ${t.answered}`;
+  }
+
   function renderQuestion() {
     const q = questions[current];
-    submitted = false;
-    selected = [];
+    const prior = results[current];   // 이미 푼 문제면 결과, 아니면 null
+    submitted = !!prior;
+    selected = prior ? [...prior.selected] : [];
 
     // progress
     const pct = Math.round((current / questions.length) * 100);
     document.getElementById('prog-text').textContent = `문제 ${current + 1} / ${questions.length}`;
     document.getElementById('prog-pct').textContent = `${pct}%`;
     document.getElementById('progress-bar').style.width = pct + '%';
-    document.getElementById('header-score').textContent = `점수: ${score} / ${answered}`;
+    updateHeaderScore();
 
     // question meta
     document.getElementById('q-num-badge').textContent = `Q${q.localNum}`;
@@ -874,6 +886,7 @@
       const div = document.createElement('div');
       div.className = 'option';
       div.dataset.id = opt.id;
+      if (selected.includes(opt.id)) div.classList.add('selected');
       div.innerHTML = `
         <div class="opt-label">${escHtml(opt.id)}</div>
         <div class="opt-content">
@@ -890,12 +903,55 @@
     document.getElementById('result-feedback').textContent = '';
     document.getElementById('explanation-box').classList.remove('visible');
     document.getElementById('explanation-text').textContent = '';
-    document.getElementById('btn-submit').disabled = true;
-    document.getElementById('btn-next').style.display = 'none';
-    document.getElementById('btn-submit').style.display = '';
     document.getElementById('btn-next').textContent =
       current === questions.length - 1 ? '결과 보기 →' : '다음 →';
     document.getElementById('btn-prev').disabled = current === 0;
+
+    if (prior) {
+      // 이미 푼 문제: 채점 결과 복원 (재채점·중복 집계 없음)
+      revealAnswer();
+    } else {
+      document.getElementById('btn-submit').disabled = true;
+      document.getElementById('btn-submit').style.display = '';
+      document.getElementById('btn-next').style.display = 'none';
+    }
+  }
+
+  // 채점된 문항의 보기 스타일·피드백·해설·버튼 표시 (제출 직후 & 재방문 공용)
+  function revealAnswer() {
+    const q = questions[current];
+    const r = results[current];
+
+    document.querySelectorAll('.option').forEach(opt => {
+      opt.classList.add('disabled');
+      const id = opt.dataset.id;
+      const icon = opt.querySelector('.opt-icon');
+      if (q.correct_answer.includes(id)) {
+        opt.classList.add('correct');
+        icon.textContent = '✅';
+      } else if (r.selected.includes(id)) {
+        opt.classList.add('wrong');
+        icon.textContent = '❌';
+      }
+    });
+
+    const fb = document.getElementById('result-feedback');
+    if (r.isCorrect) {
+      fb.className = 'result-feedback correct-msg';
+      fb.textContent = '✅ 정답입니다!';
+    } else {
+      fb.className = 'result-feedback wrong-msg';
+      fb.textContent = `❌ 오답입니다. 정답: ${q.correct_answer.join(', ')}`;
+    }
+
+    if (q.explanation) {
+      document.getElementById('explanation-text').textContent = q.explanation;
+      document.getElementById('explanation-box').classList.add('visible');
+    }
+
+    updateHeaderScore();
+    document.getElementById('btn-submit').style.display = 'none';
+    document.getElementById('btn-next').style.display = 'block';
   }
 
   function selectOption(div, id, isMulti) {
@@ -919,47 +975,16 @@
   function submitAnswer() {
     if (submitted || selected.length === 0) return;
     submitted = true;
-    answered++;
 
     const q = questions[current];
     const correct = [...q.correct_answer].sort().join(',');
     const given = [...selected].sort().join(',');
     const isCorrect = correct === given;
-    if (isCorrect) score++;
 
-    // style options
-    document.querySelectorAll('.option').forEach(opt => {
-      opt.classList.add('disabled');
-      const id = opt.dataset.id;
-      const icon = opt.querySelector('.opt-icon');
-      if (q.correct_answer.includes(id)) {
-        opt.classList.add('correct');
-        icon.textContent = '✅';
-      } else if (selected.includes(id)) {
-        opt.classList.add('wrong');
-        icon.textContent = '❌';
-      }
-    });
+    // 문항 위치별 1회만 기록 (재방문·재제출해도 중복 집계 없음)
+    results[current] = { selected: [...selected], isCorrect };
 
-    // feedback
-    const fb = document.getElementById('result-feedback');
-    if (isCorrect) {
-      fb.className = 'result-feedback correct-msg';
-      fb.textContent = '✅ 정답입니다!';
-    } else {
-      fb.className = 'result-feedback wrong-msg';
-      fb.textContent = `❌ 오답입니다. 정답: ${q.correct_answer.join(', ')}`;
-    }
-
-    // explanation
-    if (q.explanation) {
-      document.getElementById('explanation-text').textContent = q.explanation;
-      document.getElementById('explanation-box').classList.add('visible');
-    }
-
-    document.getElementById('header-score').textContent = `점수: ${score} / ${answered}`;
-    document.getElementById('btn-submit').style.display = 'none';
-    document.getElementById('btn-next').style.display = 'block';
+    revealAnswer();
   }
 
   function nextQuestion() {
@@ -995,6 +1020,7 @@
     document.getElementById('quiz-screen').classList.add('hidden');
     document.getElementById('end-screen').style.display = 'block';
 
+    const { score, answered } = tally();
     const passPct = CERT_META[currentCert].pass;
     const pct = answered > 0 ? Math.round((score / answered) * 100) : 0;
     const pass = pct >= passPct;
