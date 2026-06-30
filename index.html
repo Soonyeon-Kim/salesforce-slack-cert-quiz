@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salesforce Slack 자격증 퀴즈</title>
+  <style>
+    :root {
+      --slack-purple: #4a154b;
+      --slack-green: #2bac76;
+      --slack-yellow: #ecb22e;
+      --slack-red: #e01e5a;
+      --slack-blue: #36c5f0;
+      --bg: #f8f8f8;
+      --card: #ffffff;
+      --text: #1d1c1d;
+      --muted: #616061;
+      --border: #e8e8e8;
+      --correct: #2bac76;
+      --wrong: #e01e5a;
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--slack-purple);
+      color: #fff;
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    }
+    header .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    header .logo {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    header .subtitle {
+      font-size: 13px;
+      opacity: .75;
+      margin-top: 2px;
+    }
+    header .spacer { flex: 1; }
+    header .score-badge {
+      background: rgba(255,255,255,.15);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    header .timer-badge {
+      background: rgba(255,255,255,.15);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      margin-left: 10px;
+    }
+    header .timer-badge.warning {
+      background: var(--slack-red);
+      color: #fff;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .6; }
+    }
+
+    /* ── Layout ── */
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 24px 16px 80px;
+    }
+
+    /* ── Progress ── */
+    .progress-wrap {
+      background: var(--border);
+      border-radius: 8px;
+      height: 6px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--slack-blue), var(--slack-green));
+      border-radius: 8px;
+      transition: width .4s ease;
+    }
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: 0 1px 4px rgba(0,0,0,.08);
+      padding: 28px;
+      margin-bottom: 16px;
+    }
+
+    /* ── Question ── */
+    .q-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .q-num {
+      background: var(--slack-purple);
+      color: #fff;
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .q-type {
+      background: var(--slack-yellow);
+      color: #000;
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .q-domain {
+      background: #f0e9f5;
+      color: var(--slack-purple);
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .q-text {
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+
+    /* ── Options ── */
+    .options { display: flex; flex-direction: column; gap: 10px; }
+
+    .option {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all .2s;
+      user-select: none;
+    }
+    .option:hover:not(.disabled) {
+      border-color: var(--slack-purple);
+      background: #faf5ff;
+    }
+    .option.selected {
+      border-color: var(--slack-purple);
+      background: #f5eeff;
+    }
+    .option.correct {
+      border-color: var(--correct);
+      background: #f0fdf8;
+    }
+    .option.wrong {
+      border-color: var(--wrong);
+      background: #fff0f4;
+    }
+    .option.disabled { cursor: default; }
+
+    .opt-label {
+      min-width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+      flex-shrink: 0;
+      transition: all .2s;
+    }
+    .option.selected .opt-label { background: var(--slack-purple); color: #fff; }
+    .option.correct .opt-label  { background: var(--correct); color: #fff; }
+    .option.wrong .opt-label    { background: var(--wrong); color: #fff; }
+
+    .opt-content { flex: 1; }
+    .opt-text { font-size: 15px; line-height: 1.6; }
+
+    .opt-icon {
+      margin-left: auto;
+      font-size: 18px;
+      padding-top: 4px;
+    }
+
+    /* ── Explanation ── */
+    .explanation {
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 16px 18px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text);
+      margin-top: 16px;
+      border-left: 4px solid var(--slack-green);
+      display: none;
+      white-space: pre-wrap;
+    }
+    .explanation.visible { display: block; }
+    .explanation-label {
+      font-weight: 700;
+      color: var(--slack-green);
+      margin-bottom: 8px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    /* ── Actions ── */
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    button {
+      border: none;
+      border-radius: 8px;
+      padding: 11px 22px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .btn-submit {
+      background: var(--slack-purple);
+      color: #fff;
+      flex: 1;
+    }
+    .btn-submit:hover { background: #3a0f3b; }
+    .btn-submit:disabled {
+      background: var(--border);
+      color: var(--muted);
+      cursor: not-allowed;
+    }
+    .btn-next {
+      background: var(--slack-green);
+      color: #fff;
+      flex: 1;
+      display: none;
+    }
+    .btn-next:hover { background: #229a62; }
+    .btn-prev {
+      background: var(--card);
+      color: var(--slack-purple);
+      border: 2px solid var(--slack-purple);
+      min-width: 100px;
+    }
+    .btn-prev:hover { background: #f5eeff; }
+    .btn-prev:disabled {
+      border-color: var(--border);
+      color: var(--muted);
+      background: var(--bg);
+      cursor: not-allowed;
+    }
+    .btn-prev:disabled:hover { background: var(--bg); }
+
+    /* ── Result feedback ── */
+    .result-feedback {
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 15px;
+      margin-top: 14px;
+      display: none;
+    }
+    .result-feedback.correct-msg {
+      background: #e8faf3;
+      color: var(--correct);
+      display: block;
+    }
+    .result-feedback.wrong-msg {
+      background: #fde8ef;
+      color: var(--wrong);
+      display: block;
+    }
+
+    /* ── Landing (자격증 선택) ── */
+    #landing-screen { display: none; }
+    .landing-head { text-align: center; margin-bottom: 28px; }
+    .landing-head .start-logo { font-size: 56px; margin-bottom: 12px; }
+    .landing-head .start-title { font-size: 26px; font-weight: 800; margin-bottom: 8px; color: var(--slack-purple); }
+    .landing-head .start-desc { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 520px; margin: 0 auto; }
+    .cert-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .cert-card {
+      background: var(--card);
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      cursor: pointer;
+      transition: all .2s;
+      text-align: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.06);
+    }
+    .cert-card:hover {
+      border-color: var(--slack-purple);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(74,21,75,.16);
+    }
+    .cert-card .cc-emoji { font-size: 42px; margin-bottom: 10px; }
+    .cert-card .cc-name { font-size: 17px; font-weight: 800; color: var(--slack-purple); margin-bottom: 6px; line-height: 1.4; }
+    .cert-card .cc-blurb { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 16px; min-height: 40px; }
+    .cert-card .cc-meta { display: flex; justify-content: center; gap: 18px; }
+    .cert-card .cc-meta .m { font-size: 12px; color: var(--muted); }
+    .cert-card .cc-meta .m strong { display: block; color: var(--text); font-size: 16px; font-weight: 800; }
+
+    /* ── Start screen (cert 진입 후) ── */
+    #start-screen { text-align: center; }
+    .start-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 40px 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.1);
+    }
+    .back-link {
+      background: none;
+      color: var(--slack-purple);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 0;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    .back-link:hover { text-decoration: underline; }
+    .start-logo { font-size: 52px; margin-bottom: 14px; }
+    .start-title { font-size: 24px; font-weight: 800; margin-bottom: 8px; color: var(--slack-purple); }
+    .start-desc { font-size: 15px; color: var(--muted); margin-bottom: 28px; line-height: 1.7; }
+    .start-options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 360px;
+      margin: 0 auto 28px;
+    }
+    .start-option-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 14px;
+    }
+    .start-option-row select, .start-option-row input[type=number] {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 14px;
+      background: #fff;
+      color: var(--text);
+      max-width: 60%;
+    }
+    .exam-info {
+      background: #faf5ff;
+      border: 1px solid #e6d6f5;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 13px;
+      color: var(--slack-purple);
+      max-width: 360px;
+      margin: 0 auto 28px;
+      line-height: 1.6;
+    }
+    .btn-start {
+      background: var(--slack-purple);
+      color: #fff;
+      font-size: 17px;
+      padding: 16px 48px;
+      border-radius: 10px;
+    }
+    .btn-start:hover { background: #3a0f3b; }
+
+    /* ── End screen ── */
+    #end-screen {
+      display: none;
+      text-align: center;
+    }
+    .end-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 48px 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.1);
+    }
+    .end-emoji { font-size: 64px; margin-bottom: 16px; }
+    .end-title { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+    .end-score {
+      font-size: 56px;
+      font-weight: 900;
+      color: var(--slack-purple);
+      margin: 16px 0;
+    }
+    .end-detail {
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 32px;
+    }
+    .end-bars {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+    .end-stat { text-align: center; }
+    .end-stat .val { font-size: 28px; font-weight: 800; }
+    .end-stat .lbl { font-size: 13px; color: var(--muted); margin-top: 4px; }
+    .stat-correct .val { color: var(--correct); }
+    .stat-wrong .val { color: var(--wrong); }
+    .end-actions { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .btn-restart {
+      background: var(--slack-purple);
+      color: #fff;
+      font-size: 16px;
+      padding: 14px 28px;
+      border-radius: 10px;
+    }
+    .btn-restart:hover { background: #3a0f3b; }
+    .btn-shuffle {
+      background: var(--card);
+      color: var(--slack-purple);
+      border: 2px solid var(--slack-purple);
+      font-size: 16px;
+      padding: 14px 24px;
+      border-radius: 10px;
+    }
+    .btn-shuffle:hover { background: #f5eeff; }
+    .btn-change {
+      background: var(--card);
+      color: var(--muted);
+      border: 2px solid var(--border);
+      font-size: 16px;
+      padding: 14px 24px;
+      border-radius: 10px;
+    }
+    .btn-change:hover { border-color: var(--slack-purple); color: var(--slack-purple); }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+      padding: 0 16px 40px;
+    }
+    footer a { color: var(--slack-purple); }
+
+    /* ── Misc ── */
+    .hidden { display: none !important; }
+
+    @media (max-width: 500px) {
+      header { padding: 12px 0; }
+      header .header-inner { padding: 0 10px; }
+      header .logo { font-size: 18px; }
+      .card { padding: 18px 14px; }
+      main { padding: 16px 10px 80px; }
+      .q-text { font-size: 15px; }
+      .end-bars { gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div>
+      <div class="logo">⚡ Slack 자격증 Quiz</div>
+      <div class="subtitle" id="header-subtitle">Salesforce Slack 자격증 예시문제</div>
+    </div>
+    <div class="spacer"></div>
+    <div class="score-badge" id="header-score" style="display:none">점수: 0 / 0</div>
+    <div class="timer-badge" id="header-timer" style="display:none">⏱ 75:00</div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ── Landing Screen (자격증 선택) ── -->
+  <div id="landing-screen">
+    <div class="landing-head">
+      <div class="start-logo">🎯</div>
+      <div class="start-title">Salesforce Slack 자격증<br>예시문제 퀴즈</div>
+      <div class="start-desc">
+        학습할 자격증을 선택하세요. 각 학습 가이드의 도메인별 연습문제와
+        종합 모의고사로 구성됩니다.
+      </div>
+    </div>
+    <div class="cert-cards" id="cert-cards"></div>
+  </div>
+
+  <!-- ── Start Screen (cert 진입 후) ── -->
+  <div id="start-screen" class="hidden">
+    <div class="start-card">
+      <button class="back-link" onclick="showLanding()">← 자격증 변경</button>
+      <div class="start-logo" id="start-emoji">🎯</div>
+      <div class="start-title" id="start-title"></div>
+      <div class="start-desc" id="start-desc"></div>
+      <div class="start-options">
+        <div class="start-option-row">
+          <span>모드</span>
+          <select id="q-mode" onchange="onModeChange()">
+            <option value="study">공부모드</option>
+            <option value="exam">시험모드</option>
+          </select>
+        </div>
+        <div class="start-option-row" id="domain-row">
+          <span>도메인</span>
+          <select id="q-domain" onchange="onDomainChange()"></select>
+        </div>
+        <div class="start-option-row" id="count-row">
+          <span>문제 수</span>
+          <input type="number" id="q-count-input" value="20" min="1" style="width:80px" />
+        </div>
+      </div>
+      <div id="exam-info" class="exam-info" style="display:none"></div>
+      <button class="btn-start" onclick="startQuiz()">퀴즈 시작하기 →</button>
+    </div>
+  </div>
+
+  <!-- ── Quiz Screen ── -->
+  <div id="quiz-screen" class="hidden">
+    <div class="progress-label">
+      <span id="prog-text">문제 1 / 20</span>
+      <span id="prog-pct">0%</span>
+    </div>
+    <div class="progress-wrap"><div class="progress-bar" id="progress-bar" style="width:0%"></div></div>
+
+    <div class="card">
+      <div class="q-meta">
+        <span class="q-num" id="q-num-badge">Q1</span>
+        <span class="q-type" id="q-type-badge">단일 선택</span>
+        <span class="q-domain" id="q-domain-badge"></span>
+      </div>
+      <div class="q-text" id="q-text"></div>
+
+      <div class="options" id="options-wrap"></div>
+
+      <div class="result-feedback" id="result-feedback"></div>
+
+      <div class="explanation" id="explanation-box">
+        <div class="explanation-label">💡 해설</div>
+        <div id="explanation-text"></div>
+      </div>
+
+      <div class="actions">
+        <button class="btn-prev" id="btn-prev" onclick="prevQuestion()">← 이전</button>
+        <button class="btn-submit" id="btn-submit" onclick="submitAnswer()" disabled>정답 제출</button>
+        <button class="btn-next" id="btn-next" onclick="nextQuestion()">다음 →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── End Screen ── -->
+  <div id="end-screen">
+    <div class="end-card">
+      <div class="end-emoji" id="end-emoji">🏆</div>
+      <div class="end-title" id="end-title">퀴즈 완료!</div>
+      <div class="end-score" id="end-score">--</div>
+      <div class="end-detail" id="end-detail"></div>
+      <div class="end-bars">
+        <div class="end-stat stat-correct">
+          <div class="val" id="stat-correct">0</div>
+          <div class="lbl">✅ 정답</div>
+        </div>
+        <div class="end-stat">
+          <div class="val" id="stat-total">0</div>
+          <div class="lbl">📋 총 문제</div>
+        </div>
+        <div class="end-stat stat-wrong">
+          <div class="val" id="stat-wrong">0</div>
+          <div class="lbl">❌ 오답</div>
+        </div>
+      </div>
+      <div class="end-actions">
+        <button class="btn-restart" onclick="showStart()">🔄 다시 풀기</button>
+        <button class="btn-shuffle" onclick="restartShuffle()">🔀 랜덤으로 다시 풀기</button>
+        <button class="btn-change" onclick="showLanding()">🎯 자격증 변경</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    학습 점검용 자체 제작 예상문제입니다(공식 기출 아님). 이미 공개된 학습 가이드 자료를 기반으로 합니다.<br>
+    시험모드 합격선은 각 자격증의 공식 합격선을 기준으로 합니다.
+  </footer>
+
+</main>
+
+<script>
+  // cert별 메타데이터 (문항 수는 데이터에서 동적 계산)
+  const CERT_META = {
+    developer:  { name: "Salesforce Certified Slack Developer",     emoji: "⚡", pass: 67, minutes: 75, blurb: "앱·API·Bolt 중심 슬랙 개발자 인증" },
+    admin:      { name: "Salesforce Certified Slack Administrator", emoji: "🛠️", pass: 65, minutes: 65, blurb: "워크스페이스·보안·운영 관리자 인증" },
+    consultant: { name: "Salesforce Certified Slack Consultant",    emoji: "🧭", pass: 67, minutes: 67, blurb: "발견·설계·구축 컨설턴트 인증" },
+  };
+  const CERT_ORDER = ["developer", "admin", "consultant"];
+
+  let ALL_QUESTIONS = [];
+  let currentCert = null;
+  let questions = [];
+  let current = 0;
+  let score = 0;
+  let answered = 0;
+  let selected = [];
+  let submitted = false;
+  let examMode = false;
+  let timerInterval = null;
+  let timeLeft = 0;
+
+  async function loadQuestions() {
+    try {
+      const res = await fetch('./questions.json');
+      ALL_QUESTIONS = await res.json();
+    } catch (e) {
+      document.getElementById('landing-screen').innerHTML =
+        '<div class="start-card" style="max-width:480px;margin:0 auto;text-align:center">' +
+        '<div class="start-logo">⚠️</div><div class="start-title">문항 데이터를 불러오지 못했습니다</div>' +
+        '<div class="start-desc">questions.json 을 찾을 수 없습니다.</div></div>';
+      document.getElementById('landing-screen').style.display = 'block';
+      return;
+    }
+    assignLocalNums();
+    buildLandingCards();
+    showLanding();
+  }
+
+  // cert별 1..N 로컬 번호 부여 (배지 표시용 — 통합 id는 데이터에 그대로 유지)
+  function assignLocalNums() {
+    const counters = {};
+    ALL_QUESTIONS.forEach(q => {
+      counters[q.cert] = (counters[q.cert] || 0) + 1;
+      q.localNum = counters[q.cert];
+    });
+  }
+
+  function certCount(cert) {
+    return ALL_QUESTIONS.filter(q => q.cert === cert).length;
+  }
+
+  function buildLandingCards() {
+    const wrap = document.getElementById('cert-cards');
+    wrap.innerHTML = '';
+    CERT_ORDER.forEach(cert => {
+      const m = CERT_META[cert];
+      const card = document.createElement('div');
+      card.className = 'cert-card';
+      card.onclick = () => selectCert(cert);
+      card.innerHTML = `
+        <div class="cc-emoji">${m.emoji}</div>
+        <div class="cc-name">${escHtml(m.name)}</div>
+        <div class="cc-blurb">${escHtml(m.blurb)}</div>
+        <div class="cc-meta">
+          <div class="m"><strong>${certCount(cert)}</strong>문항</div>
+          <div class="m"><strong>${m.pass}%</strong>합격선</div>
+          <div class="m"><strong>${m.minutes}분</strong>제한시간</div>
+        </div>`;
+      wrap.appendChild(card);
+    });
+  }
+
+  function showLanding() {
+    stopTimer();
+    currentCert = null;
+    document.getElementById('header-subtitle').textContent = 'Salesforce Slack 자격증 예시문제';
+    document.getElementById('header-score').style.display = 'none';
+    document.getElementById('header-timer').style.display = 'none';
+    document.getElementById('landing-screen').style.display = 'block';
+    document.getElementById('start-screen').classList.add('hidden');
+    document.getElementById('quiz-screen').classList.add('hidden');
+    document.getElementById('end-screen').style.display = 'none';
+  }
+
+  function selectCert(cert) {
+    currentCert = cert;
+    const m = CERT_META[cert];
+    const n = certCount(cert);
+    document.getElementById('header-subtitle').textContent = m.name;
+    document.getElementById('start-emoji').textContent = m.emoji;
+    document.getElementById('start-title').textContent = m.name;
+    document.getElementById('start-desc').innerHTML =
+      `학습 가이드 예시문제 <strong>${n}</strong>문항으로 시험을 준비하세요.<br>도메인별 연습문제 + 종합 모의고사 · 정답 및 해설 제공`;
+
+    // 모드 기본값 복귀 + 도메인/문제수 갱신
+    document.getElementById('q-mode').value = 'study';
+    buildDomainOptions();
+    onModeChange();
+
+    document.getElementById('landing-screen').style.display = 'none';
+    document.getElementById('end-screen').style.display = 'none';
+    document.getElementById('quiz-screen').classList.add('hidden');
+    document.getElementById('start-screen').classList.remove('hidden');
+  }
+
+  function certPool() {
+    return ALL_QUESTIONS.filter(q => q.cert === currentCert);
+  }
+
+  function buildDomainOptions() {
+    const pool = certPool();
+    const seen = new Map();  // 데이터 순서대로 고유 도메인 수집
+    pool.forEach(q => seen.set(q.domain, (seen.get(q.domain) || 0) + 1));
+    const sel = document.getElementById('q-domain');
+    sel.innerHTML = `<option value="all">전체 (${pool.length})</option>`;
+    seen.forEach((cnt, name) => {
+      const o = document.createElement('option');
+      o.value = name;
+      o.textContent = `${name} (${cnt})`;
+      sel.appendChild(o);
+    });
+    onDomainChange();
+  }
+
+  function poolForDomain() {
+    const dom = document.getElementById('q-domain').value;
+    return dom === 'all' ? certPool() : certPool().filter(q => q.domain === dom);
+  }
+
+  function onDomainChange() {
+    const pool = poolForDomain();
+    const input = document.getElementById('q-count-input');
+    input.max = pool.length;
+    input.value = pool.length;
+  }
+
+  function onModeChange() {
+    const exam = document.getElementById('q-mode').value === 'exam';
+    document.getElementById('domain-row').style.display = exam ? 'none' : '';
+    document.getElementById('count-row').style.display = exam ? 'none' : '';
+    const info = document.getElementById('exam-info');
+    if (exam) {
+      const m = CERT_META[currentCert];
+      info.innerHTML =
+        `📝 시험모드: 전체 <strong>${certPool().length}문제</strong> 랜덤 출제<br>` +
+        `제한시간 <strong>${m.minutes}분</strong> · 합격선 <strong>${m.pass}%</strong>`;
+      info.style.display = '';
+    } else {
+      info.style.display = 'none';
+    }
+  }
+
+  function startQuiz() {
+    examMode = document.getElementById('q-mode').value === 'exam';
+
+    // 시험모드는 cert 전체 풀, 공부모드는 선택한 도메인 풀
+    let pool = examMode ? [...certPool()] : [...poolForDomain()];
+    pool.sort(() => Math.random() - 0.5);
+
+    const count = examMode
+      ? pool.length
+      : Math.min(parseInt(document.getElementById('q-count-input').value) || pool.length, pool.length);
+    questions = pool.slice(0, count);
+
+    if (questions.length === 0) return;
+
+    current = 0; score = 0; answered = 0;
+    document.getElementById('start-screen').classList.add('hidden');
+    document.getElementById('end-screen').style.display = 'none';
+    document.getElementById('quiz-screen').classList.remove('hidden');
+    document.getElementById('header-score').style.display = '';
+
+    setupTimer();
+    renderQuestion();
+  }
+
+  function setupTimer() {
+    stopTimer();
+    const timerEl = document.getElementById('header-timer');
+    if (!examMode) {
+      timerEl.style.display = 'none';
+      return;
+    }
+    timeLeft = CERT_META[currentCert].minutes * 60;
+    timerEl.style.display = '';
+    updateTimerDisplay();
+    timerInterval = setInterval(() => {
+      timeLeft--;
+      updateTimerDisplay();
+      if (timeLeft <= 0) {
+        stopTimer();
+        alert('⏰ 시험 시간이 종료되었습니다!');
+        showEnd();
+      }
+    }, 1000);
+  }
+
+  function stopTimer() {
+    if (timerInterval) {
+      clearInterval(timerInterval);
+      timerInterval = null;
+    }
+  }
+
+  function updateTimerDisplay() {
+    const mm = Math.floor(timeLeft / 60);
+    const s = timeLeft % 60;
+    const el = document.getElementById('header-timer');
+    el.textContent = `⏱ ${String(mm).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    el.classList.toggle('warning', timeLeft <= 5 * 60);
+  }
+
+  function restartShuffle() {
+    document.getElementById('q-mode').value = 'study';
+    document.getElementById('q-domain').value = 'all';
+    onModeChange();
+    onDomainChange();
+    startQuiz();
+  }
+
+  function renderQuestion() {
+    const q = questions[current];
+    submitted = false;
+    selected = [];
+
+    // progress
+    const pct = Math.round((current / questions.length) * 100);
+    document.getElementById('prog-text').textContent = `문제 ${current + 1} / ${questions.length}`;
+    document.getElementById('prog-pct').textContent = `${pct}%`;
+    document.getElementById('progress-bar').style.width = pct + '%';
+    document.getElementById('header-score').textContent = `점수: ${score} / ${answered}`;
+
+    // question meta
+    document.getElementById('q-num-badge').textContent = `Q${q.localNum}`;
+    const isMulti = q.correct_answer.length > 1;
+    document.getElementById('q-type-badge').textContent = isMulti
+      ? `복수 선택 (${q.correct_answer.length}개)` : '단일 선택';
+    document.getElementById('q-domain-badge').textContent = q.domain;
+    document.getElementById('q-text').textContent = q.question;
+
+    // options
+    const wrap = document.getElementById('options-wrap');
+    wrap.innerHTML = '';
+    q.options.forEach(opt => {
+      const div = document.createElement('div');
+      div.className = 'option';
+      div.dataset.id = opt.id;
+      div.innerHTML = `
+        <div class="opt-label">${escHtml(opt.id)}</div>
+        <div class="opt-content">
+          <div class="opt-text">${escHtml(opt.text)}</div>
+        </div>
+        <div class="opt-icon"></div>
+      `;
+      div.onclick = () => selectOption(div, opt.id, isMulti);
+      wrap.appendChild(div);
+    });
+
+    // reset UI
+    document.getElementById('result-feedback').className = 'result-feedback';
+    document.getElementById('result-feedback').textContent = '';
+    document.getElementById('explanation-box').classList.remove('visible');
+    document.getElementById('explanation-text').textContent = '';
+    document.getElementById('btn-submit').disabled = true;
+    document.getElementById('btn-next').style.display = 'none';
+    document.getElementById('btn-submit').style.display = '';
+    document.getElementById('btn-next').textContent =
+      current === questions.length - 1 ? '결과 보기 →' : '다음 →';
+    document.getElementById('btn-prev').disabled = current === 0;
+  }
+
+  function selectOption(div, id, isMulti) {
+    if (submitted) return;
+    if (isMulti) {
+      if (selected.includes(id)) {
+        selected = selected.filter(x => x !== id);
+        div.classList.remove('selected');
+      } else {
+        selected.push(id);
+        div.classList.add('selected');
+      }
+    } else {
+      document.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+      selected = [id];
+      div.classList.add('selected');
+    }
+    document.getElementById('btn-submit').disabled = selected.length === 0;
+  }
+
+  function submitAnswer() {
+    if (submitted || selected.length === 0) return;
+    submitted = true;
+    answered++;
+
+    const q = questions[current];
+    const correct = [...q.correct_answer].sort().join(',');
+    const given = [...selected].sort().join(',');
+    const isCorrect = correct === given;
+    if (isCorrect) score++;
+
+    // style options
+    document.querySelectorAll('.option').forEach(opt => {
+      opt.classList.add('disabled');
+      const id = opt.dataset.id;
+      const icon = opt.querySelector('.opt-icon');
+      if (q.correct_answer.includes(id)) {
+        opt.classList.add('correct');
+        icon.textContent = '✅';
+      } else if (selected.includes(id)) {
+        opt.classList.add('wrong');
+        icon.textContent = '❌';
+      }
+    });
+
+    // feedback
+    const fb = document.getElementById('result-feedback');
+    if (isCorrect) {
+      fb.className = 'result-feedback correct-msg';
+      fb.textContent = '✅ 정답입니다!';
+    } else {
+      fb.className = 'result-feedback wrong-msg';
+      fb.textContent = `❌ 오답입니다. 정답: ${q.correct_answer.join(', ')}`;
+    }
+
+    // explanation
+    if (q.explanation) {
+      document.getElementById('explanation-text').textContent = q.explanation;
+      document.getElementById('explanation-box').classList.add('visible');
+    }
+
+    document.getElementById('header-score').textContent = `점수: ${score} / ${answered}`;
+    document.getElementById('btn-submit').style.display = 'none';
+    document.getElementById('btn-next').style.display = 'block';
+  }
+
+  function nextQuestion() {
+    if (current < questions.length - 1) {
+      current++;
+      renderQuestion();
+    } else {
+      showEnd();
+    }
+  }
+
+  function prevQuestion() {
+    if (current > 0) {
+      current--;
+      renderQuestion();
+    }
+  }
+
+  // 결과 화면에서 "다시 풀기" → 현재 cert의 시작 화면으로
+  function showStart() {
+    stopTimer();
+    document.getElementById('header-timer').style.display = 'none';
+    document.getElementById('header-score').style.display = 'none';
+    document.getElementById('quiz-screen').classList.add('hidden');
+    document.getElementById('end-screen').style.display = 'none';
+    document.getElementById('landing-screen').style.display = 'none';
+    document.getElementById('start-screen').classList.remove('hidden');
+  }
+
+  function showEnd() {
+    stopTimer();
+    document.getElementById('header-timer').style.display = 'none';
+    document.getElementById('quiz-screen').classList.add('hidden');
+    document.getElementById('end-screen').style.display = 'block';
+
+    const passPct = CERT_META[currentCert].pass;
+    const pct = answered > 0 ? Math.round((score / answered) * 100) : 0;
+    const pass = pct >= passPct;
+    document.getElementById('end-emoji').textContent = pct >= 85 ? '🏆' : pass ? '🎉' : '📚';
+    document.getElementById('end-title').textContent = pass ? '합격 기준 달성!' : '조금 더 공부해요!';
+    document.getElementById('end-score').textContent = `${pct}%`;
+    document.getElementById('end-detail').textContent =
+      `합격 기준은 ${passPct}% 이상 — 현재 ${score}/${answered} 정답`;
+    document.getElementById('stat-correct').textContent = score;
+    document.getElementById('stat-total').textContent = answered;
+    document.getElementById('stat-wrong').textContent = answered - score;
+  }
+
+  function escHtml(str) {
+    return (str || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  loadQuestions();
+</script>
+</body>
+</html>

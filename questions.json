@@ -1,0 +1,3793 @@
+[
+  {
+    "id": 1,
+    "cert": "developer",
+    "domain_id": 1,
+    "domain": "1. 슬랙 플랫폼의 앱",
+    "question": "영업팀이 \"항상 열려 있고 개인화된 영업 현황판\"을 앱으로 제공하려 한다. 가장 적합한 앱 표면은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Modal"
+      },
+      {
+        "id": "B",
+        "text": "Incoming Webhook"
+      },
+      {
+        "id": "C",
+        "text": "App Home(Home 탭)"
+      },
+      {
+        "id": "D",
+        "text": "Ephemeral 메시지"
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "항상 보이는 개인화 대시보드는 영구 UI인 App Home의 Home 탭이 적합합니다. Modal은 제출 시 사라지는 일시적 화면입니다."
+  },
+  {
+    "id": 2,
+    "cert": "developer",
+    "domain_id": 1,
+    "domain": "1. 슬랙 플랫폼의 앱",
+    "question": "Slack 앱의 봇(bot)에 대한 설명으로 옳은 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "봇은 앱과 무관한 독립 객체다"
+      },
+      {
+        "id": "B",
+        "text": "봇 사용자는 앱의 구성 요소이며, legacy custom bot 대신 사용한다"
+      },
+      {
+        "id": "C",
+        "text": "봇은 Enterprise Grid에서만 만들 수 있다"
+      },
+      {
+        "id": "D",
+        "text": "봇은 모달을 통해서만 메시지를 보낸다"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "봇 사용자는 앱의 구성 요소이며, 종료된 legacy custom bot(2025-03-31)이 아니라 앱 내부 봇 사용자를 사용합니다."
+  },
+  {
+    "id": 3,
+    "cert": "developer",
+    "domain_id": 1,
+    "domain": "1. 슬랙 플랫폼의 앱",
+    "question": "차세대 자동화 플랫폼(Slack CLI + Deno Slack SDK)의 특징을 모두 고르면? (복수 선택)",
+    "options": [
+      {
+        "id": "A",
+        "text": "functions·workflows·triggers·datastores를 제공한다"
+      },
+      {
+        "id": "B",
+        "text": "앱을 반드시 자체 서버에 호스팅해야 한다"
+      },
+      {
+        "id": "C",
+        "text": "run-on-Slack 방식으로 Slack이 호스팅한다"
+      },
+      {
+        "id": "D",
+        "text": "전통적 앱은 Bolt + Web/Events API를 사용한다"
+      }
+    ],
+    "correct_answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "explanation": "차세대 플랫폼은 functions·workflows·triggers·datastores를 제공하고 run-on-Slack으로 호스팅됩니다. 자체 서버 호스팅은 전통적 앱의 특징입니다."
+  },
+  {
+    "id": 4,
+    "cert": "developer",
+    "domain_id": 2,
+    "domain": "2. 앱의 상호작용 흐름 설계",
+    "question": "외부 모니터링 시스템이 장애 발생 시 특정 채널에 단방향 알림만 보내면 된다. 가장 단순하고 적합한 방법은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Slash Command"
+      },
+      {
+        "id": "B",
+        "text": "Incoming Webhook"
+      },
+      {
+        "id": "C",
+        "text": "Modal"
+      },
+      {
+        "id": "D",
+        "text": "Message Shortcut"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "외부에서 특정 채널로 단방향 메시지만 보내면 되므로 Incoming Webhook이 가장 단순합니다. 상호작용이 필요 없으니 Slash Command·Modal은 과합니다."
+  },
+  {
+    "id": 5,
+    "cert": "developer",
+    "domain_id": 2,
+    "domain": "2. 앱의 상호작용 흐름 설계",
+    "question": "슬래시 커맨드로 모달을 여는 흐름에 대한 설명으로 옳은 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "response_url 로 모달을 연다"
+      },
+      {
+        "id": "B",
+        "text": "trigger_id 로 views.open 을 호출하며, trigger_id는 3초 내 사용해야 한다"
+      },
+      {
+        "id": "C",
+        "text": "모달은 ack 없이 바로 열 수 있다"
+      },
+      {
+        "id": "D",
+        "text": "모달 제출은 app.command() 로 처리한다"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "모달은 trigger_id 로 views.open 을 호출해 열며, trigger_id 는 3초 내 사용해야 합니다. 모달 제출은 app.view() 로 처리합니다."
+  },
+  {
+    "id": 6,
+    "cert": "developer",
+    "domain_id": 2,
+    "domain": "2. 앱의 상호작용 흐름 설계",
+    "question": "Slack 상호작용의 타이밍·식별에 대한 설명으로 옳은 것을 모두 고르면? (복수 선택)",
+    "options": [
+      {
+        "id": "A",
+        "text": "모든 상호작용은 3초 내 ack 해야 한다"
+      },
+      {
+        "id": "B",
+        "text": "response_url 은 발급 후 최대 5회·30분 내 사용할 수 있다"
+      },
+      {
+        "id": "C",
+        "text": "action_id 는 블록 자체를, block_id 는 인터랙티브 요소를 식별한다"
+      },
+      {
+        "id": "D",
+        "text": "모달 입력 검증 실패는 response_action: \"errors\" 로 필드별 오류를 반환한다"
+      }
+    ],
+    "correct_answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "explanation": "ack는 3초, response_url 은 5회·30분입니다. C는 설명이 반대로, block_id 가 블록을, action_id 가 인터랙티브 요소를 식별합니다."
+  },
+  {
+    "id": 7,
+    "cert": "developer",
+    "domain_id": 3,
+    "domain": "3. 워크플로우 설계: Slack API",
+    "question": "Slack Web API 호출이 성공했는지 가장 먼저 확인해야 하는 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "HTTP 상태 코드가 200인지"
+      },
+      {
+        "id": "B",
+        "text": "응답 본문의 ok 필드가 true 인지"
+      },
+      {
+        "id": "C",
+        "text": "응답에 ts 필드가 있는지"
+      },
+      {
+        "id": "D",
+        "text": "X-Slack-Retry-Num 헤더 유무"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Slack Web API는 HTTP 200이어도 ok: false 일 수 있습니다. 성공 판별은 본문의 ok 필드, 실패 원인은 error 필드로 확인합니다."
+  },
+  {
+    "id": 8,
+    "cert": "developer",
+    "domain_id": 3,
+    "domain": "3. 워크플로우 설계: Slack API",
+    "question": "Socket Mode를 사용하기 위해 반드시 필요한 것을 모두 고르면? (복수 선택)",
+    "options": [
+      {
+        "id": "A",
+        "text": "공개 HTTPS Request URL"
+      },
+      {
+        "id": "B",
+        "text": "App-Level Token(xapp-)"
+      },
+      {
+        "id": "C",
+        "text": "connections:write scope"
+      },
+      {
+        "id": "D",
+        "text": "chat:write scope만 있으면 충분"
+      }
+    ],
+    "correct_answer": [
+      "B",
+      "C"
+    ],
+    "explanation": "Socket Mode는 공개 URL이 필요 없고(A 오답), connections:write scope를 가진 App-Level Token(xapp-) 으로 연결합니다. chat:write 만으로는 연결을 열 수 없습니다(D 오답)."
+  },
+  {
+    "id": 9,
+    "cert": "developer",
+    "domain_id": 3,
+    "domain": "3. 워크플로우 설계: Slack API",
+    "question": "conversations.list 응답에서 다음 페이지를 가져오려면?",
+    "options": [
+      {
+        "id": "A",
+        "text": "page 인자를 1씩 증가시킨다"
+      },
+      {
+        "id": "B",
+        "text": "offset 에 받은 개수를 누적해 넣는다"
+      },
+      {
+        "id": "C",
+        "text": "response_metadata.next_cursor 값을 다음 요청 cursor 에 넣는다"
+      },
+      {
+        "id": "D",
+        "text": "같은 요청을 그대로 다시 보낸다"
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Slack은 커서 기반 페이지네이션을 사용합니다. next_cursor 를 다음 요청의 cursor 로 전달하며, 빈 문자열이면 마지막 페이지입니다."
+  },
+  {
+    "id": 10,
+    "cert": "developer",
+    "domain_id": 4,
+    "domain": "4. 훌륭한 사용자 경험 설계",
+    "question": "슬래시 커맨드를 친 사용자에게 \"접수 완료\" 안내를 본인에게만 보여주고 채널은 깨끗하게 유지하려면?",
+    "options": [
+      {
+        "id": "A",
+        "text": "chat.postMessage 로 채널에 공개 메시지를 보낸다"
+      },
+      {
+        "id": "B",
+        "text": "chat.postEphemeral 로 임시 메시지를 보낸다"
+      },
+      {
+        "id": "C",
+        "text": "모든 멤버에게 DM을 보낸다"
+      },
+      {
+        "id": "D",
+        "text": "App Home에 게시한다"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "본인에게만 보이고 채널을 더럽히지 않는 응답은 chat.postEphemeral(임시 메시지)입니다. 공개 메시지나 전체 DM은 불필요한 알림·오염을 만듭니다."
+  },
+  {
+    "id": 11,
+    "cert": "developer",
+    "domain_id": 4,
+    "domain": "4. 훌륭한 사용자 경험 설계",
+    "question": "입력 항목이 많은 폼을 모달로 만들 때 좋은 UX 원칙은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "한 화면에 모든 입력을 한꺼번에 표시한다"
+      },
+      {
+        "id": "B",
+        "text": "progressive disclosure로 선택에 따라 단계적으로 입력을 보여준다"
+      },
+      {
+        "id": "C",
+        "text": "검증 오류는 그냥 무시한다"
+      },
+      {
+        "id": "D",
+        "text": "제출 후에도 모달을 영구히 띄워 둔다"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "많은 입력은 progressive disclosure(점진적 공개)로 나누어 보여줘 부담을 줄입니다. 검증 오류는 친절히 안내해야 하고(C 오답), 모달은 제출하면 닫히는 일시적 화면입니다(D 오답)."
+  },
+  {
+    "id": 12,
+    "cert": "developer",
+    "domain_id": 4,
+    "domain": "4. 훌륭한 사용자 경험 설계",
+    "question": "채널 오염(channel noise)을 줄이는 좋은 UX 패턴을 모두 고르면? (복수 선택)",
+    "options": [
+      {
+        "id": "A",
+        "text": "본인만 볼 내용은 ephemeral 메시지로 보낸다"
+      },
+      {
+        "id": "B",
+        "text": "부가 대화는 스레드로 옮긴다"
+      },
+      {
+        "id": "C",
+        "text": "알림마다 채널 전체를 @channel 로 멘션한다"
+      },
+      {
+        "id": "D",
+        "text": "개인 알림은 DM으로 보낸다"
+      }
+    ],
+    "correct_answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "explanation": "ephemeral·스레드·DM은 채널을 깨끗하게 유지합니다. 매 알림마다 @channel 을 거는 것은 대표적인 안티패턴입니다."
+  },
+  {
+    "id": 13,
+    "cert": "developer",
+    "domain_id": 5,
+    "domain": "5. 보안 설계",
+    "question": "OAuth v2 인가 URL에서 봇(bot) scope 를 전달하는 파라미터는?",
+    "options": [
+      {
+        "id": "A",
+        "text": "user_scope"
+      },
+      {
+        "id": "B",
+        "text": "scope"
+      },
+      {
+        "id": "C",
+        "text": "bot_scope"
+      },
+      {
+        "id": "D",
+        "text": "permissions"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "OAuth v2에서 봇 scope는 scope, 사용자 scope는 user_scope 로 분리해 전달합니다."
+  },
+  {
+    "id": 14,
+    "cert": "developer",
+    "domain_id": 5,
+    "domain": "5. 보안 설계",
+    "question": "Slack이 보낸 요청인지 확인하는 현행 방식으로 옳은 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Verification Token을 본문과 비교한다"
+      },
+      {
+        "id": "B",
+        "text": "Bot 토큰(xoxb-)을 헤더에서 검증한다"
+      },
+      {
+        "id": "C",
+        "text": "Signing Secret으로 v0:timestamp:body 를 HMAC-SHA256 서명해 X-Slack-Signature 와 비교한다"
+      },
+      {
+        "id": "D",
+        "text": "state 파라미터를 재계산해 비교한다"
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "현행 요청 검증은 Signing Secret 기반 HMAC-SHA256 서명을 X-Slack-Signature 와 비교합니다. Verification Token은 deprecated입니다."
+  },
+  {
+    "id": 15,
+    "cert": "developer",
+    "domain_id": 5,
+    "domain": "5. 보안 설계",
+    "question": "토큰·보안 모범 사례로 옳은 것을 모두 고르면? (복수 선택)",
+    "options": [
+      {
+        "id": "A",
+        "text": "App-Level token(xapp-)은 Socket Mode 등 앱 전역 동작에 쓴다"
+      },
+      {
+        "id": "B",
+        "text": "토큰은 코드에 하드코딩하고 Git에 커밋해 공유한다"
+      },
+      {
+        "id": "C",
+        "text": "요청 타임스탬프가 5분 이상 차이나면 거부해 리플레이 공격을 막는다"
+      },
+      {
+        "id": "D",
+        "text": "앱은 필요한 최소 scope만 요청한다(최소 권한 원칙)"
+      }
+    ],
+    "correct_answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "explanation": "토큰을 코드에 하드코딩·커밋하는 것(B)은 금지입니다. 토큰은 암호화 저장하고 환경변수로 주입합니다."
+  },
+  {
+    "id": 16,
+    "cert": "developer",
+    "domain_id": 6,
+    "domain": "6. 확장성 설계",
+    "question": "Enterprise Grid 조직 전체에 앱을 한 번에 설치하는 방식은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "per-workspace 설치를 워크스페이스마다 반복한다"
+      },
+      {
+        "id": "B",
+        "text": "org-wide installation(조직 전역 설치)"
+      },
+      {
+        "id": "C",
+        "text": "Socket Mode로 연결한다"
+      },
+      {
+        "id": "D",
+        "text": "legacy custom bot을 추가한다"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "조직 전체에 한 번에 적용하는 것은 org-wide installation(조직 전역 설치)이며, 조직 관리자 승인이 필요합니다."
+  },
+  {
+    "id": 17,
+    "cert": "developer",
+    "domain_id": 6,
+    "domain": "6. 확장성 설계",
+    "question": "여러 워크스페이스에 배포되는 공유 앱을 설계할 때 옳은 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "모든 팀에 동일한 봇 토큰을 하드코딩한다"
+      },
+      {
+        "id": "B",
+        "text": "팀(워크스페이스)별로 토큰을 따로 저장하고 team_id로 조회한다"
+      },
+      {
+        "id": "C",
+        "text": "토큰은 저장하지 않고 매 요청마다 새로 발급받는다"
+      },
+      {
+        "id": "D",
+        "text": "첫 번째 설치 팀의 토큰만 쓰면 된다"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "공유 앱은 설치된 팀마다 고유한 토큰을 가지므로, 팀별로 저장하고 team_id로 조회해야 합니다. 토큰 하드코딩·전역 공유는 다중 팀에서 깨집니다."
+  },
+  {
+    "id": 18,
+    "cert": "developer",
+    "domain_id": 6,
+    "domain": "6. 확장성 설계",
+    "question": "대규모 다중 워크스페이스 환경에서 권장되는 확장 전략을 모두 고르면? (복수 선택)",
+    "options": [
+      {
+        "id": "A",
+        "text": "429를 받으면 Retry-After 만큼 대기 후 재시도한다"
+      },
+      {
+        "id": "B",
+        "text": "대량 전송은 배치/큐잉으로 평탄화한다"
+      },
+      {
+        "id": "C",
+        "text": "이벤트는 3초 내 200 ack 후 비동기로 처리한다"
+      },
+      {
+        "id": "D",
+        "text": "한도를 무시하고 가능한 한 빠르게 모두 전송한다"
+      }
+    ],
+    "correct_answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "Retry-After 대기·배치/큐잉·3초 ack 후 비동기는 대규모의 기본기입니다. 한도를 무시한 최대 속도 전송은 429와 차단을 부릅니다."
+  },
+  {
+    "id": 19,
+    "cert": "developer",
+    "domain_id": 7,
+    "domain": "7. 개발 도구",
+    "question": "데이터 분석팀이 기존 Python 스택과 통합되는 Slack 앱을 만들려고 한다. 가장 적합한 프레임워크는?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Bolt for JavaScript"
+      },
+      {
+        "id": "B",
+        "text": "Bolt for Python"
+      },
+      {
+        "id": "C",
+        "text": "Deno Slack SDK"
+      },
+      {
+        "id": "D",
+        "text": "Block Kit Builder"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "기존 Python 스택과 통합한다면 Bolt for Python(slack_bolt)이 적합합니다. 프레임워크 선택은 팀의 언어 역량을 기준으로 합니다."
+  },
+  {
+    "id": 20,
+    "cert": "developer",
+    "domain_id": 7,
+    "domain": "7. 개발 도구",
+    "question": "Block Kit Builder의 주된 용도로 옳은 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Web API 메서드를 직접 호출해 테스트한다"
+      },
+      {
+        "id": "B",
+        "text": "앱을 Slack 인프라에 배포한다"
+      },
+      {
+        "id": "C",
+        "text": "Block Kit UI를 시각적으로 설계하고 JSON을 추출한다"
+      },
+      {
+        "id": "D",
+        "text": "OAuth 설치 흐름을 생성한다"
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "Block Kit Builder는 UI를 시각적으로 조립하고 그에 대응하는 Block Kit JSON을 추출하는 프로토타이핑 도구입니다."
+  },
+  {
+    "id": 21,
+    "cert": "developer",
+    "domain_id": 7,
+    "domain": "7. 개발 도구",
+    "question": "Slack CLI + Deno Slack SDK(차세대 자동화 플랫폼)에 해당하는 설명을 모두 고르면? (복수 선택)",
+    "options": [
+      {
+        "id": "A",
+        "text": "functions·workflows·triggers·datastores를 코드로 정의한다"
+      },
+      {
+        "id": "B",
+        "text": "run-on-Slack 방식으로 Slack이 호스팅한다"
+      },
+      {
+        "id": "C",
+        "text": "반드시 자체 서버를 운영해야 한다"
+      },
+      {
+        "id": "D",
+        "text": "slack create·slack run·slack deploy 같은 CLI 명령을 사용한다"
+      }
+    ],
+    "correct_answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "explanation": "차세대 플랫폼은 functions·workflows·triggers·datastores를 코드로 정의하고, run-on-Slack으로 Slack이 호스팅하며, Slack CLI 명령으로 다룹니다. 자체 서버 운영은 전통적 Bolt 앱의 특징입니다(C 오답)."
+  },
+  {
+    "id": 22,
+    "cert": "developer",
+    "domain_id": 8,
+    "domain": "8. Slack 관리용 API",
+    "question": "Okta 같은 IdP와 연동해 입·퇴사에 따라 Slack 계정을 자동 생성·비활성화하려면 어떤 API가 적합한가?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Admin API"
+      },
+      {
+        "id": "B",
+        "text": "SCIM API"
+      },
+      {
+        "id": "C",
+        "text": "Audit Logs API"
+      },
+      {
+        "id": "D",
+        "text": "Discovery API"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "사용자·그룹의 프로비저닝/디프로비저닝(계정 수명주기) 자동화는 SCIM API의 역할입니다. SCIM은 Business+ 이상에서 사용할 수 있습니다."
+  },
+  {
+    "id": 23,
+    "cert": "developer",
+    "domain_id": 8,
+    "domain": "8. Slack 관리용 API",
+    "question": "\"지난 30일간 누가 언제 로그인했고 어떤 앱이 설치되었는지\" 보안 감사를 위해 조회하려면? 필요한 scope와 함께 고르면?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Discovery API, discovery:read"
+      },
+      {
+        "id": "B",
+        "text": "Admin API, admin.users:write"
+      },
+      {
+        "id": "C",
+        "text": "Audit Logs API, auditlogs:read"
+      },
+      {
+        "id": "D",
+        "text": "SCIM API, Owner 토큰"
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "로그인·앱 설치 등 활동 추적은 Audit Logs API이며 auditlogs:read scope가 필요합니다(Enterprise Grid)."
+  },
+  {
+    "id": 24,
+    "cert": "developer",
+    "domain_id": 8,
+    "domain": "8. Slack 관리용 API",
+    "question": "Enterprise Grid가 반드시 필요한 API를 모두 고르면? (복수 선택)",
+    "options": [
+      {
+        "id": "A",
+        "text": "Admin API(admin.*)"
+      },
+      {
+        "id": "B",
+        "text": "Audit Logs API"
+      },
+      {
+        "id": "C",
+        "text": "Discovery API"
+      },
+      {
+        "id": "D",
+        "text": "SCIM API"
+      }
+    ],
+    "correct_answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "Admin API·Audit Logs API·Discovery API는 Enterprise Grid 전용입니다. SCIM API는 Business+ 이상 에서도 사용 가능하므로 Grid 전용이 아닙니다."
+  },
+  {
+    "id": 25,
+    "cert": "developer",
+    "domain_id": 9,
+    "domain": "9. 앱 배포",
+    "question": "여러 워크스페이스에 설치 가능한 배포(공개) 앱 이 반드시 갖춰야 하는 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "단일 토큰 하드코딩"
+      },
+      {
+        "id": "B",
+        "text": "OAuth 흐름과 팀별 토큰 저장"
+      },
+      {
+        "id": "C",
+        "text": "Enterprise Grid 플랜"
+      },
+      {
+        "id": "D",
+        "text": "Verification Token"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "배포 앱은 설치마다 OAuth로 팀별 토큰을 발급·저장해야 합니다. 단일 토큰 하드코딩은 내부 단일 워크스페이스 앱에만 해당하고, 그래도 하드코딩은 금지입니다(5장)."
+  },
+  {
+    "id": 26,
+    "cert": "developer",
+    "domain_id": 9,
+    "domain": "9. 앱 배포",
+    "question": "\"Sign in with Slack\"에 대한 설명으로 옳은 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "앱을 워크스페이스에 설치하는 버튼이다"
+      },
+      {
+        "id": "B",
+        "text": "OpenID Connect(OIDC) 기반의 사용자 로그인·신원 확인 흐름이다"
+      },
+      {
+        "id": "C",
+        "text": "봇 토큰을 갱신하는 기능이다"
+      },
+      {
+        "id": "D",
+        "text": "Marketplace 제출을 자동화한다"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "\"Sign in with Slack\"은 OIDC 기반 사용자 로그인용이며, 앱 설치용 \"Add to Slack\"과 목적이 다릅니다."
+  },
+  {
+    "id": 27,
+    "cert": "developer",
+    "domain_id": 9,
+    "domain": "9. 앱 배포",
+    "question": "Slack Marketplace 제출 시 요구되는 항목을 모두 고르면? (복수 선택)",
+    "options": [
+      {
+        "id": "A",
+        "text": "보안 검토(security review)"
+      },
+      {
+        "id": "B",
+        "text": "요청 scope 정당화"
+      },
+      {
+        "id": "C",
+        "text": "사내 전용 앱도 반드시 제출"
+      },
+      {
+        "id": "D",
+        "text": "브랜딩·리스팅 요건 충족"
+      }
+    ],
+    "correct_answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "explanation": "사내 전용(단일 워크스페이스) 앱은 Marketplace 제출이 불필요하므로 C는 틀립니다."
+  },
+  {
+    "id": 28,
+    "cert": "developer",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "외부 모니터링 시스템이 장애 시 특정 채널에 단방향 알림만 보내면 된다. 가장 단순·적합한 방법은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Modal"
+      },
+      {
+        "id": "B",
+        "text": "Incoming Webhook"
+      },
+      {
+        "id": "C",
+        "text": "Global Shortcut"
+      },
+      {
+        "id": "D",
+        "text": "Events API 구독"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "(2장) 상호작용: 단방향 알림=Incoming Webhook, 모달은 trigger_id+views.open(3초), 요소 식별=action_id, 모달 검증 실패=response_action: \"errors\"."
+  },
+  {
+    "id": 29,
+    "cert": "developer",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "슬래시 커맨드로 모달을 열 때 옳은 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "response_url 로 모달을 연다"
+      },
+      {
+        "id": "B",
+        "text": "trigger_id 로 views.open 을 호출하며 3초 내 사용해야 한다"
+      },
+      {
+        "id": "C",
+        "text": "ack 없이 바로 연다"
+      },
+      {
+        "id": "D",
+        "text": "app.command() 로 모달 제출을 처리한다"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "(2장) 상호작용: 단방향 알림=Incoming Webhook, 모달은 trigger_id+views.open(3초), 요소 식별=action_id, 모달 검증 실패=response_action: \"errors\"."
+  },
+  {
+    "id": 30,
+    "cert": "developer",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "Block Kit에서 인터랙티브 요소(버튼 등)를 식별하는 값은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "block_id"
+      },
+      {
+        "id": "B",
+        "text": "callback_id"
+      },
+      {
+        "id": "C",
+        "text": "action_id"
+      },
+      {
+        "id": "D",
+        "text": "trigger_id"
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "(2장) 상호작용: 단방향 알림=Incoming Webhook, 모달은 trigger_id+views.open(3초), 요소 식별=action_id, 모달 검증 실패=response_action: \"errors\"."
+  },
+  {
+    "id": 31,
+    "cert": "developer",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "모달 입력 검증에 실패했을 때 필드별 오류를 돌려주는 방법은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "HTTP 500 반환"
+      },
+      {
+        "id": "B",
+        "text": "response_action: \"errors\" 로 응답"
+      },
+      {
+        "id": "C",
+        "text": "chat.update 호출"
+      },
+      {
+        "id": "D",
+        "text": "무시하고 ack"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "(2장) 상호작용: 단방향 알림=Incoming Webhook, 모달은 trigger_id+views.open(3초), 요소 식별=action_id, 모달 검증 실패=response_action: \"errors\"."
+  },
+  {
+    "id": 32,
+    "cert": "developer",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "Slack Web API 호출의 성공 여부를 가장 먼저 확인할 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "HTTP 200 여부"
+      },
+      {
+        "id": "B",
+        "text": "응답 본문의 ok 필드"
+      },
+      {
+        "id": "C",
+        "text": "ts 필드 유무"
+      },
+      {
+        "id": "D",
+        "text": "X-Slack-Retry-Num 헤더"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "(3장) API: 성공 판별=ok 필드, Socket Mode=xapp-+connections:write, 페이지네이션=next_cursor→cursor."
+  },
+  {
+    "id": 33,
+    "cert": "developer",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "Socket Mode를 쓰기 위해 반드시 필요한 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "공개 HTTPS Request URL"
+      },
+      {
+        "id": "B",
+        "text": "App-Level Token(xapp-) + connections:write"
+      },
+      {
+        "id": "C",
+        "text": "chat:write 만"
+      },
+      {
+        "id": "D",
+        "text": "Verification Token"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "(3장) API: 성공 판별=ok 필드, Socket Mode=xapp-+connections:write, 페이지네이션=next_cursor→cursor."
+  },
+  {
+    "id": 34,
+    "cert": "developer",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "conversations.list 의 다음 페이지를 가져오려면?",
+    "options": [
+      {
+        "id": "A",
+        "text": "page 를 1씩 증가"
+      },
+      {
+        "id": "B",
+        "text": "offset 누적"
+      },
+      {
+        "id": "C",
+        "text": "response_metadata.next_cursor 를 cursor 에 전달"
+      },
+      {
+        "id": "D",
+        "text": "같은 요청 반복"
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "(3장) API: 성공 판별=ok 필드, Socket Mode=xapp-+connections:write, 페이지네이션=next_cursor→cursor."
+  },
+  {
+    "id": 35,
+    "cert": "developer",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "OAuth v2 인가 URL에서 봇 scope 를 전달하는 파라미터는?",
+    "options": [
+      {
+        "id": "A",
+        "text": "user_scope"
+      },
+      {
+        "id": "B",
+        "text": "scope"
+      },
+      {
+        "id": "C",
+        "text": "bot_scope"
+      },
+      {
+        "id": "D",
+        "text": "permissions"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "(5장) 보안: 봇 scope=scope, 요청 검증=Signing Secret HMAC, 토큰 xapp-=앱 전역, 타임스탬프 5분 초과=거부."
+  },
+  {
+    "id": 36,
+    "cert": "developer",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "Slack이 보낸 요청인지 확인하는 현행 방식은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Verification Token 비교"
+      },
+      {
+        "id": "B",
+        "text": "봇 토큰을 헤더에서 검증"
+      },
+      {
+        "id": "C",
+        "text": "Signing Secret으로 v0:timestamp:body 를 HMAC-SHA256 서명해 X-Slack-Signature 와 비교"
+      },
+      {
+        "id": "D",
+        "text": "state 재계산"
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "(5장) 보안: 봇 scope=scope, 요청 검증=Signing Secret HMAC, 토큰 xapp-=앱 전역, 타임스탬프 5분 초과=거부."
+  },
+  {
+    "id": 37,
+    "cert": "developer",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "토큰 종류와 용도가 올바르게 짝지어진 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "xoxb- = 사용자 위임"
+      },
+      {
+        "id": "B",
+        "text": "xoxp- = Socket Mode 연결"
+      },
+      {
+        "id": "C",
+        "text": "xapp- = 앱 전역(Socket Mode 등)"
+      },
+      {
+        "id": "D",
+        "text": "xoxb- = 요청 검증"
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "(5장) 보안: 봇 scope=scope, 요청 검증=Signing Secret HMAC, 토큰 xapp-=앱 전역, 타임스탬프 5분 초과=거부."
+  },
+  {
+    "id": 38,
+    "cert": "developer",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "요청 타임스탬프가 현재와 5분 이상 차이날 때 올바른 처리는?",
+    "options": [
+      {
+        "id": "A",
+        "text": "그대로 수용"
+      },
+      {
+        "id": "B",
+        "text": "거부(리플레이 공격 방지)"
+      },
+      {
+        "id": "C",
+        "text": "토큰 갱신"
+      },
+      {
+        "id": "D",
+        "text": "재전송 요청"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "(5장) 보안: 봇 scope=scope, 요청 검증=Signing Secret HMAC, 토큰 xapp-=앱 전역, 타임스탬프 5분 초과=거부."
+  },
+  {
+    "id": 39,
+    "cert": "developer",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "Okta 같은 IdP와 연동해 입·퇴사에 따라 계정을 자동 생성·비활성화하려면?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Admin API"
+      },
+      {
+        "id": "B",
+        "text": "SCIM API"
+      },
+      {
+        "id": "C",
+        "text": "Audit Logs API"
+      },
+      {
+        "id": "D",
+        "text": "Discovery API"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "(8장) 관리용 API: 프로비저닝=SCIM, 활동 감사=Audit Logs(auditlogs:read)."
+  },
+  {
+    "id": 40,
+    "cert": "developer",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "\"지난 30일 로그인·앱 설치 내역\"을 보안 감사로 조회하려면? (API + scope)",
+    "options": [
+      {
+        "id": "A",
+        "text": "Discovery API, discovery:read"
+      },
+      {
+        "id": "B",
+        "text": "Admin API, admin.users:write"
+      },
+      {
+        "id": "C",
+        "text": "Audit Logs API, auditlogs:read"
+      },
+      {
+        "id": "D",
+        "text": "SCIM API, Owner 토큰"
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "(8장) 관리용 API: 프로비저닝=SCIM, 활동 감사=Audit Logs(auditlogs:read)."
+  },
+  {
+    "id": 41,
+    "cert": "developer",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "Enterprise Grid 조직 전체에 앱을 한 번에 설치하는 방식은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "per-workspace 설치 반복"
+      },
+      {
+        "id": "B",
+        "text": "org-wide installation(조직 전역 설치)"
+      },
+      {
+        "id": "C",
+        "text": "Socket Mode 연결"
+      },
+      {
+        "id": "D",
+        "text": "legacy custom bot 추가"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "(6장) 확장: 전 조직 일괄=org-wide installation, 공유 앱=팀별 토큰 격리."
+  },
+  {
+    "id": 42,
+    "cert": "developer",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "여러 워크스페이스에 배포되는 공유 앱 설계로 옳은 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "모든 팀에 같은 토큰 하드코딩"
+      },
+      {
+        "id": "B",
+        "text": "팀별 토큰을 저장하고 team_id로 조회"
+      },
+      {
+        "id": "C",
+        "text": "토큰 미저장, 매번 재발급"
+      },
+      {
+        "id": "D",
+        "text": "첫 설치 팀 토큰만 사용"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "(6장) 확장: 전 조직 일괄=org-wide installation, 공유 앱=팀별 토큰 격리."
+  },
+  {
+    "id": 43,
+    "cert": "developer",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "슬래시 커맨드를 친 사용자에게 본인에게만 보이는 안내를 보내려면?",
+    "options": [
+      {
+        "id": "A",
+        "text": "chat.postMessage 공개 메시지"
+      },
+      {
+        "id": "B",
+        "text": "chat.postEphemeral"
+      },
+      {
+        "id": "C",
+        "text": "전체 DM"
+      },
+      {
+        "id": "D",
+        "text": "views.publish"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "(4·1장) UX·표면: 본인만=ephemeral, 영구 대시보드=App Home."
+  },
+  {
+    "id": 44,
+    "cert": "developer",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "\"항상 열려 있는 개인화된 현황판\"에 가장 적합한 표면은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Modal"
+      },
+      {
+        "id": "B",
+        "text": "Incoming Webhook"
+      },
+      {
+        "id": "C",
+        "text": "App Home(Home 탭)"
+      },
+      {
+        "id": "D",
+        "text": "ephemeral 메시지"
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "(4·1장) UX·표면: 본인만=ephemeral, 영구 대시보드=App Home."
+  },
+  {
+    "id": 45,
+    "cert": "developer",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "\"Add to Slack\" 과 \"Sign in with Slack\" 의 차이로 옳은 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "둘 다 앱 설치용이다"
+      },
+      {
+        "id": "B",
+        "text": "Add to Slack=앱 설치(OAuth authorize), Sign in with Slack=OIDC 사용자 로그인"
+      },
+      {
+        "id": "C",
+        "text": "Sign in with Slack=봇 토큰 갱신"
+      },
+      {
+        "id": "D",
+        "text": "Add to Slack=Marketplace 제출"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "(9·7장·교차) 배포·도구·폐기: Add to Slack vs Sign in(OIDC), Python 스택=Bolt for Python, RTM·Verification Token·legacy custom bot=deprecated."
+  },
+  {
+    "id": 46,
+    "cert": "developer",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "데이터팀이 기존 Python 스택과 통합되는 앱을 만들 때 적합한 프레임워크는?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Bolt for JavaScript"
+      },
+      {
+        "id": "B",
+        "text": "Bolt for Python"
+      },
+      {
+        "id": "C",
+        "text": "Block Kit Builder"
+      },
+      {
+        "id": "D",
+        "text": "RTM API"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "(9·7장·교차) 배포·도구·폐기: Add to Slack vs Sign in(OIDC), Python 스택=Bolt for Python, RTM·Verification Token·legacy custom bot=deprecated."
+  },
+  {
+    "id": 47,
+    "cert": "developer",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "현행(current)이 아니라 폐기(deprecated)된 것을 모두 고르면? (복수 선택)",
+    "options": [
+      {
+        "id": "A",
+        "text": "RTM API"
+      },
+      {
+        "id": "B",
+        "text": "Verification Token"
+      },
+      {
+        "id": "C",
+        "text": "Signing Secret"
+      },
+      {
+        "id": "D",
+        "text": "legacy custom bot"
+      }
+    ],
+    "correct_answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "explanation": "(9·7장·교차) 배포·도구·폐기: Add to Slack vs Sign in(OIDC), Python 스택=Bolt for Python, RTM·Verification Token·legacy custom bot=deprecated."
+  },
+  {
+    "id": 48,
+    "cert": "admin",
+    "domain_id": 1,
+    "domain": "1. 기초",
+    "question": "워크스페이스를 완전히 삭제할 수 있는 역할은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Workspace Admin"
+      },
+      {
+        "id": "B",
+        "text": "Workspace Owner"
+      },
+      {
+        "id": "C",
+        "text": "Primary Owner"
+      },
+      {
+        "id": "D",
+        "text": "Org Admin"
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "워크스페이스 삭제·소유권 이전은 Primary Owner(기본 소유자)만 가능합니다. Owner도 삭제는 불가합니다."
+  },
+  {
+    "id": 49,
+    "cert": "admin",
+    "domain_id": 1,
+    "domain": "1. 기초",
+    "question": "SAML 기반 SSO와 SCIM 자동 프로비저닝을 사용하려면 최소 어떤 플랜이 필요한가?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Free"
+      },
+      {
+        "id": "B",
+        "text": "Pro"
+      },
+      {
+        "id": "C",
+        "text": "Business+"
+      },
+      {
+        "id": "D",
+        "text": "플랜과 무관"
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "SAML SSO와 SCIM은 Business+ 이상에서 제공됩니다. (참고: 2025년 6월 정책 변경으로 Salesforce org를 연결한 Free·Pro 워크스페이스에서도 사용 가능해졌습니다. 시험에서 별도 조건이 없으면 Business+를 기준 답으로 봅니다.)"
+  },
+  {
+    "id": 50,
+    "cert": "admin",
+    "domain_id": 1,
+    "domain": "1. 기초",
+    "question": "Enterprise Grid에서만 제공되는 요소를 모두 고르면? (복수 선택)",
+    "options": [
+      {
+        "id": "A",
+        "text": "Organization(Org) 단위 정책"
+      },
+      {
+        "id": "B",
+        "text": "Custom Role(사용자 지정 역할)"
+      },
+      {
+        "id": "C",
+        "text": "Single-Channel Guest"
+      },
+      {
+        "id": "D",
+        "text": "EKM(Enterprise Key Management)"
+      }
+    ],
+    "correct_answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "explanation": "조직 단위 정책·사용자 지정 역할·EKM은 Enterprise Grid 고유입니다. Single-Channel Guest는 유료 플랜 전반에서 제공됩니다."
+  },
+  {
+    "id": 51,
+    "cert": "admin",
+    "domain_id": 2,
+    "domain": "2. 워크스페이스 관리",
+    "question": "전 세계 수십 개 워크스페이스가 난립해 보안·보존 정책을 일관되게 적용하기 어렵다. 가장 적절한 조치는?",
+    "options": [
+      {
+        "id": "A",
+        "text": "모든 워크스페이스를 하나로 합쳐 단일 워크스페이스로 만든다"
+      },
+      {
+        "id": "B",
+        "text": "Enterprise Grid로 전환해 조직(Org) 정책으로 일괄 관리한다"
+      },
+      {
+        "id": "C",
+        "text": "각 워크스페이스 관리자에게 동일한 설정을 수동 안내한다"
+      },
+      {
+        "id": "D",
+        "text": "Free 플랜으로 다운그레이드한다"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Grid는 워크스페이스를 유지한 채 조직 차원 정책을 일괄 적용합니다. 무조건 단일화(A)는 보안 경계를 무너뜨릴 수 있어 부적절합니다."
+  },
+  {
+    "id": 52,
+    "cert": "admin",
+    "domain_id": 2,
+    "domain": "2. 워크스페이스 관리",
+    "question": "여러 워크스페이스가 함께 사용하는 전사 공지 채널을 만들려면 무엇을 사용하는가?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Direct Message"
+      },
+      {
+        "id": "B",
+        "text": "Single-Channel Guest"
+      },
+      {
+        "id": "C",
+        "text": "Multi-Workspace Channel(다중 워크스페이스 채널)"
+      },
+      {
+        "id": "D",
+        "text": "Slack Connect 외부 채널"
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "조직 내 여러 워크스페이스에 공유되는 채널은 Multi-Workspace Channel입니다. Slack Connect는 외부 조직과의 공유에 사용합니다."
+  },
+  {
+    "id": 53,
+    "cert": "admin",
+    "domain_id": 3,
+    "domain": "3. 채널·사용자 그룹 관리",
+    "question": "더 이상 사용하지 않지만 대화 이력은 보존해야 하는 채널에 대한 가장 적절한 조치는?",
+    "options": [
+      {
+        "id": "A",
+        "text": "삭제(Delete)"
+      },
+      {
+        "id": "B",
+        "text": "보관(Archive)"
+      },
+      {
+        "id": "C",
+        "text": "비공개 전환"
+      },
+      {
+        "id": "D",
+        "text": "기본 채널 지정"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "이력 보존이 필요하면 삭제가 아닌 보관(Archive)을 사용합니다. 보관은 언제든 해제 가능합니다."
+  },
+  {
+    "id": 54,
+    "cert": "admin",
+    "domain_id": 3,
+    "domain": "3. 채널·사용자 그룹 관리",
+    "question": "기본 채널(Default Channels)에 대한 설명으로 옳은 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "기존 멤버도 소급 적용되어 자동 참여한다"
+      },
+      {
+        "id": "B",
+        "text": "신규 가입 멤버만 자동 참여한다"
+      },
+      {
+        "id": "C",
+        "text": "비공개 채널만 기본 채널로 지정할 수 있다"
+      },
+      {
+        "id": "D",
+        "text": "기본 채널은 삭제할 수 없다"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "기본 채널은 신규 가입자에게만 적용되며, 기존 멤버를 소급 가입시키지 않습니다."
+  },
+  {
+    "id": 55,
+    "cert": "admin",
+    "domain_id": 3,
+    "domain": "3. 채널·사용자 그룹 관리",
+    "question": "외부 파트너사와 채널을 공유해 협업하려고 한다. 사용해야 할 기능은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Multi-Workspace Channel"
+      },
+      {
+        "id": "B",
+        "text": "User Group"
+      },
+      {
+        "id": "C",
+        "text": "Slack Connect"
+      },
+      {
+        "id": "D",
+        "text": "Default Channel"
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "외부 조직과의 공유는 Slack Connect입니다. Multi-Workspace Channel은 같은 조직 내부용입니다."
+  },
+  {
+    "id": 56,
+    "cert": "admin",
+    "domain_id": 3,
+    "domain": "3. 채널·사용자 그룹 관리",
+    "question": "사용자 그룹(User Group)에 대한 설명으로 옳은 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "그룹 멤버에게 관리자 권한을 부여하는 수단이다"
+      },
+      {
+        "id": "B",
+        "text": "@그룹명 멘션과 채널 일괄 추가에 사용한다"
+      },
+      {
+        "id": "C",
+        "text": "Free 플랜에서만 제공된다"
+      },
+      {
+        "id": "D",
+        "text": "그룹은 외부 조직과만 공유된다"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "사용자 그룹은 멘션·채널 멤버십 관리 도구이며 권한 부여 수단이 아닙니다."
+  },
+  {
+    "id": 57,
+    "cert": "admin",
+    "domain_id": 3,
+    "domain": "3. 채널·사용자 그룹 관리",
+    "question": "공지 채널에서 일반 멤버가 글을 올리지 못하게 하려면?",
+    "options": [
+      {
+        "id": "A",
+        "text": "채널을 보관한다"
+      },
+      {
+        "id": "B",
+        "text": "게시 권한(Posting Permissions)을 관리자로 제한한다"
+      },
+      {
+        "id": "C",
+        "text": "채널을 삭제 후 재생성한다"
+      },
+      {
+        "id": "D",
+        "text": "DM으로 전환한다"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "게시 권한 설정으로 채널별 게시 가능자를 제한합니다."
+  },
+  {
+    "id": 58,
+    "cert": "admin",
+    "domain_id": 4,
+    "domain": "4. 사용자 생애주기 관리",
+    "question": "퇴사자가 IdP에서 제거되면 Slack 계정도 자동으로 비활성화되도록 하려면?",
+    "options": [
+      {
+        "id": "A",
+        "text": "JIT 프로비저닝만 사용한다"
+      },
+      {
+        "id": "B",
+        "text": "SCIM 프로비저닝을 구성한다"
+      },
+      {
+        "id": "C",
+        "text": "Google 로그인을 사용한다"
+      },
+      {
+        "id": "D",
+        "text": "게스트로 전환한다"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "자동 비활성화(deprovisioning)는 SCIM의 핵심 기능입니다. JIT은 생성만 자동입니다."
+  },
+  {
+    "id": 59,
+    "cert": "admin",
+    "domain_id": 4,
+    "domain": "4. 사용자 생애주기 관리",
+    "question": "SSO로 처음 로그인할 때 계정이 자동 생성되지만, 자동 해제는 제공되지 않는 방식은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "SCIM"
+      },
+      {
+        "id": "B",
+        "text": "JIT(Just-in-Time)"
+      },
+      {
+        "id": "C",
+        "text": "SAML"
+      },
+      {
+        "id": "D",
+        "text": "DLP"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "첫 로그인 시 생성만 자동인 방식은 JIT입니다."
+  },
+  {
+    "id": 60,
+    "cert": "admin",
+    "domain_id": 4,
+    "domain": "4. 사용자 생애주기 관리",
+    "question": "Slack에서 멤버를 비활성화(deactivate)했을 때 옳은 설명은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "멤버의 모든 메시지·파일이 즉시 영구 삭제된다"
+      },
+      {
+        "id": "B",
+        "text": "데이터는 보존되고 로그인만 차단되며, 재활성화로 복구 가능하다"
+      },
+      {
+        "id": "C",
+        "text": "워크스페이스 전체가 잠긴다"
+      },
+      {
+        "id": "D",
+        "text": "비활성화는 되돌릴 수 없다"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "비활성화는 데이터 보존+로그인 차단이며 재활성화로 복구 가능합니다."
+  },
+  {
+    "id": 61,
+    "cert": "admin",
+    "domain_id": 5,
+    "domain": "5. 앱 관리",
+    "question": "멤버가 임의로 앱을 설치하지 못하게 하고 관리자가 검토 후 설치하도록 하려면?",
+    "options": [
+      {
+        "id": "A",
+        "text": "App Directory를 비활성화한다"
+      },
+      {
+        "id": "B",
+        "text": "앱 승인(App Approval)을 강제한다"
+      },
+      {
+        "id": "C",
+        "text": "모든 앱의 스코프를 제거한다"
+      },
+      {
+        "id": "D",
+        "text": "Webhook을 차단한다"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "앱 승인 강제로 설치 요청–검토–승인 흐름을 만듭니다."
+  },
+  {
+    "id": 62,
+    "cert": "admin",
+    "domain_id": 5,
+    "domain": "5. 앱 관리",
+    "question": "코드를 작성하지 않고 \"새 멤버가 채널에 들어오면 환영 메시지를 보내는\" 자동화를 만들려면?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Webhook"
+      },
+      {
+        "id": "B",
+        "text": "SCIM"
+      },
+      {
+        "id": "C",
+        "text": "Workflow Builder"
+      },
+      {
+        "id": "D",
+        "text": "EKM"
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "노코드 자동화는 Workflow Builder입니다."
+  },
+  {
+    "id": 63,
+    "cert": "admin",
+    "domain_id": 6,
+    "domain": "6. 보안",
+    "question": "고객이 자체적으로 관리하는 암호화 키로 Slack 데이터를 암호화하려고 한다. 필요한 기능과 플랜은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "DLP, Pro"
+      },
+      {
+        "id": "B",
+        "text": "EKM, Enterprise Grid"
+      },
+      {
+        "id": "C",
+        "text": "SCIM, Business+"
+      },
+      {
+        "id": "D",
+        "text": "2FA, Free"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "고객 관리형 암호화 키는 EKM이며 Enterprise Grid에서 제공됩니다."
+  },
+  {
+    "id": 64,
+    "cert": "admin",
+    "domain_id": 6,
+    "domain": "6. 보안",
+    "question": "메시지에 신용카드 번호 같은 민감정보가 게시되는 것을 자동 탐지·차단하려면?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Retention Policy"
+      },
+      {
+        "id": "B",
+        "text": "DLP(Data Loss Prevention)"
+      },
+      {
+        "id": "C",
+        "text": "JIT"
+      },
+      {
+        "id": "D",
+        "text": "Default Channel"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "민감정보 탐지·차단은 DLP입니다."
+  },
+  {
+    "id": 65,
+    "cert": "admin",
+    "domain_id": 6,
+    "domain": "6. 보안",
+    "question": "비공개 채널과 DM을 포함해 규정 준수 목적으로 메시지를 내보내려면 일반적으로 무엇이 필요한가?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Free 플랜의 표준 내보내기만으로 충분"
+      },
+      {
+        "id": "B",
+        "text": "Business+ 이상 플랜과 승인된 Compliance Export"
+      },
+      {
+        "id": "C",
+        "text": "사용자 그룹 설정"
+      },
+      {
+        "id": "D",
+        "text": "Workflow Builder"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "비공개·DM 포함 내보내기는 Business+ 이상+승인된 규정 준수 내보내기가 필요합니다(표준 내보내기는 공개 채널 한정)."
+  },
+  {
+    "id": 66,
+    "cert": "admin",
+    "domain_id": 7,
+    "domain": "7. 슬랙 정착·성공",
+    "question": "특정 부서의 Slack 사용이 저조한지 파악하고 개입 대상을 정하려면 우선 무엇을 확인하는가?",
+    "options": [
+      {
+        "id": "A",
+        "text": "EKM 설정"
+      },
+      {
+        "id": "B",
+        "text": "Analytics Dashboard(분석 대시보드)의 정착 지표"
+      },
+      {
+        "id": "C",
+        "text": "보존 정책"
+      },
+      {
+        "id": "D",
+        "text": "앱 스코프"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "정착 현황 파악의 출발점은 분석 대시보드의 지표입니다."
+  },
+  {
+    "id": 67,
+    "cert": "admin",
+    "domain_id": 7,
+    "domain": "7. 슬랙 정착·성공",
+    "question": "부서별 열성 사용자를 양성해 Slack 확산을 주도하게 하는 정착 전략은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Champion Program(챔피언 프로그램)"
+      },
+      {
+        "id": "B",
+        "text": "Compliance Export"
+      },
+      {
+        "id": "C",
+        "text": "Single-Channel Guest"
+      },
+      {
+        "id": "D",
+        "text": "Webhook"
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "부서별 열성 사용자를 양성하는 것은 챔피언 프로그램입니다."
+  },
+  {
+    "id": 68,
+    "cert": "admin",
+    "domain_id": 7,
+    "domain": "7. 슬랙 정착·성공",
+    "question": "건강한 Slack 정착을 나타내는 지표로 가장 적절한 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "DM 비율이 매우 높음"
+      },
+      {
+        "id": "B",
+        "text": "공개 채널을 통한 소통 비율이 높음"
+      },
+      {
+        "id": "C",
+        "text": "비활성 멤버 수가 많음"
+      },
+      {
+        "id": "D",
+        "text": "앱 설치 수가 0"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "공개 채널 소통 비율이 높을수록 지식 공유·투명성이 높아 건강한 정착 신호입니다."
+  },
+  {
+    "id": 69,
+    "cert": "admin",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "워크스페이스를 영구 삭제할 수 있는 유일한 역할은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Workspace Admin"
+      },
+      {
+        "id": "B",
+        "text": "Workspace Owner"
+      },
+      {
+        "id": "C",
+        "text": "Primary Owner"
+      },
+      {
+        "id": "D",
+        "text": "Org Admin"
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "권한·Grid 전용 요소(Primary Owner의 삭제 권한, 조직 정책)."
+  },
+  {
+    "id": 70,
+    "cert": "admin",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "SAML SSO와 SCIM을 사용하려면 최소 어떤 플랜이 필요한가?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Free"
+      },
+      {
+        "id": "B",
+        "text": "Pro"
+      },
+      {
+        "id": "C",
+        "text": "Business+"
+      },
+      {
+        "id": "D",
+        "text": "Enterprise Grid 전용"
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "플랜 경계: SSO/SCIM·Compliance Export = Business+ 이상(SSO·SCIM은 Salesforce org 연결 시 Free/Pro도 가능), EKM·DLP = Enterprise Grid."
+  },
+  {
+    "id": 71,
+    "cert": "admin",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "Enterprise Grid에서만 제공되는 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "단일 채널 게스트"
+      },
+      {
+        "id": "B",
+        "text": "Workflow Builder"
+      },
+      {
+        "id": "C",
+        "text": "조직(Org) 차원 정책"
+      },
+      {
+        "id": "D",
+        "text": "2FA"
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "권한·Grid 전용 요소(Primary Owner의 삭제 권한, 조직 정책)."
+  },
+  {
+    "id": 72,
+    "cert": "admin",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "워크스페이스가 난립해 정책 적용이 어렵다. 가장 적절한 조치는?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Free로 다운그레이드"
+      },
+      {
+        "id": "B",
+        "text": "Enterprise Grid로 전환"
+      },
+      {
+        "id": "C",
+        "text": "모두 단일 워크스페이스로 강제 통합"
+      },
+      {
+        "id": "D",
+        "text": "방치"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "워크스페이스 통합은 Grid로, 내부 공유=Multi-Workspace Channel, 외부 공유=Slack Connect."
+  },
+  {
+    "id": 73,
+    "cert": "admin",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "같은 조직 내 여러 워크스페이스가 공유하는 채널은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Slack Connect 채널"
+      },
+      {
+        "id": "B",
+        "text": "Multi-Workspace Channel"
+      },
+      {
+        "id": "C",
+        "text": "비공개 채널"
+      },
+      {
+        "id": "D",
+        "text": "DM"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "워크스페이스 통합은 Grid로, 내부 공유=Multi-Workspace Channel, 외부 공유=Slack Connect."
+  },
+  {
+    "id": 74,
+    "cert": "admin",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "이력은 보존하되 더 이상 사용하지 않는 채널 처리는?",
+    "options": [
+      {
+        "id": "A",
+        "text": "삭제"
+      },
+      {
+        "id": "B",
+        "text": "보관(Archive)"
+      },
+      {
+        "id": "C",
+        "text": "공개 전환"
+      },
+      {
+        "id": "D",
+        "text": "기본 채널 지정"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "채널 운영: 보관 vs 삭제, 기본 채널은 신규만, 사용자 그룹은 멘션·멤버십, 게시 권한 제한."
+  },
+  {
+    "id": 75,
+    "cert": "admin",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "기본 채널(Default Channels)에 대해 옳은 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "기존 멤버도 소급 가입"
+      },
+      {
+        "id": "B",
+        "text": "신규 멤버만 자동 참여"
+      },
+      {
+        "id": "C",
+        "text": "비공개만 지정 가능"
+      },
+      {
+        "id": "D",
+        "text": "삭제 불가"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "채널 운영: 보관 vs 삭제, 기본 채널은 신규만, 사용자 그룹은 멘션·멤버십, 게시 권한 제한."
+  },
+  {
+    "id": 76,
+    "cert": "admin",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "외부 파트너사와 채널을 공유해 협업하려면?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Multi-Workspace Channel"
+      },
+      {
+        "id": "B",
+        "text": "User Group"
+      },
+      {
+        "id": "C",
+        "text": "Slack Connect"
+      },
+      {
+        "id": "D",
+        "text": "Default Channel"
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "워크스페이스 통합은 Grid로, 내부 공유=Multi-Workspace Channel, 외부 공유=Slack Connect."
+  },
+  {
+    "id": 77,
+    "cert": "admin",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "사용자 그룹(User Group)의 올바른 용도는?",
+    "options": [
+      {
+        "id": "A",
+        "text": "관리자 권한 부여"
+      },
+      {
+        "id": "B",
+        "text": "@그룹명 멘션·채널 일괄 추가"
+      },
+      {
+        "id": "C",
+        "text": "외부 조직 공유 전용"
+      },
+      {
+        "id": "D",
+        "text": "암호화"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "채널 운영: 보관 vs 삭제, 기본 채널은 신규만, 사용자 그룹은 멘션·멤버십, 게시 권한 제한."
+  },
+  {
+    "id": 78,
+    "cert": "admin",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "공지 채널에서 일반 멤버의 게시를 막으려면?",
+    "options": [
+      {
+        "id": "A",
+        "text": "보관"
+      },
+      {
+        "id": "B",
+        "text": "게시 권한 제한"
+      },
+      {
+        "id": "C",
+        "text": "삭제 후 재생성"
+      },
+      {
+        "id": "D",
+        "text": "DM 전환"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "채널 운영: 보관 vs 삭제, 기본 채널은 신규만, 사용자 그룹은 멘션·멤버십, 게시 권한 제한."
+  },
+  {
+    "id": 79,
+    "cert": "admin",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "퇴사자가 IdP에서 제거되면 Slack 계정도 자동 비활성화되게 하려면?",
+    "options": [
+      {
+        "id": "A",
+        "text": "JIT만 사용"
+      },
+      {
+        "id": "B",
+        "text": "SCIM 구성"
+      },
+      {
+        "id": "C",
+        "text": "Google 로그인"
+      },
+      {
+        "id": "D",
+        "text": "게스트 전환"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "생애주기: SCIM=자동 해제, JIT=생성만, 비활성화=데이터 보존, 게스트 범위."
+  },
+  {
+    "id": 80,
+    "cert": "admin",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "SSO 첫 로그인 시 계정 자동 생성, 자동 해제는 없는 방식은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "SCIM"
+      },
+      {
+        "id": "B",
+        "text": "JIT"
+      },
+      {
+        "id": "C",
+        "text": "SAML"
+      },
+      {
+        "id": "D",
+        "text": "EKM"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "생애주기: SCIM=자동 해제, JIT=생성만, 비활성화=데이터 보존, 게스트 범위."
+  },
+  {
+    "id": 81,
+    "cert": "admin",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "멤버 비활성화(deactivate)에 대해 옳은 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "데이터 즉시 영구 삭제"
+      },
+      {
+        "id": "B",
+        "text": "데이터 보존+로그인 차단, 재활성화 가능"
+      },
+      {
+        "id": "C",
+        "text": "워크스페이스 잠금"
+      },
+      {
+        "id": "D",
+        "text": "되돌릴 수 없음"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "생애주기: SCIM=자동 해제, JIT=생성만, 비활성화=데이터 보존, 게스트 범위."
+  },
+  {
+    "id": 82,
+    "cert": "admin",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "단일 채널 게스트(Single-Channel Guest)의 특징은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "모든 채널 접근"
+      },
+      {
+        "id": "B",
+        "text": "하나의 채널만 접근"
+      },
+      {
+        "id": "C",
+        "text": "관리자 권한 보유"
+      },
+      {
+        "id": "D",
+        "text": "Free 전용"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "생애주기: SCIM=자동 해제, JIT=생성만, 비활성화=데이터 보존, 게스트 범위."
+  },
+  {
+    "id": 83,
+    "cert": "admin",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "멤버가 임의로 앱을 설치하지 못하게 하려면?",
+    "options": [
+      {
+        "id": "A",
+        "text": "App Directory 비활성화"
+      },
+      {
+        "id": "B",
+        "text": "앱 승인 강제"
+      },
+      {
+        "id": "C",
+        "text": "모든 스코프 제거"
+      },
+      {
+        "id": "D",
+        "text": "Webhook 차단"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "앱·자동화·보안: 앱 승인, 노코드=Workflow Builder, 민감정보=DLP."
+  },
+  {
+    "id": 84,
+    "cert": "admin",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "코드 없이 \"새 멤버 환영 메시지\" 자동화를 만들려면?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Webhook"
+      },
+      {
+        "id": "B",
+        "text": "SCIM"
+      },
+      {
+        "id": "C",
+        "text": "Workflow Builder"
+      },
+      {
+        "id": "D",
+        "text": "EKM"
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "앱·자동화·보안: 앱 승인, 노코드=Workflow Builder, 민감정보=DLP."
+  },
+  {
+    "id": 85,
+    "cert": "admin",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "고객이 직접 관리하는 암호화 키로 데이터를 암호화하려면?",
+    "options": [
+      {
+        "id": "A",
+        "text": "DLP / Pro"
+      },
+      {
+        "id": "B",
+        "text": "EKM / Enterprise Grid"
+      },
+      {
+        "id": "C",
+        "text": "SCIM / Business+"
+      },
+      {
+        "id": "D",
+        "text": "2FA / Free"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "플랜 경계: SSO/SCIM·Compliance Export = Business+ 이상(SSO·SCIM은 Salesforce org 연결 시 Free/Pro도 가능), EKM·DLP = Enterprise Grid."
+  },
+  {
+    "id": 86,
+    "cert": "admin",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "메시지의 신용카드 번호 등 민감정보를 자동 탐지·차단하려면?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Retention Policy"
+      },
+      {
+        "id": "B",
+        "text": "DLP"
+      },
+      {
+        "id": "C",
+        "text": "JIT"
+      },
+      {
+        "id": "D",
+        "text": "Default Channel"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "앱·자동화·보안: 앱 승인, 노코드=Workflow Builder, 민감정보=DLP."
+  },
+  {
+    "id": 87,
+    "cert": "admin",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "비공개 채널·DM을 포함해 규정 준수 목적으로 내보내려면?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Free 표준 내보내기"
+      },
+      {
+        "id": "B",
+        "text": "Business+ 이상+승인된 Compliance Export"
+      },
+      {
+        "id": "C",
+        "text": "User Group"
+      },
+      {
+        "id": "D",
+        "text": "Workflow Builder"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "플랜 경계: SSO/SCIM·Compliance Export = Business+ 이상(SSO·SCIM은 Salesforce org 연결 시 Free/Pro도 가능), EKM·DLP = Enterprise Grid."
+  },
+  {
+    "id": 88,
+    "cert": "admin",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "건강한 Slack 정착을 나타내는 지표로 가장 적절한 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "DM 비율이 매우 높음"
+      },
+      {
+        "id": "B",
+        "text": "공개 채널 소통 비율이 높음"
+      },
+      {
+        "id": "C",
+        "text": "비활성 멤버가 많음"
+      },
+      {
+        "id": "D",
+        "text": "앱 설치 0"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "정착: 공개 채널 비율이 높을수록 건강한 신호."
+  },
+  {
+    "id": 89,
+    "cert": "consultant",
+    "domain_id": 1,
+    "domain": "1. 발견·요구사항 분석",
+    "question": "컨설턴트가 발견(Discovery) 단계에서 수행하는 핵심 활동으로 가장 적절한 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "워크플로우를 즉시 구축한다"
+      },
+      {
+        "id": "B",
+        "text": "현재 상태·페인 포인트를 파악하고 비즈니스 요구를 솔루션 요건으로 번역한다"
+      },
+      {
+        "id": "C",
+        "text": "사용자 비밀번호를 일괄 재설정한다"
+      },
+      {
+        "id": "D",
+        "text": "채널을 모두 보관한다"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "발견 단계는 구축 전에 현재 상태·페인 포인트를 파악하고 비즈니스 요구를 솔루션으로 번역하는 단계입니다."
+  },
+  {
+    "id": 90,
+    "cert": "consultant",
+    "domain_id": 1,
+    "domain": "1. 발견·요구사항 분석",
+    "question": "고객이 \"퇴사자 계정이 제때 정리되지 않는다\"고 호소한다. 발견 단계에서 이를 어떤 솔루션 요건으로 번역하는 것이 적절한가?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Workflow Builder 도입"
+      },
+      {
+        "id": "B",
+        "text": "SSO + SCIM 프로비저닝"
+      },
+      {
+        "id": "C",
+        "text": "채널 명명 규칙 수립"
+      },
+      {
+        "id": "D",
+        "text": "캔버스 작성"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "계정 자동 정리(deprovisioning)는 SCIM의 핵심이며 SSO와 함께 구성합니다."
+  },
+  {
+    "id": 91,
+    "cert": "consultant",
+    "domain_id": 2,
+    "domain": "2. 그리드 설계",
+    "question": "부서마다 규제·데이터 분리 요건이 크게 다른 대기업에 적합한 워크스페이스 설계 모델은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "중앙집중형(Centralized)"
+      },
+      {
+        "id": "B",
+        "text": "분산형(Distributed)"
+      },
+      {
+        "id": "C",
+        "text": "단일 채널만 사용"
+      },
+      {
+        "id": "D",
+        "text": "Free 플랜 다중 사용"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "부서별 정책·규제 분리가 필요하면 분산형이 적합합니다."
+  },
+  {
+    "id": 92,
+    "cert": "consultant",
+    "domain_id": 2,
+    "domain": "2. 그리드 설계",
+    "question": "같은 Enterprise Grid 조직 내 여러 워크스페이스가 함께 보는 전사 공지 채널을 만들려면?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Slack Connect 채널"
+      },
+      {
+        "id": "B",
+        "text": "Multi-Workspace Channel(다중 워크스페이스 채널)"
+      },
+      {
+        "id": "C",
+        "text": "단일 채널 게스트"
+      },
+      {
+        "id": "D",
+        "text": "DM"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "조직 내부 공유는 다중 워크스페이스 채널, 외부 공유는 Slack Connect입니다."
+  },
+  {
+    "id": 93,
+    "cert": "consultant",
+    "domain_id": 2,
+    "domain": "2. 그리드 설계",
+    "question": "중앙집중형 설계의 장점으로 가장 적절한 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "부서별로 완전히 다른 정책 적용이 쉽다"
+      },
+      {
+        "id": "B",
+        "text": "관리가 단순하고 전사 통합 소통에 유리하다"
+      },
+      {
+        "id": "C",
+        "text": "데이터 경계를 물리적으로 분리한다"
+      },
+      {
+        "id": "D",
+        "text": "외부 조직과만 협업한다"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "중앙집중형은 관리 단순화와 전사 통합 소통이 강점입니다."
+  },
+  {
+    "id": 94,
+    "cert": "consultant",
+    "domain_id": 3,
+    "domain": "3. 채널 전략",
+    "question": "채널 전략 설계의 기본 원칙으로 가장 적절한 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "모든 채널을 비공개로 만든다"
+      },
+      {
+        "id": "B",
+        "text": "공개를 기본으로 하고 비공개는 예외로 둔다"
+      },
+      {
+        "id": "C",
+        "text": "채널 이름은 무작위로 둔다"
+      },
+      {
+        "id": "D",
+        "text": "DM 사용을 권장한다"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "투명성·지식 공유를 위해 공개를 기본으로, 비공개는 예외로 설계합니다."
+  },
+  {
+    "id": 95,
+    "cert": "consultant",
+    "domain_id": 3,
+    "domain": "3. 채널 전략",
+    "question": "사용자가 새 채널 생성이나 앱 설치를 관리자에게 요청하도록 설계하는 채널은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Request Channel(요청 채널)"
+      },
+      {
+        "id": "B",
+        "text": "Slack Connect 채널"
+      },
+      {
+        "id": "C",
+        "text": "기본 채널"
+      },
+      {
+        "id": "D",
+        "text": "다중 워크스페이스 채널"
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "도움·생성 요청을 받는 전용 채널이 요청(Request) 채널입니다."
+  },
+  {
+    "id": 96,
+    "cert": "consultant",
+    "domain_id": 3,
+    "domain": "3. 채널 전략",
+    "question": "접두어 기반 채널 명명 규칙의 주된 이점은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "메시지 암호화"
+      },
+      {
+        "id": "B",
+        "text": "검색성·발견성·정리(거버넌스) 향상"
+      },
+      {
+        "id": "C",
+        "text": "비밀번호 강화"
+      },
+      {
+        "id": "D",
+        "text": "외부 공유 차단"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "접두어 명명 규칙은 검색·발견·정리를 쉽게 합니다."
+  },
+  {
+    "id": 97,
+    "cert": "consultant",
+    "domain_id": 4,
+    "domain": "4. 정책·설정",
+    "question": "5,000명 규모 기업이 입·퇴사를 IdP와 자동 연동하려 한다. 권고할 구성은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "수동 초대"
+      },
+      {
+        "id": "B",
+        "text": "SSO(SAML) + SCIM 프로비저닝"
+      },
+      {
+        "id": "C",
+        "text": "Google 로그인만"
+      },
+      {
+        "id": "D",
+        "text": "JIT만 사용"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "대규모 자동 연동은 SSO+SCIM 조합입니다."
+  },
+  {
+    "id": 98,
+    "cert": "consultant",
+    "domain_id": 4,
+    "domain": "4. 정책·설정",
+    "question": "Enterprise Grid에서 모든 워크스페이스에 동일한 앱 승인 정책을 강제하려면 어디에서 설정하는가?",
+    "options": [
+      {
+        "id": "A",
+        "text": "각 워크스페이스에서 개별 설정"
+      },
+      {
+        "id": "B",
+        "text": "조직(Org) 차원 설정"
+      },
+      {
+        "id": "C",
+        "text": "사용자 개인 설정"
+      },
+      {
+        "id": "D",
+        "text": "채널 설정"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "Grid에서 정책 일괄 강제는 조직 차원 설정에서 합니다."
+  },
+  {
+    "id": 99,
+    "cert": "consultant",
+    "domain_id": 4,
+    "domain": "4. 정책·설정",
+    "question": "고객이 비공개 채널·DM을 포함한 규정 준수 내보내기와 DLP가 필요하다고 한다. 최소 권고 플랜은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Free"
+      },
+      {
+        "id": "B",
+        "text": "Pro"
+      },
+      {
+        "id": "C",
+        "text": "Business+"
+      },
+      {
+        "id": "D",
+        "text": "Enterprise Grid"
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "규정 준수 내보내기는 Business+ 이상이지만 네이티브 DLP는 Enterprise Grid 전용입니다. 둘 다 필요하므로 최소 권고 플랜은 Enterprise Grid입니다."
+  },
+  {
+    "id": 100,
+    "cert": "consultant",
+    "domain_id": 4,
+    "domain": "4. 정책·설정",
+    "question": "SCIM과 JIT의 차이로 옳은 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "JIT은 자동 계정 해제를 제공한다"
+      },
+      {
+        "id": "B",
+        "text": "SCIM은 생성·동기화·자동 해제를 포함한다"
+      },
+      {
+        "id": "C",
+        "text": "둘 다 동일하다"
+      },
+      {
+        "id": "D",
+        "text": "SCIM은 첫 로그인 시에만 동작한다"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "SCIM은 자동 해제까지 포함, JIT은 생성만 합니다."
+  },
+  {
+    "id": 101,
+    "cert": "consultant",
+    "domain_id": 5,
+    "domain": "5. 거버넌스 구조·역할",
+    "question": "특정 관리 업무만 일부 담당자에게 맡기고 과도한 권한 부여를 피하려면 Enterprise Grid에서 무엇을 사용하는가?",
+    "options": [
+      {
+        "id": "A",
+        "text": "모두에게 Org Owner 부여"
+      },
+      {
+        "id": "B",
+        "text": "Custom Role(사용자 지정 역할)로 최소 권한 위임"
+      },
+      {
+        "id": "C",
+        "text": "단일 채널 게스트 전환"
+      },
+      {
+        "id": "D",
+        "text": "DM 비활성화"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "최소 권한 위임은 사용자 지정 역할(Custom Role)로 구현합니다."
+  },
+  {
+    "id": 102,
+    "cert": "consultant",
+    "domain_id": 5,
+    "domain": "5. 거버넌스 구조·역할",
+    "question": "거버넌스 구조 설계에서 \"지원 모델(Support Model)\"이 정의하는 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "채널 색상 테마"
+      },
+      {
+        "id": "B",
+        "text": "지속 운영을 내부/파트너 중 누가 책임지는지"
+      },
+      {
+        "id": "C",
+        "text": "메시지 보존 기간"
+      },
+      {
+        "id": "D",
+        "text": "앱의 스코프"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "지원 모델은 지속 운영 책임 주체(내부 vs 파트너)를 정의합니다."
+  },
+  {
+    "id": 103,
+    "cert": "consultant",
+    "domain_id": 6,
+    "domain": "6. 구축·마이그레이션",
+    "question": "Slack 구축 프로젝트에서 \"최종 사용자 교육\"이 주로 이루어지는 단계는?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Prepare"
+      },
+      {
+        "id": "B",
+        "text": "Discovery(Understand)"
+      },
+      {
+        "id": "C",
+        "text": "Launch(출시)"
+      },
+      {
+        "id": "D",
+        "text": "Success"
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "사용자 교육은 Launch(출시) 단계의 핵심 활동입니다."
+  },
+  {
+    "id": 104,
+    "cert": "consultant",
+    "domain_id": 6,
+    "domain": "6. 구축·마이그레이션",
+    "question": "독립 워크스페이스를 Enterprise Grid로 마이그레이션할 때 일반적으로 함께 보존·이전되는 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "멤버 계정·메시지·파일·이모지 반응"
+      },
+      {
+        "id": "B",
+        "text": "아무것도 보존되지 않음"
+      },
+      {
+        "id": "C",
+        "text": "메시지만, 파일은 제외"
+      },
+      {
+        "id": "D",
+        "text": "채널 이름만"
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "마이그레이션 시 계정·메시지·파일·이모지 반응이 보존·이전됩니다."
+  },
+  {
+    "id": 105,
+    "cert": "consultant",
+    "domain_id": 6,
+    "domain": "6. 구축·마이그레이션",
+    "question": "마이그레이션 중 같은 사용자가 두 워크스페이스에 서로 다른 이메일·권한으로 존재한다. 컨설턴트가 사전에 설계해야 하는 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "DM 비활성화"
+      },
+      {
+        "id": "B",
+        "text": "이메일·역할 충돌 해결(Conflict Resolution) 규칙"
+      },
+      {
+        "id": "C",
+        "text": "채널 색상 정책"
+      },
+      {
+        "id": "D",
+        "text": "캔버스 템플릿"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "이메일·역할 충돌 해결 규칙을 사전에 설계해야 합니다."
+  },
+  {
+    "id": 106,
+    "cert": "consultant",
+    "domain_id": 6,
+    "domain": "6. 구축·마이그레이션",
+    "question": "단계별로 \"누가 무엇을 책임지는지\"를 문서화하는 산출물은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Stakeholder Responsibility Mapping(이해관계자 책임 매핑)"
+      },
+      {
+        "id": "B",
+        "text": "보존 정책"
+      },
+      {
+        "id": "C",
+        "text": "앱 스코프 목록"
+      },
+      {
+        "id": "D",
+        "text": "채널 명명 규칙"
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "단계별 책임 문서화가 이해관계자 책임 매핑입니다."
+  },
+  {
+    "id": 107,
+    "cert": "consultant",
+    "domain_id": 7,
+    "domain": "7. 교육·정착",
+    "question": "교육 계획 설계에서 컨설턴트가 구분해야 하는 3대 교육 대상은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "경영진·주주·고객"
+      },
+      {
+        "id": "B",
+        "text": "관리자·챔피언·최종 사용자"
+      },
+      {
+        "id": "C",
+        "text": "개발자·디자이너·기획자"
+      },
+      {
+        "id": "D",
+        "text": "내부·외부·파트너"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "관리자·챔피언·최종 사용자 3대상으로 나눠 맞춤 교육합니다."
+  },
+  {
+    "id": 108,
+    "cert": "consultant",
+    "domain_id": 7,
+    "domain": "7. 교육·정착",
+    "question": "부서별 열성 사용자를 양성해 동료 코칭과 확산을 맡기는 전략은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Change Management"
+      },
+      {
+        "id": "B",
+        "text": "Champion Program(챔피언 프로그램)"
+      },
+      {
+        "id": "C",
+        "text": "SCIM"
+      },
+      {
+        "id": "D",
+        "text": "eDiscovery"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "동료 코칭·확산은 챔피언 프로그램입니다."
+  },
+  {
+    "id": 109,
+    "cert": "consultant",
+    "domain_id": 7,
+    "domain": "7. 교육·정착",
+    "question": "건강한 Slack 정착을 나타내는 지표로 가장 적절한 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "DM 비율이 매우 높음"
+      },
+      {
+        "id": "B",
+        "text": "공개 채널 소통 비율이 높음"
+      },
+      {
+        "id": "C",
+        "text": "비활성 멤버가 많음"
+      },
+      {
+        "id": "D",
+        "text": "채널 수가 0"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "공개 채널 소통 비율이 높을수록 건강한 정착 신호입니다."
+  },
+  {
+    "id": 110,
+    "cert": "consultant",
+    "domain_id": 7,
+    "domain": "7. 교육·정착",
+    "question": "컨설턴트가 떠난 뒤에도 고객이 자립 운영하도록 하는 활동은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Knowledge Transfer(지식 전수)·문서화"
+      },
+      {
+        "id": "B",
+        "text": "모든 채널 삭제"
+      },
+      {
+        "id": "C",
+        "text": "앱 승인 비활성화"
+      },
+      {
+        "id": "D",
+        "text": "비밀번호 재설정"
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "지식 전수·문서화로 고객의 자립 운영을 돕습니다."
+  },
+  {
+    "id": 111,
+    "cert": "consultant",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "발견(Discovery) 단계의 핵심 산출물로 가장 적절한 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "완성된 워크플로우"
+      },
+      {
+        "id": "B",
+        "text": "비즈니스 요구→솔루션 요건 매핑"
+      },
+      {
+        "id": "C",
+        "text": "비밀번호 정책"
+      },
+      {
+        "id": "D",
+        "text": "채널 색상표"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "발견: 비즈니스 요구를 솔루션으로 번역(외부 협업=Slack Connect+DLP)."
+  },
+  {
+    "id": 112,
+    "cert": "consultant",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "\"외부 협력사와 안전하게 협업\"이라는 요구를 솔루션으로 번역하면?",
+    "options": [
+      {
+        "id": "A",
+        "text": "기본 채널 추가"
+      },
+      {
+        "id": "B",
+        "text": "Slack Connect + 외부 공유 정책·DLP"
+      },
+      {
+        "id": "C",
+        "text": "DM 비활성화"
+      },
+      {
+        "id": "D",
+        "text": "캔버스 작성"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "발견: 비즈니스 요구를 솔루션으로 번역(외부 협업=Slack Connect+DLP)."
+  },
+  {
+    "id": 113,
+    "cert": "consultant",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "부서별 규제·데이터 분리가 강하게 요구되는 조직의 Grid 설계 모델은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "중앙집중형"
+      },
+      {
+        "id": "B",
+        "text": "분산형"
+      },
+      {
+        "id": "C",
+        "text": "Free 다중"
+      },
+      {
+        "id": "D",
+        "text": "단일 채널"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "설계: 분리 필요=분산형, 단순·통합=중앙집중형, 내부 공유=다중 워크스페이스 채널."
+  },
+  {
+    "id": 114,
+    "cert": "consultant",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "중앙집중형(Centralized) 설계의 강점은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "부서별 상이 정책 용이"
+      },
+      {
+        "id": "B",
+        "text": "관리 단순·전사 통합 소통"
+      },
+      {
+        "id": "C",
+        "text": "물리적 데이터 분리"
+      },
+      {
+        "id": "D",
+        "text": "외부 전용"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "설계: 분리 필요=분산형, 단순·통합=중앙집중형, 내부 공유=다중 워크스페이스 채널."
+  },
+  {
+    "id": 115,
+    "cert": "consultant",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "같은 조직 내 여러 워크스페이스가 공유하는 채널은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Slack Connect 채널"
+      },
+      {
+        "id": "B",
+        "text": "다중 워크스페이스 채널"
+      },
+      {
+        "id": "C",
+        "text": "비공개 채널"
+      },
+      {
+        "id": "D",
+        "text": "DM"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "설계: 분리 필요=분산형, 단순·통합=중앙집중형, 내부 공유=다중 워크스페이스 채널."
+  },
+  {
+    "id": 116,
+    "cert": "consultant",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "채널 전략의 기본 설계 원칙은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "전부 비공개"
+      },
+      {
+        "id": "B",
+        "text": "공개를 기본, 비공개는 예외"
+      },
+      {
+        "id": "C",
+        "text": "무작위 명명"
+      },
+      {
+        "id": "D",
+        "text": "DM 우선"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "채널 전략: 공개 기본, 요청 채널."
+  },
+  {
+    "id": 117,
+    "cert": "consultant",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "사용자가 채널 생성·앱 설치를 관리자에게 요청하도록 만드는 채널은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "요청(Request) 채널"
+      },
+      {
+        "id": "B",
+        "text": "기본 채널"
+      },
+      {
+        "id": "C",
+        "text": "Slack Connect"
+      },
+      {
+        "id": "D",
+        "text": "다중 워크스페이스 채널"
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "채널 전략: 공개 기본, 요청 채널."
+  },
+  {
+    "id": 118,
+    "cert": "consultant",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "대규모 기업의 입·퇴사 자동 연동을 위한 권고 구성은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "수동 초대"
+      },
+      {
+        "id": "B",
+        "text": "SSO(SAML)+SCIM"
+      },
+      {
+        "id": "C",
+        "text": "Google 로그인만"
+      },
+      {
+        "id": "D",
+        "text": "JIT만"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "정책·설정: SSO+SCIM(Salesforce org 연결 시 Free/Pro도 가능), 조직 차원 강제, 규정 준수 내보내기=Business+·네이티브 DLP=Enterprise Grid 전용(문제10 답 Enterprise Grid), SCIM=자동 해제, 조직 정책 우선."
+  },
+  {
+    "id": 119,
+    "cert": "consultant",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "Enterprise Grid에서 모든 워크스페이스에 앱 승인 정책을 일괄 강제하려면?",
+    "options": [
+      {
+        "id": "A",
+        "text": "워크스페이스별 개별 설정"
+      },
+      {
+        "id": "B",
+        "text": "조직(Org) 차원 설정"
+      },
+      {
+        "id": "C",
+        "text": "개인 설정"
+      },
+      {
+        "id": "D",
+        "text": "채널 설정"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "정책·설정: SSO+SCIM(Salesforce org 연결 시 Free/Pro도 가능), 조직 차원 강제, 규정 준수 내보내기=Business+·네이티브 DLP=Enterprise Grid 전용(문제10 답 Enterprise Grid), SCIM=자동 해제, 조직 정책 우선."
+  },
+  {
+    "id": 120,
+    "cert": "consultant",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "비공개 채널·DM 포함 규정 준수 내보내기와 DLP가 필요하다. 최소 권고 플랜은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Free"
+      },
+      {
+        "id": "B",
+        "text": "Pro"
+      },
+      {
+        "id": "C",
+        "text": "Business+"
+      },
+      {
+        "id": "D",
+        "text": "Enterprise Grid"
+      }
+    ],
+    "correct_answer": [
+      "D"
+    ],
+    "explanation": "정책·설정: SSO+SCIM(Salesforce org 연결 시 Free/Pro도 가능), 조직 차원 강제, 규정 준수 내보내기=Business+·네이티브 DLP=Enterprise Grid 전용(문제10 답 Enterprise Grid), SCIM=자동 해제, 조직 정책 우선."
+  },
+  {
+    "id": 121,
+    "cert": "consultant",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "SCIM과 JIT의 차이로 옳은 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "JIT이 자동 해제 제공"
+      },
+      {
+        "id": "B",
+        "text": "SCIM은 생성·동기화·자동 해제 포함"
+      },
+      {
+        "id": "C",
+        "text": "동일"
+      },
+      {
+        "id": "D",
+        "text": "SCIM은 첫 로그인만"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "정책·설정: SSO+SCIM(Salesforce org 연결 시 Free/Pro도 가능), 조직 차원 강제, 규정 준수 내보내기=Business+·네이티브 DLP=Enterprise Grid 전용(문제10 답 Enterprise Grid), SCIM=자동 해제, 조직 정책 우선."
+  },
+  {
+    "id": 122,
+    "cert": "consultant",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "조직 정책과 워크스페이스 설정이 충돌할 때 Enterprise Grid에서 일반적으로?",
+    "options": [
+      {
+        "id": "A",
+        "text": "워크스페이스 설정이 항상 우선"
+      },
+      {
+        "id": "B",
+        "text": "조직 정책이 강제·우선할 수 있음"
+      },
+      {
+        "id": "C",
+        "text": "둘 다 무시"
+      },
+      {
+        "id": "D",
+        "text": "사용자 선택"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "정책·설정: SSO+SCIM(Salesforce org 연결 시 Free/Pro도 가능), 조직 차원 강제, 규정 준수 내보내기=Business+·네이티브 DLP=Enterprise Grid 전용(문제10 답 Enterprise Grid), SCIM=자동 해제, 조직 정책 우선."
+  },
+  {
+    "id": 123,
+    "cert": "consultant",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "특정 관리 업무만 위임하고 과도한 권한을 피하려면?",
+    "options": [
+      {
+        "id": "A",
+        "text": "모두 Org Owner"
+      },
+      {
+        "id": "B",
+        "text": "Custom Role로 최소 권한 위임"
+      },
+      {
+        "id": "C",
+        "text": "게스트 전환"
+      },
+      {
+        "id": "D",
+        "text": "DM 차단"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "거버넌스: 최소 권한=Custom Role, 지원 모델=운영 책임 주체."
+  },
+  {
+    "id": 124,
+    "cert": "consultant",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "거버넌스의 \"지원 모델(Support Model)\"이 정의하는 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "채널 테마"
+      },
+      {
+        "id": "B",
+        "text": "내부 vs 파트너 운영 책임"
+      },
+      {
+        "id": "C",
+        "text": "보존 기간"
+      },
+      {
+        "id": "D",
+        "text": "앱 스코프"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "거버넌스: 최소 권한=Custom Role, 지원 모델=운영 책임 주체."
+  },
+  {
+    "id": 125,
+    "cert": "consultant",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "Slack 구축에서 최종 사용자 교육이 주로 이루어지는 단계는?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Prepare"
+      },
+      {
+        "id": "B",
+        "text": "Understand"
+      },
+      {
+        "id": "C",
+        "text": "Launch"
+      },
+      {
+        "id": "D",
+        "text": "Success"
+      }
+    ],
+    "correct_answer": [
+      "C"
+    ],
+    "explanation": "구축·마이그레이션: 교육=Launch, 보존=계정·메시지·파일·이모지, 충돌 해결 규칙, 책임 매핑."
+  },
+  {
+    "id": 126,
+    "cert": "consultant",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "Grid 마이그레이션 시 일반적으로 보존·이전되는 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "계정·메시지·파일·이모지 반응"
+      },
+      {
+        "id": "B",
+        "text": "없음"
+      },
+      {
+        "id": "C",
+        "text": "메시지만"
+      },
+      {
+        "id": "D",
+        "text": "이름만"
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "구축·마이그레이션: 교육=Launch, 보존=계정·메시지·파일·이모지, 충돌 해결 규칙, 책임 매핑."
+  },
+  {
+    "id": 127,
+    "cert": "consultant",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "마이그레이션 중 같은 사용자의 이메일·권한이 충돌한다. 사전에 설계할 것은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "DM 비활성화"
+      },
+      {
+        "id": "B",
+        "text": "충돌 해결(Conflict Resolution) 규칙"
+      },
+      {
+        "id": "C",
+        "text": "채널 색상"
+      },
+      {
+        "id": "D",
+        "text": "캔버스"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "구축·마이그레이션: 교육=Launch, 보존=계정·메시지·파일·이모지, 충돌 해결 규칙, 책임 매핑."
+  },
+  {
+    "id": 128,
+    "cert": "consultant",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "단계별 \"누가 무엇을 책임지는지\" 문서화 산출물은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "이해관계자 책임 매핑"
+      },
+      {
+        "id": "B",
+        "text": "보존 정책"
+      },
+      {
+        "id": "C",
+        "text": "스코프 목록"
+      },
+      {
+        "id": "D",
+        "text": "명명 규칙"
+      }
+    ],
+    "correct_answer": [
+      "A"
+    ],
+    "explanation": "구축·마이그레이션: 교육=Launch, 보존=계정·메시지·파일·이모지, 충돌 해결 규칙, 책임 매핑."
+  },
+  {
+    "id": 129,
+    "cert": "consultant",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "교육 계획에서 구분해야 할 3대 대상은?",
+    "options": [
+      {
+        "id": "A",
+        "text": "경영진·주주·고객"
+      },
+      {
+        "id": "B",
+        "text": "관리자·챔피언·최종 사용자"
+      },
+      {
+        "id": "C",
+        "text": "개발·디자인·기획"
+      },
+      {
+        "id": "D",
+        "text": "내부·외부·파트너"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "정착: 3대상 맞춤 교육, 공개 채널 비율↑."
+  },
+  {
+    "id": 130,
+    "cert": "consultant",
+    "domain_id": "mock",
+    "domain": "종합 모의고사",
+    "question": "건강한 정착을 나타내는 지표는?",
+    "options": [
+      {
+        "id": "A",
+        "text": "DM 비율↑"
+      },
+      {
+        "id": "B",
+        "text": "공개 채널 소통 비율↑"
+      },
+      {
+        "id": "C",
+        "text": "비활성 멤버↑"
+      },
+      {
+        "id": "D",
+        "text": "채널 0"
+      }
+    ],
+    "correct_answer": [
+      "B"
+    ],
+    "explanation": "정착: 3대상 맞춤 교육, 공개 채널 비율↑."
+  }
+]
