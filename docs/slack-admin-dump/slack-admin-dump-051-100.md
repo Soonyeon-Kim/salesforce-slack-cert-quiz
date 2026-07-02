@@ -387,16 +387,17 @@
 > - C. Signed out if they don't complete EMM setup within 72 hours.
 > - D. Signed out if they don't complete EMM setup within 24 hours.
 
-**핵심 개념:** EMM 활성화 후 멤버는 **72시간 내 EMM 설정을 완료**해야 하며, 미완료 시 모바일에서 로그아웃된다. (cf. NO.3)
-**덤프 정답:** A → ⚠️ 재판정 불일치 (내 판단: **C = 72시간**) *(공식 문서로 확인, 확신도: 높음)*
-**정답 근거(C):** Slack 공식 문서: "Members will have 72 hours to set up EMM... if a member does not complete the EMM setup, they will be signed out." 사용자 안내로 넣을 '행동 기한'은 72시간이다.
-**왜 덤프 A가 틀렸나:** A는 "유예 없이 즉시 로그아웃"이라 하지만, 이는 **NO.3의 정답(72시간 설정 기한)과 정면으로 모순**되고 공식 문서와도 어긋난다. ("Slack for EMM only"로 강제하면 미관리 기기는 즉시 차단되지만, 사용자에게 안내할 '설정 완료 기한'은 72시간.)
+**핵심 개념:** EMM 활성화 후 멤버는 **정해진 기한 내에 EMM 설정을 완료**해야 하며, 미완료 시 모바일 Slack에서 로그아웃된다. ⚠️ 공식 문서상 기한은 **12시간**이다(EMM을 켜면 정규 Slack 앱에서 "within 12 hours, 종종 그보다 훨씬 빨리" 로그아웃). **이 문항 보기에는 12시간이 없다.** (cf. NO.3)
+**덤프 정답:** A → 🟡 재판정 정정: **A 수용(4개 중 최선)** *(이전 판 'C=72시간'은 잘못된 72h 수치에 기댄 오류 — 철회. 확신도: 중)*
+**정답 근거:** Slack 공식 문서: "When EMM is turned on, members required to use the Slack for EMM app will be signed out of the regular Slack app **within 12 hours** (though often, this happens much sooner)." 설정 기한도 **12시간**("Members will have 12 hours to set up EMM… if a member does not complete the EMM setup, they will be signed out of Slack on their mobile devices"). 즉 실제 수치는 12시간이지 72시간이 아니다.
+**보기 판정:** 시간창을 명시한 B(1주일)·C(72시간)·D(24시간)는 **모두 실제 12시간과 불일치**해 어느 것도 정확하지 않다. 반면 A("미관리 기기에서 곧 로그아웃")는 "정규 앱에서 12시간 내(종종 훨씬 빨리) 로그아웃" 동작과 부합해 4개 중 가장 방어 가능하다. 따라서 덤프의 **A를 수용**하고, 앞서 골랐던 C는 근거 없는 수치라 **철회**한다.
 **오답 해설:**
-- A. "즉시/유예 없음"은 부정확(72시간 창 존재).
-- B. 1주일이 아님.
-- D. 24시간이 아님.
+- A. 문서상 로그아웃은 "즉시"라기보다 "12시간 내(종종 훨씬 빨리)"지만, 시간창이 틀린 B·C·D보다 정확하다.
+- B. 1주일 창은 문서에 없음.
+- C. "72시간" 창은 **어느 공식 Slack 문서에서도 확인되지 않음**(NO.3와 동일한 덤프 오기).
+- D. 24시간은 설정 완료 기한이 아님(안드로이드의 '외부 워크스페이스' 로그아웃 맥락 24시간과 혼동한 값).
 
-**출처:** Slack Help Center — [Enable Enterprise Mobility Management](https://slack.com/help/articles/115002579426-Enable-Enterprise-Mobility-Management-for-your-organization).
+**출처:** Slack Help Center — [Enable Enterprise Mobility Management](https://slack.com/help/articles/115002579426-Enable-Enterprise-Mobility-Management-for-your-organization) (현재 문서: "within 12 hours"). 설정 기한 "12 hours to set up EMM …" 문구는 [Install EMM](https://slack.com/help/articles/115002247686-Install-Enterprise-Mobility-Management) 구버전.
 
 ---
 

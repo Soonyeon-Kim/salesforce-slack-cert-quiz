@@ -1,7 +1,7 @@
 # Salesforce Certified Slack Administrator — 덤프 검증·해설 (NO.101~150)
 
 > 문서 목적·면책·표기 규칙은 [README](./README.md) 참고. 문제·보기는 영어 원문, 해설은 한국어. `✅` 일치 / `⚠️` 불일치·논란.
-> **이 파일의 ⚠️ 문항: NO.105.**
+> **이 파일의 ⚠️ 문항: NO.105, NO.124(B 서술 문서 미확인·소거법).**
 > 참고: NO.110은 NO.60, NO.113은 NO.69, NO.122는 NO.81과 사실상 동일(보기 순서만 다름).
 
 ---
@@ -77,12 +77,12 @@
 > - D. IdP group management for mobile devices.
 > - E. Jailbreak or root detection for mobile devices.
 
-**핵심 개념:** Slack Enterprise Grid **네이티브 모바일 통제**에는 **파일 다운로드/복사 차단(A)** 과 **탈옥/루팅 기기 차단(E)** 이 포함된다(EMM 없이도 사용 가능).
-**덤프 정답:** A, B → ⚠️ 재판정 불일치 (내 판단: **A, E**) *(공식 문서로 확인, 확신도: 중-높음)*
-**정답 근거(A, E):** 공식 문서상 네이티브 모바일 보안 통제에 "block file downloads and message copying"과 "block jailbroken or rooted devices"가 명시됨.
-**왜 덤프 B가 어긋나나:** "도메인 허용목록으로 모바일 접근 제한"은 관리 기기(EMM/AppConfig) 구성에 가까운 기능으로, EMM 없는 네이티브 단독 통제로 보기 어렵다. 반면 탈옥/루팅 감지(E)는 네이티브 기능으로 문서화돼 있어 B보다 정확하다.
-**오답 해설:** C 원격 삭제(remote wipe)는 MDM 필요. D IdP 그룹은 모바일 전용 기능이 아님.
-**출처:** Slack Help Center — [Block jailbroken or rooted devices on Enterprise Grid](https://slack.com/help/articles/360042097113-Block-jailbroken-or-rooted-mobile-devices-from-accessing-Slack), [Block file downloads and message copying](https://slack.com/help/articles/360016181794-Block-file-downloads-and-message-copying-on-Enterprise-Grid).
+**핵심 개념:** Slack Enterprise Grid **네이티브 모바일 보안 기능**(EMM 없이 사용)은 문서상 5종이다: 파일 다운로드/메시지 복사 차단, 2차 인증 요구, 필수 모바일 브라우저 지정, 탈옥/루팅 기기 차단, 최소 앱 버전 요구. 이 문항 정답은 그중 **A(다운로드/복사 차단) + E(탈옥/루팅 차단)**.
+**덤프 정답:** A, B → ⚠️ 재판정 불일치 (내 판단: **A, E**) *(공식 문서로 확인, 확신도: 높음)*
+**정답 근거(A, E):** "Mobile security for Enterprise Grid" 문서의 *"Native security features … For devices that aren't managed by EMM"* 목록에 **"Block file downloads and message copying"(A)** 와 **"Block jailbroken or rooted devices"(E)** 가 명시돼 있다.
+**왜 덤프 B가 틀렸나:** "도메인 허용목록으로 모바일 접근을 회사 워크스페이스로 제한"(B)은 **EMM 전용 기능**이다 — **AppConfig 키/값(`WhitelistedDomains`)** 으로 설정하며("only allow access to your org domain when members use your EMM app"), EMM 등록 앱이 필요하므로 BYOD·EMM 미사용 기기엔 적용 불가 → 네이티브 통제가 아니다.
+**오답 해설:** C 원격 삭제(remote wipe)는 EMM/MDM 필요(네이티브 목록에 없음). D IdP 그룹 관리는 모바일 전용 네이티브 통제가 아님.
+**출처:** Slack Help Center — [Mobile security for Enterprise Grid](https://slack.com/help/articles/360033806733-Mobile-security-for-Enterprise-Grid) (네이티브 기능 목록), [Block file downloads and message copying](https://slack.com/help/articles/360016181794-Block-file-downloads-and-message-copying-on-Enterprise-Grid), [Block jailbroken or rooted devices](https://slack.com/help/articles/360042097113-Block-jailbroken-or-rooted-mobile-devices-from-accessing-Slack).
 
 ---
 
@@ -358,11 +358,14 @@
 > - C. File upload permissions to Slack Connect channels can't be restricted.
 > - D. In a public channel, only admins can create an external link for a file.
 
-**핵심 개념:** Slack Connect 채널에서 파일 공유 설정은 **채널에 참여한 조직들이 올린 파일 전반에 적용**된다.
-**덤프 정답:** B → ✅ 재판정 일치 *(소거법, 확신도: 중)*
-**정답 근거(B):** 참여 조직들이 올린 파일에 조직의 파일 공유 정책이 적용된다는 서술이 나머지 오류 보기 대비 가장 타당.
-**오답 해설:** A DLP는 별개 기능으로 "public file sharing" 활성화와 직접 결부되지 않음. C Connect 파일 업로드 권한은 제한 가능. D 외부 링크 생성은 관리자 전용이 아님(허용 시 일반 사용자도).
-**출처:** Slack Help Center — *Manage file sharing / Slack Connect data settings*.
+**핵심 개념:** 이 문항은 **소거법**으로 푼다. Slack Connect 파일 문서 기준으로 A·C·D가 모두 명백히 틀리므로 B가 남는다. ⚠️ B의 "한 조직 설정이 참여 250개 조직의 모든 파일에 적용"이라는 서술 **자체는 공식 문서로 직접 확인되지 않는다** — 실제 문서는 **조직별 통제 모델**(각 조직이 자기 멤버 업로드를 관리, Org는 외부 조직별 업로드 권한을 개별 설정)을 기술한다.
+**덤프 정답:** B → ✅ 재판정 일치(소거법) *(단 B 서술은 문서 미확인 — 확신도: 중-낮음)*
+**정답 근거:** A·C·D가 문서상 오답이라 소거로 B가 최선. B 문장을 문서가 적극 뒷받침하지는 않지만 나머지 셋보다 덜 틀리다.
+**오답 해설:**
+- A. DLP는 "public file sharing" 활성화와 무관한 별개 기능.
+- C. **틀림** — Slack Connect 파일 업로드 권한은 제한 가능("owners and admins can manage these permissions").
+- D. **틀림** — 공개 채널에선 **모든 멤버**가 외부 링크를 만들 수 있다(관리자 전용 아님).
+**출처:** Slack Help Center — [Manage file uploads … for Slack Connect](https://slack.com/help/articles/1500005777562-Manage-file-uploads-canvas-sharing-and-list-sharing-for-Slack-Connect), [Add files to Slack](https://slack.com/help/articles/201330736-Add-files-to-Slack).
 
 ---
 
@@ -373,11 +376,11 @@
 > - C. Share files with guests.
 > - D. Share files externally via Slack Connect channels.
 
-**핵심 개념:** "public file sharing"은 파일의 **외부 공개 URL(public link)** 생성을 허용한다.
-**덤프 정답:** A → ✅ 재판정 일치 *(확신도: 중-높음)*
-**정답 근거(A):** 공개 링크를 만들어 Slack 밖에서도 파일을 열람하게 한다.
+**핵심 개념:** 관리자 설정 **"Public File Sharing"** 은 파일의 **외부 링크(external link) 생성 → Slack 밖 공유**를 허용한다. (현재 UI 용어는 "external link"; "public URL/public link"는 동일 개념의 옛/API 용어 `files.sharedPublicURL`.)
+**덤프 정답:** A → ✅ 재판정 일치 *(공식 문서로 확인, 확신도: 높음)*
+**정답 근거(A):** 문서: "share it outside of Slack by creating an external link" — 외부 링크로 Slack 밖에서도 파일을 열람하게 한다.
 **오답 해설:** B 내부 공유, C 게스트 공유, D Connect 공유는 각각 별개 기능.
-**출처:** Slack Help Center — *Manage public file sharing / external file links*.
+**출처:** Slack Help Center — [Manage public file sharing](https://slack.com/help/articles/4412651915539-Manage-public-file-sharing), [Add files to Slack](https://slack.com/help/articles/201330736-Add-files-to-Slack).
 
 ---
 

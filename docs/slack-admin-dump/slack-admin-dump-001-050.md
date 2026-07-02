@@ -1,6 +1,6 @@
 # Salesforce Certified Slack Administrator — 덤프 검증·해설 (NO.1~50)
 
-> **범위**: NO.1~50 (완료). 이 파일의 ⚠️ 불일치·논란 문항: **NO.25, NO.30**.
+> **범위**: NO.1~50 (완료). 이 파일의 ⚠️ 불일치·논란 문항: **NO.3(근거 수치 정정: 72h→12h), NO.16(정답 재판정: C→B), NO.25, NO.30**.
 
 ## 면책 / 사용법
 
@@ -60,15 +60,15 @@
 > - C. EMM requires users to sign in every 72 hours to ensure compliance.
 > - D. When activating EMM, you did not enable "Keep users signed in."
 
-**핵심 개념:** EMM 활성화 후 멤버는 **72시간 내에 기기에서 EMM 설정을 완료**해야 하며, 완료하지 못하면 모바일 Slack에서 **자동 로그아웃**된다.
-**덤프 정답:** B → ✅ 재판정 일치 *(공식 문서로 확인, 확신도: 높음)*
-**정답 근거(B):** Slack 공식 문서: "Members will have 72 hours to set up EMM for Slack on their device. If a member does not complete the EMM setup, they will be signed out of Slack on their mobile devices."
+**핵심 개념:** EMM 활성화 후 멤버는 **정해진 기한 내에 기기에서 EMM 설정을 완료**해야 하며, 완료하지 못하면 모바일 Slack에서 **자동 로그아웃**된다. ⚠️ 공식 문서상 기한은 **12시간**이며, 보기 B·C의 "72-hour"는 덤프의 오기다(실제 Slack 문서에 "72시간"이라는 수치는 없음).
+**덤프 정답:** B → ✅ 재판정 일치(정답 문자는 B) *(단, 보기의 '72시간'은 부정확 — 실제는 12시간. 확신도: 높음)*
+**정답 근거(B):** Slack 공식 문서: "Members will have **12 hours** to set up EMM for Slack on their device. If a member does not complete the EMM setup, they will be signed out of Slack on their mobile devices." 로그아웃 원인은 '기한 내 EMM 설정 미완료'이며, 보기 B는 이 개념(설정 미완료 → 로그아웃)을 담고 있어 4개 중 최선이다. 다만 B가 명시한 '72시간'은 덤프의 오기이고 실제 기한은 **12시간**이다.
 **오답 해설:**
-- A. OS 업데이트는 EMM 로그인 필수 조건이 아님.
-- C. EMM은 72시간마다 재인증을 '강제'하는 방식이 아니라, 최초 설정 완료 기한이 72시간인 것.
-- D. "Keep users signed in"은 별개 설정으로, 72시간 설정 미완료로 인한 로그아웃의 원인이 아님.
+- A. OS 업데이트는 EMM 설정/로그인 필수 조건이 아님.
+- C. EMM은 일정 주기(72시간)마다 재로그인을 '강제'하는 방식이 아니다. 실제 메커니즘은 **최초 설정 완료 기한(12시간) 내 미완료 시 로그아웃**이며, '주기적 재인증 강제'라는 프레이밍 자체가 틀림.
+- D. "Keep users signed in"은 세션 유지 관련 별개 설정으로, EMM 설정 미완료로 인한 로그아웃의 원인이 아님.
 
-**출처:** Slack Help Center — [Enable Enterprise Mobility Management for your organization](https://slack.com/help/articles/115002579426-Enable-Enterprise-Mobility-Management-for-your-organization).
+**출처:** Slack Help Center — [Enable Enterprise Mobility Management for your organization](https://slack.com/help/articles/115002579426-Enable-Enterprise-Mobility-Management-for-your-organization) (현재 문서: "EMM을 켜면 정규 Slack 앱에서 **within 12 hours** 내 로그아웃"). "12 hours to set up EMM … signed out" 문구는 [Install Enterprise Mobility Management](https://slack.com/help/articles/115002247686-Install-Enterprise-Mobility-Management) 구버전에 있었음(현재는 Intune 중심으로 개편). **어느 공식 페이지에서도 '72시간' 수치는 확인되지 않음.**
 
 ---
 
@@ -292,7 +292,7 @@
 
 **핵심 개념:** **커스텀(임의 기간) 리텐션 설정은 유료 플랜(Pro·Business+·Enterprise Grid) 전용.** Free 플랜은 프리셋 2종(1년 보관 / 90일 후 삭제)만 있고 임의 기간 지정은 불가.
 **덤프 정답:** A → ✅ 재판정 일치 *(공식 문서로 확인, 확신도: 높음)*
-**정답 근거(A):** Slack 문서상 유료 플랜은 "delete data after a set amount of time" 같은 커스텀 타임라인 설정이 가능. Free는 커스텀 기간 옵션이 없다.
+**정답 근거(A):** Slack 문서상 유료 플랜(Pro·Business+·Enterprise)은 커스텀 기간 리텐션이 가능하다. 문서 산문에 "delete data after a set amount of time"라는 표현이 있고, 실제 UI 옵션명은 **"Choose custom timeline"**이다. Pro도 'Pro and Business+ plans' 탭에 포함돼 지원하므로 B("Business+·Enterprise만")는 오답. Free는 90일/1년 프리셋뿐이라 커스텀 기간 옵션이 없다.
 **오답 해설:**
 - B. Pro도 커스텀 리텐션을 지원하므로 Pro를 뺀 B는 오답.
 - C. Free를 포함하면 오답 — Free는 프리셋 2종뿐이라 '커스터마이즈' 대상이 아님.
@@ -309,13 +309,13 @@
 > - C. Messages, files, snippets, posts and member profiles
 > - D. Messages, files, data used for analytics, snippets and posts
 
-**핵심 개념:** 데이터 레지던시는 **사용자 생성 콘텐츠(messages, posts, files, snippets, canvases)** 를 선택 리전에 저장. 분석용 데이터(analytics)는 글로벌 처리된다.
-**덤프 정답:** C → ✅ 재판정 일치 *(소거법으로 확인, 확신도: 중)*
-**정답 근거(C):** 문서상 저장 대상은 메시지·게시글(posts)·파일·스니펫 등 사용자 콘텐츠이며, 멤버가 제출한 프로필 정보도 고객 데이터에 포함. 나머지 보기의 결정적 오류가 없어 C가 최선.
+**핵심 개념:** 데이터 레지던시가 **리전 내 저장**하는 것은 **사용자 생성 콘텐츠**뿐이다. 공식 문서 *"Data stored in the data region"*: **Messages·canvases·snippets / 업로드된 파일 / 앱·봇 생성 메시지·파일**. 반대로 *"Data stored outside the data region"*(리전 외/글로벌): **Slack member profiles, Workspace and channel membership information, analytics용 데이터(sanitized logs 등)**.
+**덤프 정답:** C → ⚠️ 재판정 불일치 (내 판단: **B**) *(공식 문서로 확인. 단 문항 자체가 조악 — 확신도: 중, 시험 의도는 C일 수도)*
+**정답 근거:** C는 **"member profiles"** 를 포함하는데, 공식 문서는 member profiles를 **'리전 외 저장'으로 명시**한다 → C에는 리전 외 항목이 섞여 부정확. 보기 4개 중 **모든 항목이 '리전 내' 범주에 드는 것은 B뿐**(messages·files·snippets·posts — posts는 현재 canvases로 흡수된 사용자 콘텐츠). 다만 B는 "…posts and **files**"로 files를 중복 표기해 구성이 조악하다. 그럼에도 리전 외 항목이 섞인 A·C·D보다 문서적으로 우월하다.
 **오답 해설:**
-- A. "workspaces and channel membership information"은 레지던시 저장 범위로 문서화되지 않음.
-- B. "posts and **files**"로 files가 중복 — 구성이 어색하고 profiles/posts 조합보다 열등.
-- D. "data used for analytics"는 리전 저장 대상이 아니라 글로벌 처리 — 명백한 오답.
+- A. "workspaces and channel membership information"은 공식 문서상 **리전 외 저장** — 오답.
+- C. "member profiles"는 공식 문서상 **리전 외 저장** — 덤프가 고른 답이지만 이 항목 때문에 문서와 어긋남.
+- D. "data used for analytics"는 공식 문서상 **리전 외/글로벌 처리** — 명백한 오답.
 
 **출처:** Slack Help Center — [Data residency for Slack](https://slack.com/help/articles/360035633934-Data-residency-for-Slack).
 
@@ -487,15 +487,15 @@
 > - E. View all external people connected to your org and the Slack Connect channels they belong to.
 
 **핵심 개념:** External People 대시보드에서 Org Owner/Admin은 **외부 사용자와 소속 채널을 열람**하고 **채널에서 외부 사용자를 제거**할 수 있다. Connect 초대 열람이나 요청 승인/거부는 이 대시보드 기능이 아니다.
-**덤프 정답:** B, E → ⚠️ 재판정 논란 (내 판단: **A, E** 가능성) *(확신도: 낮음)*
+**덤프 정답:** B, E → ⚠️ 재판정 논란: **E는 확실, 두 번째(A/B)는 공식 문서로 확정 불가** *(확신도: 낮음 — 문항 자체가 모호)*
 **정답 근거:**
-- E는 확실 — 대시보드는 "모든 외부 사용자와 그들이 속한 채널"을 보여준다.
-- 두 번째 정답은 "외부 사용자 제거" 계열(A 또는 B). Slack 공식 문서는 **"permission only to post"** 멤버를 여러 채널에서 한 번에 제거할 수 있다고 명시 → 문서적 근거는 **A**에 더 부합. 덤프가 고른 **B("Can post & invite")** 는 문서로 뒷받침되지 않는다.
-- 단, 다른 Slack 문서는 제거가 권한 유형에 따라 구분되지 않는다고도 서술 → 이 문항은 보기 자체가 모호. **E만 확실**하고 제거 옵션(A vs B)은 논란.
+- E는 확실 — 공식 문서: "Org Owners and Admins can see a list of all external people in channels hosted by your organization"이며, 이름 클릭 시 **Channels 탭**에서 소속 채널을 확인한다.
+- 제거(A/B)도 대시보드 기능은 맞다 — 공식 문서: "Org Owners and Org Admins can remove external people from channels hosted by your organization." ⚠️ **그러나 문서는 제거를 초대 권한 유형("Can only post" vs "Can post & invite")과 결부하지 않는다.** A·B 모두 문서에 없는 조건을 덧붙인 것이라 **어느 쪽이 더 옳다고 가릴 근거가 없다** — 이전 판의 "A에 더 부합"은 근거 없어 **철회**한다. 문서상 유일한 조건은 "제거 옵션이 보이지 않으면 제거 불가"뿐.
+- 결론: **E만 확실**하고, 두 번째 답(A/B)은 현재 공식 문서로 확정할 수 없는 **진짜 모호 문항**. 덤프의 B가 A보다 낫다고 볼 근거도 없다.
 
 **오답 해설:**
-- C. 모든 Connect '초대' 열람은 이 대시보드 기능이 아님.
-- D. Connect 요청 승인/거부도 이 대시보드가 아니라 별도 설정.
+- C. 모든 Connect '초대' 열람은 이 대시보드가 아니라 별도의 **Manage Slack Connect Invitations** 기능.
+- D. Connect 요청 승인/거부도 같은 **Manage Slack Connect Invitations**(Open requests 탭)에서 처리 — 이 대시보드 기능이 아님.
 
 **출처:** Slack Help Center — [Use the Slack Connect external people dashboard](https://slack.com/help/articles/5682545991443-Use-the-Slack-Connect-external-people-dashboard).
 
@@ -674,9 +674,9 @@
 > - C. Cortez can't deactivate it; he needs a Workspace Admin to do it.
 > - D. Cortez can't deactivate Camdin's account; only the Primary Owner can deactivate a Workspace Owner.
 
-**핵심 개념:** **일반 Workspace Owner는 다른 Owner를 비활성화할 수 없다.** Owner를 비활성화할 수 있는 것은 **Primary Owner뿐**. (Owner/Admin은 멤버·게스트·Admin을 비활성화 가능.)
-**덤프 정답:** D → ✅ 재판정 일치 *(공식 문서로 확인, 확신도: 높음)*
-**정답 근거(D):** 공식 문서: "Only the Workspace Primary Owner can deactivate other Workspace Owners." 따라서 동료 Owner인 Cortez는 Camdin을 비활성화할 수 없다.
+**핵심 개념:** **일반 Workspace Owner는 다른 Owner를 비활성화할 수 없다.** Owner를 비활성화할 수 있는 것은 **Primary Owner뿐**이다. (권한 표 기준: **Workspace Admin은 멤버·게스트만**, **Workspace Owner는 멤버·게스트·Admin까지**, **Primary Owner는 Owner까지** 비활성화 가능. Primary Owner 본인은 아무도 비활성화 불가 — 먼저 소유권 이전 필요.)
+**덤프 정답:** D → ✅ 재판정 일치 *(공식 문서 권한 표로 확인, 확신도: 높음)*
+**정답 근거(D):** Slack "Deactivate a member's account" 문서의 권한 표에서 **"Deactivate Workspace Owners"** 행은 **Workspace Primary Owner 열에만 체크**돼 있다(Workspace Owner·Admin 열은 빈칸). 따라서 동료 Owner인 Cortez는 Camdin(다른 Owner)을 비활성화할 수 없다. ⚠️ 이 규칙은 문서에 산문 문장으로 명시된 게 아니라 **권한 표로 표현**돼 있어, 이전 판의 큰따옴표 인용문("Only the Workspace Primary Owner…")은 원문 인용이 아니라 표를 요약한 것이므로 인용부호를 뺀다.
 **오답 해설:**
 - A. Cortez에게 그 권한 자체가 없음.
 - B. "72시간 후 비활성" 같은 지연 메커니즘은 존재하지 않음.
@@ -944,7 +944,7 @@
 > - C. "Keep everything" for public/private channels and DMs, NOT allowing overrides.
 > - D. "Keep all messages but don't track revisions" for all conversations, NOT allowing overrides.
 
-**핵심 개념:** 완전한 히스토리 보존 = **"Keep everything"** + **사용자 재정의(override) 불허**.
+**핵심 개념:** 완전한 히스토리 보존 = **모든 메시지 보존(편집·삭제 이력 포함)** + **사용자 재정의(override) 불허**. ⚠️ 보기의 "Keep everything"/"don't track revisions"는 덤프 표기이고, Slack 실제 UI 라벨은 **"Never delete messages — save edits"**(편집·삭제 추적) / **"Never delete messages — don't save edits"**(추적 안 함)이다. override 토글 실제 라벨은 **"Let workspace members override these settings"**.
 **덤프 정답:** C → ✅ 재판정 일치 *(확신도: 중-높음)*
 **정답 근거(C):** 모든 대화(공개/사적/DM)를 "Keep everything"으로 설정하고 override를 막아야 사용자가 리텐션을 바꿔 공백을 만들 수 없다.
 **오답 해설:**

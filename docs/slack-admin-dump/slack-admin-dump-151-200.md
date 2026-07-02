@@ -387,9 +387,9 @@
 > - D. Keep all files, including all file versions.
 > - E. Keep all files, only for a set number of days.
 
-**핵심 개념:** 삭제 파일까지 발견 가능하려면 **"Keep all files, including deleted files"**.
-**덤프 정답:** A → ✅ 재판정 일치 *(확신도: 중)*
-**정답 근거(A):** 사용자가 삭제해도 감사·컴플라이언스용으로 접근 가능하게 보존.
+**핵심 개념:** 삭제 파일까지 발견 가능하려면 **"Keep all files including deleted files"**(Slack 실제 라벨엔 쉼표 없음; 보기는 쉼표 표기).
+**덤프 정답:** A → ✅ 재판정 일치 *(공식 문서로 확인, 확신도: 높음)*
+**정답 근거(A):** 문서: 이 옵션은 워크스페이스 수명 내 모든 파일을 보존하며, **수동 삭제된 파일도 exports·Discovery API로 접근** 가능. 감사·컴플라이언스 요건을 충족한다.
 **오답 해설:** B 삭제 파일 보존 보장 못함. C/E "N일" 후 손실 위험. D 버전 이력(삭제 복구 아님).
 **출처:** Slack Help Center — *File retention settings*.
 
