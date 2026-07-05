@@ -6,7 +6,7 @@
 ---
 
 ### NO.201 — Slack Connect DMs disabled: can users DM the partner?
-> **Q.** Slack Connect channels with Beta Corp are set up, but Slack Connect DMs are disabled. Can Alpha Corp users DM Beta Corp users?
+> **Q.** Your company, Alpha Corp, highly prioritizes information security. The company has just set up Slack Connect channels to work with Beta Corp. Slack Connect direct messages (DMs) are disabled at this time. Given this, your Chief Information Officer (CIO) wants to know whether your organization's users can communicate with external users from Beta Corp using Slack Connect DMs. What should you tell the CIO? (Select the best answer.)
 > - A. Alpha users can DM any Beta users in the same Connect channels.
 > - B. Alpha users can DM any Beta users now that the orgs are connected.
 > - C. Alpha users cannot DM anyone from Beta since Slack Connect DMs are disabled.
@@ -21,7 +21,7 @@
 ---
 
 ### NO.202 — Grid design approach with many suggestions
-> **Q.** Teammates give dozens of workspace-creation suggestions. Which approach?
+> **Q.** You're in charge of a Slack Enterprise Grid workspace design for your company. Your teammates provide dozens of suggestions about how the workspaces should be created to provide the best user experience. Which approach should you choose? (Select the best answer.)
 > - A. Keep the design loosely defined so it can change over time.
 > - B. Define org policies to prevent workspaces from differing from standards.
 > - C. Create the minimum number of workspaces to meet users' needs, limiting context switching.
@@ -36,7 +36,7 @@
 ---
 
 ### NO.203 — Hard-to-find public channels & sprawl (keep quick creation)
-> **Q.** Public channels are hard to find and duplicative; you still want quick creation. What should you do?
+> **Q.** You're a Slack Org Owner at Acme Inc. Several employees report that public channels are difficult to search and find. This results in channel sprawl or duplicative channels being created by employees. The Slack experience is now noisy and confusing. You need a solution to address this while still enabling members to create channels quickly. What should you do? (Select the best answer.)
 > - A. Pin the Slack Etiquette Guide to a tips channel.
 > - B. Post a list of org-wide public channels in announcement channels.
 > - C. Create a process to request public channel creation through admins.
@@ -66,7 +66,7 @@
 ---
 
 ### NO.205 — Clean up ~1,000 channels efficiently
-> **Q.** Annual cleanup of ~1,000 channels (archive/delete/move by criteria). Most effective way?
+> **Q.** As an Org Admin of a large Enterprise, you perform an annual channel cleanup exercise that includes archiving, deleting, and moving channels to an alternative workspace based on set criteria. On average, there are around 1,000 channels that meet the criteria during this cleanup. What is the most effective way to do this?
 > - A. Use Slack's channel management tools.
 > - B. Utilize bulk channel lifecycle management APIs.
 > - C. Take action from each channel's settings.
@@ -81,7 +81,7 @@
 ---
 
 ### NO.206 — Surprise party planning with cross-functional friends
-> **Q.** Planning a surprise party; committee of two, inviting cross-functional friends. What to do?
+> **Q.** You're planning a surprise milestone birthday party for your Team Leader virtually. Currently, the planning committee consists of two direct team members, with plans to invite cross-functional friends. What should you do to facilitate the conversation? (Select the best answer.)
 > - A. New public channel; add committee + friends.
 > - B. Group DM with the two team members.
 > - C. Thread in the existing team channel, @mention committee.
@@ -96,7 +96,7 @@
 ---
 
 ### NO.207 — Most relevant issue in a multi-workspace proposal
-> **Q.** Proposal: per-function workspaces + Global/Social + separate workspaces per external partner. Most relevant issue to communicate?
+> **Q.** Your organization is in the process of determining its Slack Enterprise Grid design. The latest draft proposal is a multi-workspace design that includes: * Focused workspaces for each major business function, * Global and Social workspaces where all organization members will be added, * Separate workspaces for each major external partner. You need to evaluate the current proposal and communicate potential issues to the team leading the Enterprise Grid design and launch. What is the most relevant issue to communicate to the team about the challenges of the current proposal?
 > - A. High risk of notification/message noise vs a single workspace.
 > - B. Slack Connect security issues.
 > - C. Admin control and user management challenges.
@@ -111,7 +111,7 @@
 ---
 
 ### NO.208 — Promote communication outside DMs (retention + creation)
-> **Q.** DMs dominate because public retention deletes after 20 days; members also struggle to create channels. Which settings should Teara change?
+> **Q.** Teara is a Workspace Owner. She has discovered that projects and key decisions are being discussed via direct messages because public channel message retention settings are set to delete messages after 20 days. The decision regarding this setting was made 2 years ago, and now the setting is no longer required. Team members are experiencing difficulty creating channels. Teara is wondering if there are other settings she should review that might be contributing to the direct message conversations. Which settings and permissions should Teara change to promote increased communication outside of direct messages?
 > - A. Set retention to "Keep Everything" for all channels and DMs, and allow everyone to create channels.
 > - B. Announce in #general to move conversations to channels and DM Teara for channel creation.
 > - C. Public retention "Keep Everything"; DM retention delete after 1 day; restrict channel creation to Owners.
@@ -126,7 +126,7 @@
 ---
 
 ### NO.209 — Good candidate for EKM
-> **Q.** What would make your company a good candidate for Slack's EKM?
+> **Q.** Which of the following would most make your company a good candidate to use Slack's Enterprise Key Management (EKM)?
 > - A. Employees primarily use unsecured mobile devices.
 > - B. Your company frequently shares PII.
 > - C. You use Azure for all key management.
@@ -141,7 +141,7 @@
 ---
 
 ### NO.210 — Most effective way to increase productivity (little training)
-> **Q.** Increase members' productivity in Slack without overwhelming them with training. Most effective?
+> **Q.** A company has recently implemented Slack, and many teams have started to use it instead of email. Admins want to help members be more productive in Slack without overwhelming them with too much training. Which of the below would be the most effective way to increase members' productivity in Slack?
 > - A. Show how to request new apps.
 > - B. Train everyone on creating integrations.
 > - C. Allow social apps like Giphy.
@@ -168,7 +168,7 @@
 ---
 
 ### NO.212 — Prevent sharing credit card numbers in channels
-> **Q.** Employees share business credit card numbers in channels. What recommendation prevents this in the future?
+> **Q.** You're a Workspace Owner. You notice employees are breaking corporate policy by sharing business-issued credit card numbers in channel when booking their travel for an upcoming customer meeting. Your information security team identifies this as a risk. What recommendation should you make to prevent this from happening in the future? (Select the best answer.)
 > - A. Integrate with a Discovery solution using Slack's Discovery API.
 > - B. Use Admin APIs to create a custom script to flag credit card numbers.
 > - C. Integrate with a DLP solution using Slack's Discovery API.

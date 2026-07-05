@@ -6,7 +6,7 @@
 ---
 
 ### NO.151 — Share a sensitive report (usually public channel)
-> **Q.** A VP requested a sensitive internal report; communication usually happens in a public project channel. What should the user do?
+> **Q.** In your role as an Org Admin, you are advising a user working on a market research project. The VP of Human Resources requested a sensitive internal report. Typically, communication takes place in a public project channel. What should you recommend the user do?
 > - A. Group DM to the VP and anyone whose info is in the report.
 > - B. Create a private project channel to share the report with the VP and those included.
 > - C. DM the report to the VP of HR.
@@ -21,7 +21,7 @@
 ---
 
 ### NO.152 — Two actions to promote channels over DMs
-> **Q.** Most communication happens in DMs. Two actions to promote channel usage? (Select TWO.)
+> **Q.** You're a Workspace Owner and you just launched Slack across your entire organization. You notice that most communication is happening in DMs instead of public channels. Which two actions should you take to promote the usage of channels? (Select the TWO best answers.)
 > - A. Turn off channel creation so users collaborate only in existing channels.
 > - B. Publish a Slack Etiquette guide that defaults to using channels.
 > - C. Send a company-wide email asking members to use channels.
@@ -37,7 +37,7 @@
 ---
 
 ### NO.153 — App governance with audit + rationale (Business+, native)
-> **Q.** Security wants app-install governance with audit tracking and rationale, using native functionality. Best approach?
+> **Q.** You're an IT Manager and Slack Workspace Owner leading a team on the Business+ plan. Your security team requests a governance process for app installations and approvals, including audit tracking and rationale collection. What is the best approach that uses native functionality to address the security team's request?
 > - A. Pre-approve common tools and give security the list; restrict unapproved apps.
 > - B. Turn on app approval in Manage Apps, require a comment per request, add your team as App Managers, and send requests to a #plz-apps channel.
 > - C. Turn on app approval; limit approval to Workspace Owners via Slackbot; notify #team-security.
@@ -52,7 +52,7 @@
 ---
 
 ### NO.154 — Two steps to let support team build a ticket-posting workflow
-> **Q.** Support team wants a workflow that posts new/urgent tickets. Which TWO steps allow them to create it?
+> **Q.** You're an Org Admin for an airline's Slack Enterprise Grid. The airline's customer support team uses a ticketing tool to monitor customer support tickets for booking inquiries and issues. The team also uses Slack to discuss these support tickets. The customer support team wants to create a custom workflow that will post new and urgent tickets in the support team's channel. Which TWO steps should you take to allow the customer support team to create the workflow?
 > - A. Add support team as App Managers.
 > - B. Enable a policy allowing any user role to use steps from installed apps in Workflow Builder.
 > - C. Enable channel email addresses.
@@ -68,7 +68,7 @@
 ---
 
 ### NO.155 — Archive all Slack data outside Slack
-> **Q.** Brian needs all Slack data archived and stored outside Slack. What must he do?
+> **Q.** Brian, an Org Owner on Enterprise Grid, needs to ensure that all Slack data is archived and stored outside of Slack. What does Brian need to do?
 > - A. Turn on Corporate exports to retrieve private data and store it elsewhere.
 > - B. Contact Slack to set org-level retention to "Keep all messages."
 > - C. Enable DLP and quarantine all messages/files to archive.
@@ -83,7 +83,7 @@
 ---
 
 ### NO.156 — Automated app/integration approval process
-> **Q.** Best approach for an automated approval process for app/integration requests?
+> **Q.** You're an Org Owner hoping to help your admins implement an automated approval process for app and integration requests. What is the best approach to take?
 > - A. Create conditional rules; notify requesters; create rules at both Grid and workspace level.
 > - B. Create a list of trusted members; notify approvers; rules at Grid + workspace level.
 > - C. Create rules based on licensing cost; notify requesters; rules at workspace level.
@@ -97,7 +97,7 @@
 ---
 
 ### NO.157 — First step before creating a new workspace
-> **Q.** A teammate requests a new workspace. Which action first?
+> **Q.** You're an Org Admin for a company with only one Slack workspace. A teammate will be starting a new, complex project and requests a new workspace. Which action should you take first before creating a new workspace? (Select the best answer.)
 > - A. Confirm channel naming conventions.
 > - B. Identify progress-tracking tools.
 > - C. Ensure you have an available resource to serve as a Workspace Admin.
@@ -112,7 +112,7 @@
 ---
 
 ### NO.158 — Audit all guest accounts efficiently (2 workspaces)
-> **Q.** Most efficient way to audit all guest accounts across two workspaces?
+> **Q.** You're an Org Admin who is tasked with auditing all guest accounts in your company's Slack Enterprise Grid organization. The organization consists of two workspaces. What is the most efficient way for you to gather this information? (Select the best answer.)
 > - A. Gather data from each workspace's Manage Members section.
 > - B. Open a ticket with Slack's Customer Experience team.
 > - C. Export the data from the Members section of the org analytics dashboard.
@@ -127,7 +127,7 @@
 ---
 
 ### NO.159 — Facilitate regional (LA) community conversation
-> **Q.** Enable LA employees (and visitors) to discuss events/meetups/volunteering. Best way?
+> **Q.** Your company has just hired 10 new employees in the Los Angeles (LA) region. All 10 of these employees are currently working remotely as there is no physical office. You need to enable the LA employees, as well as other employees visiting LA, to discuss events, meetups, and volunteer opportunities. What is the best way to facilitate this conversation? (Select the best answer.)
 > - A. Group DM with the 10 LA employees.
 > - B. Slack Connect channel with the 10 LA people.
 > - C. Individual DMs with each of the 10.
@@ -142,7 +142,7 @@
 ---
 
 ### NO.160 — Strongest benefit of a vision statement for end users
-> **Q.** Upgrading Pro→Business+; drafting a vision. Strongest benefit of a vision statement for end users?
+> **Q.** Your team is planning to upgrade from the Pro plan to the Business+ plan. The implementation team is drafting a vision for Slack to match the new season of working in Slack inspired by the upgrade. As an admin, you're most concerned with how this statement can support end users. What is the strongest benefit a vision statement provides for end users?
 > - A. Understand the purpose of using Slack for their work in a new shared way.
 > - B. Learn several channels they should join.
 > - C. Describe their permissions vs admin permissions.
@@ -157,7 +157,7 @@
 ---
 
 ### NO.161 — Most secure onboarding for 4,000 users (company email only)
-> **Q.** Most secure option to onboard 4,000 users, restricting access to company emails?
+> **Q.** You're a Workspace Owner on a Slack Business+ plan. Your organization plans to expand Slack usage to the entire company of 4,000 people, and your security team wants workspace access restricted to company email addresses. What is the most secure option for onboarding all 4,000 users into Slack? (Select the best answer.)
 > - A. Integrate a SAML IdP + SCIM API connector to pre-provision members.
 > - B. Enable email signup for approved company emails.
 > - C. Turn on JIT provisioning and distribute an invite link.
@@ -172,7 +172,7 @@
 ---
 
 ### NO.162 — Two questions to ask requestors during app approval
-> **Q.** Two questions to ask requestors during the app approval process? (Choose 2.)
+> **Q.** You're a Workspace Primary Owner for a Slack Pro workspace. App requests from users are overwhelming. You decide to create an app approval process. Which two questions should you ask requestors during the app approval process? (Choose 2 answers.)
 > - A. Does the app support DLP?
 > - B. Are competitors using the app?
 > - C. Does the app support EKM?
@@ -188,7 +188,7 @@
 ---
 
 ### NO.163 — Scope for conversations.list / conversations.info (public channels)
-> **Q.** Which scope allows retrieving a list of all public channels and info about a public channel via conversations.list and conversations.info?
+> **Q.** The security team at your organization wants to monitor different public channels that are created in your Slack Enterprise Grid instance. The team requested access to the conversations.list and conversations.info API methods to get the required data about the channels. As a Slack admin, you need to assign the required scopes to their Slack app for the security team to be able to invoke the APIs. Which scope should you assign to allow the security team to retrieve a list of all public channels only and retrieve information about a public channel? (Select the best answer.)
 > - A. files:read · B. admin.conversations:read · C. conversations.connect:read · D. channels:read
 
 **핵심 개념:** **`conversations.list`·`conversations.info`는 `channels:read`** 스코프를 요구한다. `admin.conversations:read`는 `admin.conversations.*` 네임스페이스 전용이다.
@@ -201,7 +201,7 @@
 ---
 
 ### NO.164 — Self-paced onboarding strategy
-> **Q.** Onboarding that lets members self-start and learn at their own pace. Which strategy?
+> **Q.** You're the Slack Workspace Admin at a mid-sized company. You're working on an onboarding strategy that encourages members to self-start and learn about Slack at their own pace. Which strategy should you choose? (Select the best answer.)
 > - A. Workflow Builder onboarding workflow with webinars and Help Center articles.
 > - B. Host a hackathon on building Slack apps.
 > - C. Custom bot to pair onboarding buddies.
@@ -216,7 +216,7 @@
 ---
 
 ### NO.165 — Roll out Slack, keep apps updated
-> **Q.** Security wants all apps kept updated. How should IT roll out Slack?
+> **Q.** An IT administrator at Watch Corp is responsible for launching Slack to the company. The security team has outlined the importance of keeping all applications on all devices updated to the latest version. How should the IT administrator roll out Slack?
 > - A. Browser-only so employees only update the browser.
 > - B. Install the Slack Desktop App with automatic updates disabled.
 > - C. Install the Slack Desktop App with automatic updates allowed.
@@ -231,7 +231,7 @@
 ---
 
 ### NO.166 — Channel visible to IT + Internal but not Contractors
-> **Q.** A channel for everyone in IT and Internal workspaces but not Contractors. Best way?
+> **Q.** You're an Org Admin of an Enterprise Grid org consisting of three workspaces: IT, Internal, and Contractors. An executive wants to create a communication channel with everyone in the IT and Internal workspace, but not Contractors. What is the best way to create this channel so that it will only be visible to people in the IT and Internal workspaces? (Select the best answer.)
 > - A. Org-wide channel, exclude the Contractors workspace.
 > - B. Slack Connect channel between IT and Internal.
 > - C. Channel in IT workspace, invite Internal members as guests.
@@ -246,7 +246,7 @@
 ---
 
 ### NO.167 — Grid structure minimizing disruption
-> **Q.** Moving Plus→Grid without disrupting how teams communicate. Best structure?
+> **Q.** Tam Corp sells 15 versions of their software to customers around the world. They have a global team (e.g., sales, engineering, support, and human resources) of 500 employees. Tam Corp is moving to the Enterprise Grid plan from two workspaces on the Plus plan. On their current Plus plan, they organize one workspace by team (e.g., #sales-team, #engineering-team, and #support-team), and the other workspace is primarily for recruiting discussions and the leadership team. Leadership does not want the move from Plus to Grid to significantly impact how teams are communicating today. When considering how to structure the Enterprise Grid, what is the structure that aligns with leadership and allows the teams to communicate most effectively?
 > - A. Workspaces for each department and sub-department.
 > - B. Workspaces for each product line, each as the employee's "primary."
 > - C. Workspaces based on how info is shared, each employee having one "primary" (80% of time).
@@ -261,7 +261,7 @@
 ---
 
 ### NO.168 — Which requirement makes EMM the right option
-> **Q.** Which requirement makes EMM the right option for mobile security?
+> **Q.** You're an Org Admin working at a financial services organization. It recently upgraded to Slack Enterprise Grid, and leadership is defining a set of security policies for employees to follow when using Slack on mobile devices. After reviewing the requirements, you determine EMM is the best option. Which requirement makes EMM the right option for this organization?
 > - A. Require a minimum app version.
 > - B. Restrict access to workspaces to approved (managed) mobile devices only.
 > - C. Block file downloads and message copying.
@@ -276,7 +276,7 @@
 ---
 
 ### NO.169 — Two best ways to access Slack learning materials (beginners)
-> **Q.** Two best ways to help coworkers access relevant Slack learning materials? (Choose 2.)
+> **Q.** As a Workspace Admin, you've been tasked with launching Slack at your company. You need to provide resources for beginners to learn more about Slack on their own. What are the two best ways you can help your coworkers access relevant Slack learning materials? (Choose 2 answers.)
 > - A. Review the 'Slack tutorials' section of the Help Center.
 > - B. Guide members to the Slack resources library on slack.com.
 > - C. Complete the Slack Certified Admin program.
@@ -292,7 +292,7 @@
 ---
 
 ### NO.170 — Sync standardized user attributes from IdP
-> **Q.** Add standardized user attributes to profiles using IdP data. Best method?
+> **Q.** You're an Org Owner for your company's Slack Enterprise Grid org. Your team wants to add standardized user attributes to members' profiles using existing Identity Provider (IdP) data. What is the best method to enable this process? (Select the best answer.)
 > - A. Use the Analytics API to sync to the analytics dashboard.
 > - B. Use the SCIM API to sync attributes to member profiles.
 > - C. Use the Custom Profile API to sync to the analytics dashboard.
@@ -307,7 +307,7 @@
 ---
 
 ### NO.171 — Group DM needs changing membership
-> **Q.** Chandler uses a group DM for a private cert program; members will rotate. What next?
+> **Q.** Chandler, who works for Truck Inc, is in charge of developing a new certification program for Truck Inc's drivers. Chandler will be working with a small team of 4 employees, and details of the program must be kept private from the drivers. They are currently using a group direct message to plan the certification program, but some people on the team will be going on vacation soon, and new members will be replacing them. What should Chandler do next?
 > - A. Public channel + keep using group DMs for private content.
 > - B. Continue the group DM and invite new members.
 > - C. Start a new group DM with only new members.
@@ -322,7 +322,7 @@
 ---
 
 ### NO.172 — When to claim domains
-> **Q.** When should you claim your relevant domains for Enterprise Grid?
+> **Q.** At which point in the process should you claim your relevant domains for your Enterprise Grid organization?
 > - A. Any time; earlier workspaces are shut down automatically.
 > - B. Never; Slack claims them automatically on purchase.
 > - C. As soon as possible; not retroactive — workspaces created before claiming remain standalone.
@@ -337,7 +337,7 @@
 ---
 
 ### NO.173 — Two benefits of user groups
-> **Q.** Two benefits of creating user groups? (Select TWO.)
+> **Q.** What are two benefits of creating user groups for your workspace? (Select the TWO best answers.)
 > - A. Notify a group of members at once (e.g. @managers).
 > - B. Set channel management permissions at the workspace level.
 > - C. Set who can view workspace analytics.
@@ -353,7 +353,7 @@
 ---
 
 ### NO.174 — Make new channels' project association clear
-> **Q.** Ensure it's clear which of three projects a new channel belongs to. Best way?
+> **Q.** You're a Workspace Admin for a workspace where members are working on three specific projects. When members create new channels, you want to ensure it's clear which project the new channel is associated with. What is the best way to do so?
 > - A. Install an app that auto-updates channel topics.
 > - B. Ask members to include the project name in the channel description.
 > - C. Create a spreadsheet mapping channels to projects, pinned in #general.
@@ -368,7 +368,7 @@
 ---
 
 ### NO.175 — Feature to archive communications for regulation
-> **Q.** A bank must archive all communications for years. Which feature?
+> **Q.** A bank must archive all communications for several years due to a new government regulation. Your compliance department wants to understand how best to meet these requirements for Slack. Which feature should you leverage to meet these regulatory requirements? (Select the best answer.)
 > - A. DLP · B. MDM · C. EKM · D. eDiscovery
 
 **핵심 개념:** 규제 아카이빙·수출은 **eDiscovery** 통합.
@@ -380,7 +380,7 @@
 ---
 
 ### NO.176 — File retention: keep deleted files discoverable (Business+)
-> **Q.** All historical files (incl. deleted) must remain discoverable. Which file retention setting?
+> **Q.** You're a Workspace Owner for a financial organization on the Slack Business+ plan. Your Security and Compliance team requires all historical files to always be discoverable. These deleted files may need to be produced to ensure compliance for regulatory and auditing purposes. Which file retention setting should you enable for your workspace? (Select the best answer.)
 > - A. Keep all files, including deleted files.
 > - B. Keep all files.
 > - C. Keep all files, including deleted files, for a set number of days.
@@ -396,7 +396,7 @@
 ---
 
 ### NO.177 — When Clips are most useful (async)
-> **Q.** In which scenario is Clips most useful for asynchronous work?
+> **Q.** In which scenario would the Clips feature be the most useful to support asynchronous work? (Select the best answer.)
 > - A. Troubleshooting a time-sensitive issue with tier support.
 > - B. A PM showing their work and asking for feedback before end of week.
 > - C. A manager scheduling time to thoroughly review a product release.
@@ -411,7 +411,7 @@
 ---
 
 ### NO.178 — Benefit of integrating Slack with ServiceNow
-> **Q.** Benefit of integrating Slack with an app like ServiceNow?
+> **Q.** Incident managers at your organization use ServiceNow for incident response. What is the benefit of integrating Slack with an app like ServiceNow?
 > - A. Lets third parties access your Slack data to recommend apps.
 > - B. A unified view of what's happening in the app natively, without leaving Slack.
 > - C. You never have to log in to the app natively.
@@ -426,7 +426,7 @@
 ---
 
 ### NO.179 — Who can grant multi-workspace channel permissions
-> **Q.** Who can give Clint multi-workspace channel permissions?
+> **Q.** Clint is a Workspace Owner on the Sales Workspace, and his organization is on Slack's Enterprise Grid plan. Clint cannot find the option to make the #announcement-sales multi-workspace channel available to all Workspaces in the Org. Who can give Clint multi-workspace channel permissions?
 > - A. Org Owners and Org Admins decide who can manage multi-workspace channels.
 > - B. Only Org Owners.
 > - C. The Sales Workspace Primary Owner.
@@ -441,7 +441,7 @@
 ---
 
 ### NO.180 — Prevent wrong posting + manage large new-hire groups
-> **Q.** New hires post in announcement channels on day one; hiring is ramping. What should Nicole do?
+> **Q.** Nicole manages the global onboarding for new hires at her company. Each time a user joins the company, Nicole ensures they have the correct training materials to get started on their team. She has noticed that new hires are posting in announcement channels on their first day. Hiring is quickly increasing. Nicole has her largest new-hire group starting next week, and an even larger one the week after. What should she do to ensure she doesn't have to manage incorrectly-posted messages and to ensure she can manage the large number of new hires?
 > - A. Post a "How to use Slack" guide in all team channels.
 > - B. Custom Slackbot response when "new hire" is used.
 > - C. Email the guide before they start.
@@ -456,7 +456,7 @@
 ---
 
 ### NO.181 — Fewest-privilege role to manage users and channels (Business+)
-> **Q.** Fewest-privilege role for the Head of IT to manage users and channels (Business+)?
+> **Q.** You're the Primary Owner of your company's Slack Business+ workspace. You need more assistance managing users and channels, so you task the Head of IT with these duties. In order to be able to perform these duties, what is the role with the fewest privileges that the Head of IT should be assigned? (Select the best answer.)
 > - A. Org Admin · B. Workspace Admin · C. Workspace Owner · D. Member
 
 **핵심 개념:** 멤버·채널·설정 관리의 최소 권한 역할은 **Workspace Admin**.
@@ -468,7 +468,7 @@
 ---
 
 ### NO.182 — Enable Google Calendar for all members
-> **Q.** Best way to enable the Google Calendar app for all members?
+> **Q.** You're a Workspace Owner who recently launched Slack at your company. Google Calendar is one of the essential productivity apps used by everyone in the company. You want to ensure that your colleagues can all access their Google Calendars from Slack. What is the best way to enable the Google Calendar app for all members of your workspace? (Select the best answer.)
 > - A. Post instructions in #announcements linking to the app's directory page.
 > - B. Connect Google Calendar to your email domain and enable domain-wide authentication to auto-install for all users.
 > - C. Pre-approve the Google Calendar integration so users can easily enable it themselves.
@@ -483,7 +483,7 @@
 ---
 
 ### NO.183 — Best Workspace Admin candidate
-> **Q.** Which prior experience makes the best Workspace Admin candidate?
+> **Q.** A finance team wants to nominate a team member to be a Slack Workspace Admin. Which team member's prior experience would make them the optimal candidate for this role? (Select the best answer)
 > - A. Encourages etiquette, answers Slack questions, gives feedback on settings/policies.
 > - B. Creates custom integrations for onboarding.
 > - C. Set up Slack Connect channels and designed the approval process.
@@ -498,7 +498,7 @@
 ---
 
 ### NO.184 — Actions from scopes channels:write and chat:write:user
-> **Q.** With scopes channels:write and chat:write:user, which TWO actions can the app perform? (Choose two.)
+> **Q.** Cristina is evaluating a Slack app's security and notices that it has the following scopes present: channels: write and chat:write:user. Based on those scopes, which TWO actions can the app perform in Slack? (Choose two.)
 > - A. Modify public channels · B. Upload files · C. Send messages as a member · D. Access group direct messages
 
 **핵심 개념:** `channels:write`=공개 채널 생성/아카이브/수정, `chat:write:user`=사용자로서 메시지 전송.
@@ -510,7 +510,7 @@
 ---
 
 ### NO.185 — Two best practices when restricting channel creation to admins
-> **Q.** After restricting channel creation to Workspace Admins, two best practices? (Choose two.)
+> **Q.** Anna, a Workspace Owner, has decided to restrict channel creation in her workspace to Workspace Admins only. This will allow her and the other Workspace Admins to enforce channel naming conventions. What are two best practices Workspace Admins should follow in this scenario? (Choose two.)
 > - A. Keep up to date on channel naming conventions to process requests accurately.
 > - B. Prepare for a decrease in workload.
 > - C. Create a process for channel requests.
@@ -525,7 +525,7 @@
 ---
 
 ### NO.186 — Consider first when deciding on a new workspace
-> **Q.** New business unit has stricter security/compliance but needs to collaborate extensively. What to consider first?
+> **Q.** You're a Slack Org Admin, and your company recently acquired a new business unit. You must decide if you want to add your new teammates to your existing Slack workspaces, or create a new workspace in your Slack Enterprise Grid Org. You know that this new business unit has strict security and compliance requirements that exceed the policies of your current workspaces. You also expect the new business unit to collaborate extensively with the rest of your company, so they need to feel connected. What should you consider first when deciding if you need a new workspace? (Select the best answer.)
 > - A. Number of multi-workspace channels needed.
 > - B. The unit's preference for DMs/private channels.
 > - C. The data retention needs of the new business unit.
@@ -540,7 +540,7 @@
 ---
 
 ### NO.187 — Action for Org Owner but not Workspace Owner
-> **Q.** Which action can an Org Owner perform but not a Workspace Owner?
+> **Q.** Your organization is on the Slack Enterprise Grid plan. Which action can be performed by an Org Owner but not a Workspace Owner? (Select the best answer.)
 > - A. Set message retention policies.
 > - B. Reset all members' passwords.
 > - C. Manage SSO settings.
@@ -555,7 +555,7 @@
 ---
 
 ### NO.188 — Inactive channel with important content, one member
-> **Q.** A channel inactive nine months with important content and one member. What to do?
+> **Q.** You're a Workspace Admin cleaning up inactive channels. You find a channel inactive for nine months with important content and one member remaining. What should you do?
 > - A. Notify the member, then delete.
 > - B. Notify the member, then archive.
 > - C. Notify the member, keep active but limit posting to admins.
@@ -570,7 +570,7 @@
 ---
 
 ### NO.189 — Recover data past retention (Pro, 1-year policy, 18 months ago)
-> **Q.** Can you recover channel history from 18 months ago if retention was set to one year (Pro)?
+> **Q.** You're a Workplace Admin for a major retail chain in Europe on the Slack Pro plan. An executive user asks to access channel history from more than 18 months ago, but the retention policy was set at one year. Will it be possible for you to recover the data? (Select the best answer.)
 > - A. Yes — Slack disaster recovery backups accessible to Org Admins.
 > - B. Yes — Slack can access history upon Org Admin request due to MFA on admin access.
 > - C. No — GDPR territory; Slack legally can't provide it after the retention date.
@@ -585,7 +585,7 @@
 ---
 
 ### NO.190 — Main benefit of per-BU workspace design
-> **Q.** Workspaces per line of business + one social; members assigned to two, can join others. Main benefit?
+> **Q.** Large Inc is launching Enterprise Grid. They have decided to create a workspace for each line of business, and one workspace for social channels. Members are assigned to two workspaces but are allowed to join other workspaces if they want to. What is the main benefit of this Grid design?
 > - A. Workspace admin efforts distributed to representatives who know each BU's needs.
 > - B. Less context switching from accessing several workspaces.
 > - C. No added benefit.
@@ -600,7 +600,7 @@
 ---
 
 ### NO.191 — Update an outdated workflow
-> **Q.** A published onboarding workflow is now outdated. How do you fix it?
+> **Q.** You built a workflow using Workflow Builder that shares onboarding info with project team members. The project has pivoted, and the onboarding workflow info is outdated. How do you ensure new team members receive the correct information?
 > - A. Unpublish, modify the steps, and republish.
 > - B. Download the workflow file, edit JSON, re-import.
 > - C. Add a new step describing what changed.
@@ -615,7 +615,7 @@
 ---
 
 ### NO.192 — Minimum role for workspace-level actions
-> **Q.** Minimum role to accomplish workspace-level actions (changing settings, managing members)?
+> **Q.** You're the Primary Owner of your company's Slack Enterprise Grid org, managing a specific workspace. What is the minimum role needed to accomplish workspace-level actions (such as changing settings, managing members)?
 > - A. Workspace Owner · B. Org Admin · C. Workspace Admin · D. Roles Admin
 
 **핵심 개념:** 멤버 관리·대다수 워크스페이스 설정은 **Workspace Admin**이 수행할 수 있어, "최소 역할"은 Workspace Admin이다.
@@ -628,7 +628,7 @@
 ---
 
 ### NO.193 — Terminated user active because IdP (Okta) is down
-> **Q.** A terminated user is still active because Okta is down. Immediate steps?
+> **Q.** You are a Workspace Admin in your organization's Slack Pro instance. A terminated user is still active because Okta (your IdP) is down. Which immediate steps should you take?
 > - A. Change email to a dummy and force logout.
 > - B. Make #general read-only, delete offensive messages, contact the manager.
 > - C. Deactivate the account in Slack settings; ask HR to notify you of updates until Okta is back.
@@ -643,7 +643,7 @@
 ---
 
 ### NO.194 — What must be true for automatic deactivation
-> **Q.** Which must be true for members to be automatically deactivated when they leave (Plus, IdP)?
+> **Q.** Big Corp uses an IdP (Identity Provider) to manage access for its members to its Plus plan on Slack. Their security team wants to make sure members will be automatically deactivated when they leave the company. Which of the following must be true to ensure that members are automatically deactivated?
 > - A. Each member's access must expire after 90 days.
 > - B. The member must not be a Workspace Admin or Owner.
 > - C. The member must have left all channels.
@@ -658,7 +658,7 @@
 ---
 
 ### NO.195 — Set the Customer Support team up for success (choose all)
-> **Q.** What should you do to set the Customer Support team up for success? (Choose all that apply.)
+> **Q.** The Customer Support team for Large Inc is now using Slack to access the tools and information they need to help customers quickly. As an Admin, what should you do to set them up for success? (Choose all that apply.)
 > - A. Allow everyone on the team to approve and install apps.
 > - B. Approve and install apps to integrate their support tools.
 > - C. Streamline an incident management workflow.
@@ -673,7 +673,7 @@
 ---
 
 ### NO.196 — SMEs continuously manage a custom app's settings
-> **Q.** How to let developer SMEs continuously manage settings for a custom app?
+> **Q.** You work with a team of developers who are responsible for creating a custom ticketing app at your organization. What should you do to ensure subject matter experts (SMEs) from the developer team are able to continuously manage settings for the custom app?
 > - A. A channel to submit suggested changes for Org Admin review.
 > - B. Promote SMEs to Org Admin to manage the app (and all others).
 > - C. Use Workflow Builder instead of a custom app.
@@ -688,7 +688,7 @@
 ---
 
 ### NO.197 — True about security in Slack
-> **Q.** Which is true about security in Slack?
+> **Q.** Your company is conducting an internal security assessment of Slack prior to implementation. Which of the following is true about security in Slack?
 > - A. Workspace Admins can see all DM content anytime via the Admin console.
 > - B. Slack data is stored on your company's servers.
 > - C. Slack data is encrypted at rest and in transit.
@@ -703,7 +703,7 @@
 ---
 
 ### NO.198 — Mobile security for unmanaged devices
-> **Q.** Which mobile security feature is available for unmanaged devices?
+> **Q.** Jason, an Org Owner on the Enterprise Grid plan, wants to enable additional mobile security features for users who have unmanaged devices. Which of the following mobile security features is available to Jason?
 > - A. Block Workspace access · B. Restrict access based on IP · C. Block message copying and downloads · D. Make VPN mandatory
 
 **핵심 개념:** 비관리 기기에는 **메시지 복사·파일 다운로드 차단**으로 콘텐츠를 보호. (cf. NO.105)
@@ -715,7 +715,7 @@
 ---
 
 ### NO.199 — Get reports from a tool into Slack; first step
-> **Q.** You need reports from an inventory tool into Slack. First thing to do?
+> **Q.** Your company uses a popular online tool to help monitor inventory in the warehouse. You need to get reports from the tool into Slack by the end of the week. As a Slack admin, what is the first thing you should do? (Select the best answer.)
 > - A. Set up email forwarding outside Slack.
 > - B. Gather a team to develop a custom Slack app.
 > - C. Create a workflow using an incoming webhook.
@@ -730,7 +730,7 @@
 ---
 
 ### NO.200 — CPO async product demo to the entire company
-> **Q.** Most efficient async way for the CPO to share/demo a major product release to the whole company?
+> **Q.** You're the Primary Org Owner of your org's Slack Enterprise Grid instance. Your Slack instance is comprised of a Global workspace and six additional workspaces aligned to each business unit. Your organization's Chief Product Officer (CPO) is looking for an asynchronous way to share and demo a major product release to the entire company. What is the most efficient way for the CPO to accomplish this? (Select the best answer.)
 > - A. Record a Slack Clip in an org-wide announcements channel.
 > - B. Record a demo outside Slack and import into a multi-workspace channel.
 > - C. Start a Huddle in an org-wide announcements channel.
