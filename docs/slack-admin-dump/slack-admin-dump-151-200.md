@@ -12,6 +12,7 @@
 > - C. DM the report to the VP of HR.
 > - D. Post the report in the project's public channel.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** 민감 정보는 **접근이 제한된 비공개 채널**에서 공유.
 **덤프 정답:** B → ✅ 재판정 일치
 **정답 근거(B):** 관련 인원만 있는 private 채널이 기밀을 보호하면서 필요한 stakeholder를 포함.
@@ -28,6 +29,7 @@
 > - D. Ask Slack Champions to model the behavior.
 > - E. Create default channels for more collaboration options.
 
+**섹션:** Enabling Slack Success (Analytics and Adoption)
 **핵심 개념:** 문화 변화 = **에티켓 가이드(채널 우선) + Champion의 모범**.
 **덤프 정답:** B, D → ✅ 재판정 일치
 **정답 근거:** B 채널 우선 규범 명문화. D Champion이 행동을 모델링.
@@ -43,6 +45,7 @@
 > - C. Turn on app approval; limit approval to Workspace Owners via Slackbot; notify #team-security.
 > - D. Create #triage-apps and use a Workflow Builder form for name + rationale; App Managers approve from the App Directory.
 
+**섹션:** App and AI Administration and Automations
 **핵심 개념:** 네이티브 **앱 승인(Manage Apps)** 은 요청 기록·사유 수집·매니저 라우팅을 모두 제공.
 **덤프 정답:** B → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거(B):** 앱 승인 기능으로 요청이 로깅되고 사유를 요구하며 App Manager가 중앙에서 추적·승인.
@@ -59,6 +62,7 @@
 > - D. Enable Workflow Builder and webhooks in Workflow Builder.
 > - E. Add a workflow-creation policy allowing "Everyone, except Guests" to create workflows.
 
+**섹션:** App and AI Administration and Automations
 **핵심 개념:** 외부 도구를 워크플로우에 통합하려면 **앱 스텝 사용 허용(B)** 과 **웹훅 활성화(D)** 가 핵심.
 **덤프 정답:** B, D → ✅ 재판정 일치 *(E도 관련 — 확신도: 중)*
 **정답 근거:** B 설치된 앱의 스텝 사용 허용. D Workflow Builder + 웹훅 트리거 활성화.
@@ -74,6 +78,7 @@
 > - C. Enable DLP and quarantine all messages/files to archive.
 > - D. Use a third-party eDiscovery app to retrieve and store data in a data warehouse.
 
+**섹션:** Governance, Security and Compliance
 **핵심 개념:** 외부로의 지속 아카이빙은 **서드파티 eDiscovery/아카이빙 앱**으로 데이터를 끌어와 별도 저장.
 **덤프 정답:** D → ✅ 재판정 일치
 **정답 근거(D):** eDiscovery/아카이빙 앱이 Slack 데이터를 외부 저장소로 지속 수집.
@@ -88,6 +93,7 @@
 > - B. Create a list of trusted members; notify approvers; rules at Grid + workspace level.
 > - C. Create rules based on licensing cost; notify requesters; rules at workspace level.
 
+**섹션:** App and AI Administration and Automations
 **핵심 개념:** 자동 승인은 **조건부 규칙 + 요청자 상태 알림 + Grid·워크스페이스 양 수준 규칙**.
 **덤프 정답:** A → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거(A):** 조건부 규칙으로 자동 승인/제한하고 요청자에게 상태를 알리며, 두 수준에서 규칙을 두어 유연성 확보.
@@ -103,6 +109,7 @@
 > - C. Ensure you have an available resource to serve as a Workspace Admin.
 > - D. Determine if they'll use Slack workflows.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** 새 워크스페이스 생성 전에는 **관리할 Workspace Admin을 확보**해야 한다.
 **덤프 정답:** C → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거(C):** 책임 Workspace Admin 없이 만든 워크스페이스는 방치·혼란 우려.
@@ -118,6 +125,7 @@
 > - C. Export the data from the Members section of the org analytics dashboard.
 > - D. Export via the Export Data tab in the org administration dashboard.
 
+**섹션:** User Lifecycle Management
 **핵심 개념:** 조직 전체 게스트/멤버 정보는 **Org 분석 대시보드 Members 섹션에서 수출**하는 것이 효율적.
 **덤프 정답:** C → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거(C):** Org 분석에서 게스트 유형·상태·소속 워크스페이스를 포함해 수출 가능.
@@ -133,6 +141,7 @@
 > - C. Individual DMs with each of the 10.
 > - D. Public channel (e.g. #social-LA) with the 10 people.
 
+**섹션:** Enabling Slack Success (Analytics and Adoption)
 **핵심 개념:** 지역 커뮤니티는 **공개 채널**로 발견성과 참여를 높인다.
 **덤프 정답:** D → ✅ 재판정 일치
 **정답 근거(D):** 공개 채널은 관심 있는 다른 멤버(방문자 포함)도 쉽게 발견·참여.
@@ -148,6 +157,7 @@
 > - C. Describe their permissions vs admin permissions.
 > - D. Know about newly released features.
 
+**섹션:** Enabling Slack Success (Analytics and Adoption)
 **핵심 개념:** 비전 문구는 **왜 Slack을 쓰는지(목적)** 를 정렬시켜 전략적 이해를 준다.
 **덤프 정답:** A → ✅ 재판정 일치
 **정답 근거(A):** 조직 워크플로우에서 Slack의 목적을 이해하게 함.
@@ -163,6 +173,7 @@
 > - C. Turn on JIT provisioning and distribute an invite link.
 > - D. Enable admins to invite their departments.
 
+**섹션:** User Lifecycle Management
 **핵심 개념:** 대규모·보안 온보딩은 **SAML IdP + SCIM 프로비저닝**(자동 생성/비활성화, 통제).
 **덤프 정답:** A → ✅ 재판정 일치 *(확신도: 중-높음)*
 **정답 근거(A):** IdP+SCIM로 계정을 사전 프로비저닝하면 보안·통제가 가장 강하다.
@@ -179,6 +190,7 @@
 > - D. Does the app require a license?
 > - E. What is the urgency level for the request?
 
+**섹션:** App and AI Administration and Automations
 **핵심 개념:** 요청자에게는 **라이선스 필요 여부(D)** 와 **긴급도(E)** 를 물어 우선순위·계획을 세운다.
 **덤프 정답:** D, E → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거:** D 라이선스 요구 파악, E 긴급도로 우선순위 설정.
@@ -191,6 +203,7 @@
 > **Q.** The security team at your organization wants to monitor different public channels that are created in your Slack Enterprise Grid instance. The team requested access to the conversations.list and conversations.info API methods to get the required data about the channels. As a Slack admin, you need to assign the required scopes to their Slack app for the security team to be able to invoke the APIs. Which scope should you assign to allow the security team to retrieve a list of all public channels only and retrieve information about a public channel? (Select the best answer.)
 > - A. files:read · B. admin.conversations:read · C. conversations.connect:read · D. channels:read
 
+**섹션:** App and AI Administration and Automations
 **핵심 개념:** **`conversations.list`·`conversations.info`는 `channels:read`** 스코프를 요구한다. `admin.conversations:read`는 `admin.conversations.*` 네임스페이스 전용이다.
 **덤프 정답:** B → ⚠️ 재판정 불일치 (내 판단: **D = channels:read**) *(공식 API 문서로 확인, 확신도: 높음)*
 **정답 근거(D):** Slack API 문서상 `conversations.list`의 필수 스코프는 `channels:read`(및 groups/im/mpim:read). 공개 채널 목록·정보 조회에 해당하는 스코프는 D.
@@ -207,6 +220,7 @@
 > - C. Custom bot to pair onboarding buddies.
 > - D. Host a Slack 101 live training.
 
+**섹션:** Enabling Slack Success (Analytics and Adoption)
 **핵심 개념:** 자기주도 학습에는 **Workflow Builder로 자료(웨비나·Help Center 링크)를 담은 온보딩 워크플로우**.
 **덤프 정답:** A → ✅ 재판정 일치
 **정답 근거(A):** 자동 온보딩 워크플로우로 자료 링크를 제공해 각자 속도로 학습.
@@ -222,6 +236,7 @@
 > - C. Install the Slack Desktop App with automatic updates allowed.
 > - D. Announce steps for downloading/updating the app.
 
+**섹션:** Enabling Slack Success (Analytics and Adoption)
 **핵심 개념:** 항상 최신·보안 버전 유지는 **데스크톱 앱 배포 + 자동 업데이트 허용**.
 **덤프 정답:** C → ✅ 재판정 일치
 **정답 근거(C):** 자동 업데이트로 최신 보안 버전을 보장.
@@ -237,6 +252,7 @@
 > - C. Channel in IT workspace, invite Internal members as guests.
 > - D. Multi-workspace channel between IT and Internal.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** 선택된 워크스페이스만 공유하려면 **멀티워크스페이스 채널**(IT·Internal 한정).
 **덤프 정답:** D → ✅ 재판정 일치
 **정답 근거(D):** 멀티워크스페이스 채널은 지정 워크스페이스 간만 공유하고 나머지는 제외.
@@ -252,6 +268,7 @@
 > - C. Workspaces based on how info is shared, each employee having one "primary" (80% of time).
 > - D. One workspace, each product line as a channel.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** **정보 공유 방식**으로 워크스페이스를 나누고 각자 **주 워크스페이스(80%)** 를 두면 기존 협업을 유지.
 **덤프 정답:** C → ✅ 재판정 일치
 **정답 근거(C):** 사람들이 정보를 공유하는 방식대로 그룹핑하면 disruption 최소·협업 유지.
@@ -267,6 +284,7 @@
 > - C. Block file downloads and message copying.
 > - D. Require secondary authentication.
 
+**섹션:** Governance, Security and Compliance
 **핵심 개념:** **관리(승인)된 기기에서만 접근 허용**은 EMM 고유 기능.
 **덤프 정답:** B → ✅ 재판정 일치 *(확신도: 중-높음)*
 **정답 근거(B):** EMM은 승인된 관리 기기로만 Slack 접근을 제한한다.
@@ -283,6 +301,7 @@
 > - D. Watch the on-demand "How to launch Slack" webinar.
 > - E. Use /feedback to submit a support request.
 
+**섹션:** Enabling Slack Success (Analytics and Adoption)
 **핵심 개념:** 초보자에게는 **Help Center 튜토리얼**과 **Slack 리소스 라이브러리** 같은 셀프서비스 자료.
 **덤프 정답:** A, B → ✅ 재판정 일치
 **정답 근거:** A/B 자기주도 학습 자료.
@@ -298,6 +317,7 @@
 > - C. Use the Custom Profile API to sync to the analytics dashboard.
 > - D. Create custom profile fields for members to add manually.
 
+**섹션:** User Lifecycle Management
 **핵심 개념:** IdP의 표준 속성(부서·직함·위치)은 **SCIM API로 멤버 프로필에 동기화**.
 **덤프 정답:** B → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거(B):** SCIM 프로비저닝이 IdP 속성을 Slack 프로필로 동기화.
@@ -313,6 +333,7 @@
 > - C. Start a new group DM with only new members.
 > - D. Convert the group DM to a private channel, then invite new members.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** 그룹 DM은 **멤버 추가/교체가 불가** — 멤버십을 관리하려면 **private 채널로 전환**.
 **덤프 정답:** D → ✅ 재판정 일치 *(확신도: 중-높음)*
 **정답 근거(D):** private 채널로 전환하면 기밀 유지 + 멤버십 변경 관리 + 논의 중앙화가 가능.
@@ -328,6 +349,7 @@
 > - C. As soon as possible; not retroactive — workspaces created before claiming remain standalone.
 > - D. Before purchasing Grid, while on the free plan.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** 도메인 클레임은 **가능한 한 빨리** — 소급 적용되지 않아, 클레임 전에 만들어진 워크스페이스는 독립적으로 남는다.
 **덤프 정답:** C → ✅ 재판정 일치 *(확신도: 중-높음)*
 **정답 근거(C):** 조기 클레임으로 미관리 워크스페이스 난립을 방지.
@@ -344,6 +366,7 @@
 > - D. Assign default channels to users when they start.
 > - E. Assign default Slack app integrations to users.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** 사용자 그룹은 **@멘션 일괄 알림(A)** 과 **가입 시 기본 채널 자동 배정(D)** 을 제공.
 **덤프 정답:** A, D → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거:** A 그룹 일괄 알림. D 그룹 지정 시 기본 채널 자동 참여로 온보딩 간소화.
@@ -359,6 +382,7 @@
 > - C. Create a spreadsheet mapping channels to projects, pinned in #general.
 > - D. Create a naming convention per project and add them as default channel naming prefixes.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** **네이밍 규칙(접두사)** 으로 채널 목적을 한눈에 식별.
 **덤프 정답:** D → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거(D):** 접두사 규칙을 강제하면 생성 시점부터 프로젝트 소속이 명확.
@@ -371,6 +395,7 @@
 > **Q.** A bank must archive all communications for several years due to a new government regulation. Your compliance department wants to understand how best to meet these requirements for Slack. Which feature should you leverage to meet these regulatory requirements? (Select the best answer.)
 > - A. DLP · B. MDM · C. EKM · D. eDiscovery
 
+**섹션:** Governance, Security and Compliance
 **핵심 개념:** 규제 아카이빙·수출은 **eDiscovery** 통합.
 **덤프 정답:** D → ✅ 재판정 일치 *(확신도: 중-높음)*
 **정답 근거(D):** eDiscovery로 메시지·파일을 수집·아카이브·수출해 규제 요건 충족.
@@ -387,6 +412,7 @@
 > - D. Keep all files, including all file versions.
 > - E. Keep all files, only for a set number of days.
 
+**섹션:** Governance, Security and Compliance
 **핵심 개념:** 삭제 파일까지 발견 가능하려면 **"Keep all files including deleted files"**(Slack 실제 라벨엔 쉼표 없음; 보기는 쉼표 표기).
 **덤프 정답:** A → ✅ 재판정 일치 *(공식 문서로 확인, 확신도: 높음)*
 **정답 근거(A):** 문서: 이 옵션은 워크스페이스 수명 내 모든 파일을 보존하며, **수동 삭제된 파일도 exports·Discovery API로 접근** 가능. 감사·컴플라이언스 요건을 충족한다.
@@ -402,6 +428,7 @@
 > - C. A manager scheduling time to thoroughly review a product release.
 > - D. A manager actively brainstorming with leadership.
 
+**섹션:** Enabling Slack Success (Analytics and Adoption)
 **핵심 개념:** Clips는 **비동기**로 영상·화면·음성을 녹화·공유해 각자 시간에 소비.
 **덤프 정답:** B → ✅ 재판정 일치
 **정답 근거(B):** PM이 업데이트를 녹화해 마감 전 비동기로 피드백을 받는 상황이 적격.
@@ -417,6 +444,7 @@
 > - C. You never have to log in to the app natively.
 > - D. Lets you bypass security settings.
 
+**섹션:** App and AI Administration and Automations
 **핵심 개념:** 앱 통합의 이점은 **Slack을 떠나지 않고 외부 앱과 상호작용·업데이트 수신**.
 **덤프 정답:** B → ✅ 재판정 일치
 **정답 근거(B):** ServiceNow 같은 앱을 Slack 안에서 다루고 업데이트를 받는다.
@@ -432,6 +460,7 @@
 > - C. The Sales Workspace Primary Owner.
 > - D. A Workspace Owner who already has the permission.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** 멀티워크스페이스 채널 관리 권한은 **Org Owner/Org Admin**이 배정한다.
 **덤프 정답:** A → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거(A):** Org 수준 관리자가 멀티워크스페이스 채널 생성·관리 권한을 부여.
@@ -447,6 +476,7 @@
 > - C. Email the guide before they start.
 > - D. Use Workflow Builder to welcome teammates to channels with onboarding messages + guide links.
 
+**섹션:** Enabling Slack Success (Analytics and Adoption)
 **핵심 개념:** 대규모 온보딩 자동화는 **Workflow Builder** — 채널 참여 시 자동 안내로 잘못된 게시를 예방.
 **덤프 정답:** D → ✅ 재판정 일치
 **정답 근거(D):** 참여 시점에 가이드·규범을 자동 전달해 수동 모니터링 없이 확장.
@@ -459,6 +489,7 @@
 > **Q.** You're the Primary Owner of your company's Slack Business+ workspace. You need more assistance managing users and channels, so you task the Head of IT with these duties. In order to be able to perform these duties, what is the role with the fewest privileges that the Head of IT should be assigned? (Select the best answer.)
 > - A. Org Admin · B. Workspace Admin · C. Workspace Owner · D. Member
 
+**섹션:** Fundamentals
 **핵심 개념:** 멤버·채널·설정 관리의 최소 권한 역할은 **Workspace Admin**.
 **덤프 정답:** B → ✅ 재판정 일치 *(확신도: 중-높음)*
 **정답 근거(B):** Workspace Admin은 Owner의 광범위 권한 없이 멤버·채널·설정을 관리.
@@ -474,6 +505,7 @@
 > - C. Pre-approve the Google Calendar integration so users can easily enable it themselves.
 > - D. Use the Admin API to automate approvals.
 
+**섹션:** App and AI Administration and Automations
 **핵심 개념:** 전원에게 앱을 매끄럽게 제공하려면 **도메인 전체 인증(domain-wide authentication)** 으로 자동 설치·인가.
 **덤프 정답:** B → ✅ 재판정 일치 *(확신도: 중 — 실제로는 사용자별 Google 계정 연결이 필요할 수 있음)*
 **정답 근거(B):** 도메인 전체 인증을 켜면 개별 수동 설치 없이 앱이 전원에게 설치·인가된다.
@@ -489,6 +521,7 @@
 > - C. Set up Slack Connect channels and designed the approval process.
 > - D. Relies on Slack daily and frequently asks IT questions.
 
+**섹션:** Enabling Slack Success (Analytics and Adoption)
 **핵심 개념:** Workspace Admin은 **베스트 프랙티스 이해 + 도입 지원 + 에티켓 강화 + 정책 피드백** 역량이 이상적.
 **덤프 정답:** A → ✅ 재판정 일치
 **정답 근거(A):** 이미 Slack 사용 리더십·정책 이해·동료 지원을 보이는 후보.
@@ -501,6 +534,7 @@
 > **Q.** Cristina is evaluating a Slack app's security and notices that it has the following scopes present: channels: write and chat:write:user. Based on those scopes, which TWO actions can the app perform in Slack? (Choose two.)
 > - A. Modify public channels · B. Upload files · C. Send messages as a member · D. Access group direct messages
 
+**섹션:** App and AI Administration and Automations
 **핵심 개념:** `channels:write`=공개 채널 생성/아카이브/수정, `chat:write:user`=사용자로서 메시지 전송.
 **덤프 정답:** A, C → ✅ 재판정 일치 *(확신도: 중-높음)*
 **정답 근거:** A 공개 채널 관리, C 사용자 명의 메시지 전송.
@@ -516,6 +550,7 @@
 > - C. Create a process for channel requests.
 > - D. Appoint other members to help with the workload.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** 생성 권한을 제한하면 **네이밍 규칙 숙지(A)** 와 **채널 요청 프로세스 마련(C)** 이 필요.
 **덤프 정답:** A, C → ✅ 재판정 일치
 **정답 근거:** A 일관된 요청 처리, C 명확한 요청 절차.
@@ -531,6 +566,7 @@
 > - C. The data retention needs of the new business unit.
 > - D. The unit's app approval requirements.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** 새 워크스페이스 판단은 **데이터 리텐션·보안·컴플라이언스 요건이 기존과 다른지**를 먼저 평가.
 **덤프 정답:** C → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거(C):** 리텐션/컴플라이언스 요건이 다르면 별도 설정을 위해 워크스페이스 분리가 필요할 수 있다.
@@ -546,6 +582,7 @@
 > - C. Manage SSO settings.
 > - D. Turn on approved apps.
 
+**섹션:** Fundamentals
 **핵심 개념:** **SSO 설정은 조직 전체 보안 사안으로 Org Owner의 영역**.
 **덤프 정답:** C → ✅ 재판정 일치 *(확신도: 중-높음)*
 **정답 근거(C):** 조직 전체 SSO 구성/관리는 Org Owner가 담당하고 Workspace Owner는 불가.
@@ -561,6 +598,7 @@
 > - C. Notify the member, keep active but limit posting to admins.
 > - D. Notify the member, rename with #archived prefix.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** 중요한 콘텐츠가 있는 비활성 채널은 **아카이브**(검색 가능, 새 게시 차단).
 **덤프 정답:** B → ✅ 재판정 일치
 **정답 근거(B):** 아카이브로 히스토리를 보존하며 새 게시를 막는다.
@@ -576,6 +614,7 @@
 > - C. No — GDPR territory; Slack legally can't provide it after the retention date.
 > - D. No — data is removed on retention expiration; Slack deletes it from production systems.
 
+**섹션:** Governance, Security and Compliance
 **핵심 개념:** 리텐션 만료 시 Slack은 **프로덕션 시스템에서 영구 삭제**하므로 복구 불가.
 **덤프 정답:** D → ✅ 재판정 일치 *(확신도: 중-높음)*
 **정답 근거(D):** 만료된 메시지는 영구 삭제되어 복구할 수 없다.
@@ -591,6 +630,7 @@
 > - C. No added benefit.
 > - D. Centralized admin with less policy-breach opportunity.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** BU별 워크스페이스의 이점은 **관리 책임을 각 BU 대표에게 위임**해 효율·적합성을 높이는 것.
 **덤프 정답:** A → ✅ 재판정 일치
 **정답 근거(A):** BU를 잘 아는 리더에게 관리를 분산하면 관리가 효율적·유관하다.
@@ -606,6 +646,7 @@
 > - C. Add a new step describing what changed.
 > - D. Delete the workflow and create a new one.
 
+**섹션:** App and AI Administration and Automations
 **핵심 개념:** 워크플로우 수정은 **언퍼블리시 → 수정 → 재퍼블리시**.
 **덤프 정답:** A → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거(A):** 기존 워크플로우를 직접 편집·재게시하는 것이 표준.
@@ -618,6 +659,7 @@
 > **Q.** You're the Primary Owner of your company's Slack Enterprise Grid org, managing a specific workspace. What is the minimum role needed to accomplish workspace-level actions (such as changing settings, managing members)?
 > - A. Workspace Owner · B. Org Admin · C. Workspace Admin · D. Roles Admin
 
+**섹션:** Fundamentals
 **핵심 개념:** 멤버 관리·대다수 워크스페이스 설정은 **Workspace Admin**이 수행할 수 있어, "최소 역할"은 Workspace Admin이다.
 **덤프 정답:** A → ⚠️ 재판정 불일치/논란 (내 판단: **C = Workspace Admin**) *(확신도: 중)*
 **정답 근거(C):** 문항 예시(설정 변경·멤버 관리)는 Workspace Admin 권한 범위다. "최소 역할"을 물었으므로 Owner보다 낮은 Admin이 정답. **NO.181**(같은 취지, 정답 Workspace Admin)과도 일관된다.
@@ -634,6 +676,7 @@
 > - C. Deactivate the account in Slack settings; ask HR to notify you of updates until Okta is back.
 > - D. Ask IT and the Primary Org Owner to contact Okta and Slack support.
 
+**섹션:** User Lifecycle Management
 **핵심 개념:** SCIM/IdP가 다운이면 **Slack 설정에서 수동 비활성화**해 즉시 접근을 차단.
 **덤프 정답:** C → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거(C):** IdP 불가 시 수동 비활성화가 즉시 접근을 막는 정석.
@@ -649,6 +692,7 @@
 > - C. The member must have left all channels.
 > - D. The IdP must support deprovisioning via SCIM.
 
+**섹션:** User Lifecycle Management
 **핵심 개념:** 자동 비활성화는 **IdP의 SCIM 디프로비저닝 지원**이 전제.
 **덤프 정답:** D → ✅ 재판정 일치 *(확신도: 중-높음)*
 **정답 근거(D):** SCIM 디프로비저닝이 켜져 있어야 IdP의 비활성화가 Slack에 자동 반영된다.
@@ -664,6 +708,7 @@
 > - C. Streamline an incident management workflow.
 > - D. Organize and name channels so info/procedures/policies are easy to find.
 
+**섹션:** Enabling Slack Success (Analytics and Adoption)
 **핵심 개념:** **핵심 앱 승인·설치(B)**, **인시던트 워크플로우 정비(C)**, **채널 조직·네이밍(D)** 으로 성공을 지원.
 **덤프 정답:** B, C, D → ✅ 재판정 일치
 **정답 근거:** B 도구 통합, C 워크플로우 자동화, D 발견성 있는 채널 구성.
@@ -679,6 +724,7 @@
 > - C. Use Workflow Builder instead of a custom app.
 > - D. Add the SMEs as internal app collaborators to manage the app's settings directly.
 
+**섹션:** App and AI Administration and Automations
 **핵심 개념:** 커스텀 앱 설정은 **내부 앱 협업자(internal app collaborators)** 로 추가해 Org Admin 권한 없이 직접 관리하게 한다.
 **덤프 정답:** D → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거(D):** 내부 앱 협업자는 OAuth·스코프 등 앱 구성을 관리 가능(과도한 권한 부여 불필요).
@@ -694,6 +740,7 @@
 > - C. Slack data is encrypted at rest and in transit.
 > - D. Members can only access Slack on the corporate network.
 
+**섹션:** Governance, Security and Compliance
 **핵심 개념:** Slack 데이터는 **전송 중·저장 시 모두 암호화**된다.
 **덤프 정답:** C → ✅ 재판정 일치 *(확신도: 높음)*
 **정답 근거(C):** 업계 표준 암호화로 at rest/in transit 보호.
@@ -706,6 +753,7 @@
 > **Q.** Jason, an Org Owner on the Enterprise Grid plan, wants to enable additional mobile security features for users who have unmanaged devices. Which of the following mobile security features is available to Jason?
 > - A. Block Workspace access · B. Restrict access based on IP · C. Block message copying and downloads · D. Make VPN mandatory
 
+**섹션:** Governance, Security and Compliance
 **핵심 개념:** 비관리 기기에는 **메시지 복사·파일 다운로드 차단**으로 콘텐츠를 보호. (cf. NO.105)
 **덤프 정답:** C → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거(C):** 비관리 기기에서 복사/다운로드를 막아 민감 데이터를 보호.
@@ -721,6 +769,7 @@
 > - C. Create a workflow using an incoming webhook.
 > - D. Search the Slack App Directory for an existing app that supports the tool.
 
+**섹션:** App and AI Administration and Automations
 **핵심 개념:** 통합의 첫 단계는 **App Directory에서 기존 통합 앱 검색**.
 **덤프 정답:** D → ✅ 재판정 일치
 **정답 근거(D):** 공식 앱이 이미 있으면 개발 없이 빠르고 안정적으로 배포.
@@ -736,6 +785,7 @@
 > - C. Start a Huddle in an org-wide announcements channel.
 > - D. Create a public channel in the Product & Engineering workspace to share the announcement.
 
+**섹션:** Enabling Slack Success (Analytics and Adoption)
 **핵심 개념:** 전사 비동기 공유는 **org-wide 채널의 Slack Clip**(녹화 영상, 각자 시청).
 **덤프 정답:** A → ✅ 재판정 일치
 **정답 근거(A):** Clip은 비동기 녹화, org-wide 채널은 전사 도달.

@@ -14,6 +14,7 @@
 > - D. Employees can use the same login credentials they already use for other applications.
 > - E. It lets your org control the encryption keys to users' data.
 
+**섹션:** User Lifecycle Management
 **핵심 개념:** SAML SSO는 **IdP를 통해 인증 정책(비밀번호 규칙·세션 등)을 통제**하고 **기존 자격증명으로 단일 로그인**을 제공한다.
 **덤프 정답:** A, D → ✅ 재판정 일치
 **정답 근거:** A 인증/보안 정책을 조직이 통제. D 다른 앱과 동일 자격증명으로 로그인.
@@ -30,6 +31,7 @@
 > - D. No pre-provisioning; accounts auto-create on first login.
 > - E. Pre-provision Multi-Channel and Single-Channel Guests.
 
+**섹션:** User Lifecycle Management
 **핵심 개념:** SCIM는 **IdP 기반 계정 자동 비활성화**와 **게스트 사전 프로비저닝**을 제공(인증이 아닌 프로비저닝).
 **덤프 정답:** A, E → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거:** A IdP 비활성화 → Slack 계정 자동 비활성화. E Multi/Single-Channel Guest 사전 프로비저닝.
@@ -45,6 +47,7 @@
 > - C. @mention their Workspace Admin in the #proj channel.
 > - D. DM an Org Owner requesting guest access.
 
+**섹션:** User Lifecycle Management
 **핵심 개념:** 게스트 초대는 **워크스페이스 메뉴로 초대 + 승인 프로세스(전용 채널)로 라우팅**하는 것이 표준.
 **덤프 정답:** A → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거(A):** 워크스페이스 메뉴 초대 + 승인 채널 라우팅이 통제된 표준 절차.
@@ -61,6 +64,7 @@
 > - D. Turn on app approval so members can only install pre-approved apps.
 > - E. Send all notifications to a specific channel that includes all app managers.
 
+**섹션:** App and AI Administration and Automations
 **핵심 개념:** 앱 승인은 **앱 승인 기능 활성화(D)** + **요청 알림을 앱 매니저 채널로 라우팅(E)** 하는 구조가 표준.
 **덤프 정답:** D, E → ✅ 재판정 일치
 **정답 근거:** D 승인된 앱만 설치되게 제한. E 매니저가 모인 채널에서 검토·승인.
@@ -77,6 +81,7 @@
 > - D. IdP group management for mobile devices.
 > - E. Jailbreak or root detection for mobile devices.
 
+**섹션:** Governance, Security and Compliance
 **핵심 개념:** Slack Enterprise Grid **네이티브 모바일 보안 기능**(EMM 없이 사용)은 문서상 5종이다: 파일 다운로드/메시지 복사 차단, 2차 인증 요구, 필수 모바일 브라우저 지정, 탈옥/루팅 기기 차단, 최소 앱 버전 요구. 이 문항 정답은 그중 **A(다운로드/복사 차단) + E(탈옥/루팅 차단)**.
 **덤프 정답:** A, B → ⚠️ 재판정 불일치 (내 판단: **A, E**) *(공식 문서로 확인, 확신도: 높음)*
 **정답 근거(A, E):** "Mobile security for Enterprise Grid" 문서의 *"Native security features … For devices that aren't managed by EMM"* 목록에 **"Block file downloads and message copying"(A)** 와 **"Block jailbroken or rooted devices"(E)** 가 명시돼 있다.
@@ -93,6 +98,7 @@
 > - C. New invite-only workspace "Expenses."
 > - D. Public announce-only channel for the expense system.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** 통제된 전사 업데이트는 **공개 announce-only 채널** — 지정 인원만 게시, 전원 열람/반응.
 **덤프 정답:** D → ✅ 재판정 일치
 **정답 근거(D):** announce-only 채널은 정보 흐름을 통제하면서도 전사 가시성을 극대화.
@@ -108,6 +114,7 @@
 > - C. Use the Import/Export Data tool in workspace settings to export the required public channel data.
 > - D. Use the Discovery APIs to export the required public channel data.
 
+**섹션:** Governance, Security and Compliance
 **핵심 개념:** Business+에서 **공개 채널 데이터는 표준 Import/Export 도구**로 직접 수출 가능. Discovery API는 Grid 전용.
 **덤프 정답:** C → ✅ 재판정 일치 *(확신도: 중-높음)*
 **정답 근거(C):** Workspace Owner는 표준 수출 도구로 공개 채널 데이터를 Slack 문의 없이 내보낼 수 있다.
@@ -123,6 +130,7 @@
 > - C. Use Slack Connect to automatically sunset external access after 8 months.
 > - D. Provide guest accounts so you can block file uploads/downloads.
 
+**섹션:** User Lifecycle Management
 **핵심 개념:** 조직 대 조직의 유동적 협업은 **Slack Connect** — 각 조직이 자기 멤버·정책을 관리.
 **덤프 정답:** A → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거(A):** Slack Connect는 상대 조직이 자기 인원을 직접 관리하므로 인원이 바뀌어도 유연.
@@ -138,6 +146,7 @@
 > - C. Navigate to Customize Slack and remove the emoji.
 > - D. Tell Brian you can't delete but can replace it.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** Workspace Owner/Admin은 **Customize Slack 페이지에서 특정 커스텀 이모지를 삭제**할 수 있다.
 **덤프 정답:** C → ✅ 재판정 일치
 **정답 근거(C):** 관리자가 문제 이모지를 직접 제거하는 것이 정확한 조치.
@@ -153,6 +162,7 @@
 > - C. Encourage executives to model the behavior in public channels themselves.
 > - D. Plan a Slack Day on the benefits of public channels and search.
 
+**섹션:** Enabling Slack Success (Analytics and Adoption)
 **핵심 개념:** 리더십의 **모범(모델링)** 이 문화 변화에 가장 큰 영향. (NO.60과 동일 문항.)
 **덤프 정답:** C → ✅ 재판정 일치 *(D도 강력 — 확신도: 중)*
 **정답 근거(C):** 경영진이 직접 공개 채널을 쓰면 강력한 문화적 본보기가 된다.
@@ -169,6 +179,7 @@
 > - D. Want users to have accounts only if they plan to use them.
 > - E. Launch Slack to all employees in a single day and sunset the former platform.
 
+**섹션:** User Lifecycle Management
 **핵심 개념:** SCIM은 **대규모 사용자를 워크스페이스에 자동 배정**하고 **대규모 일괄 온보딩**에 이상적.
 **덤프 정답:** A, E → ✅ 재판정 일치
 **정답 근거:** A 자회사별 다중 워크스페이스에 사용자 배정. E 전사 일괄 런칭.
@@ -184,6 +195,7 @@
 > - C. Members and guests can find each other as they're added.
 > - D. Default channels orient new members and model channel naming conventions.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** 기본 채널은 **신규 멤버를 안내하고 네이밍 규칙을 학습**시키는 역할.
 **덤프 정답:** D → ✅ 재판정 일치
 **정답 근거(D):** 신규 멤버를 주요 조직 채널에 노출해 규범·네이밍을 자연스럽게 익히게 한다.
@@ -199,6 +211,7 @@
 > - C. Percentage of DM messages in HR workspace vs the org's overall DM percentage.
 > - D. The claim that HR is more confidential and should expect more DMs.
 
+**섹션:** Enabling Slack Success (Analytics and Adoption)
 **핵심 개념:** 팀 간 소통 패턴 비교 = **DM 비중을 조직 평균과 비교**. (NO.69와 동일 문항.)
 **덤프 정답:** C → ✅ 재판정 일치
 **정답 근거(C):** HR의 DM 비중 대 조직 평균 비교가 객관적 판단 근거.
@@ -214,6 +227,7 @@
 > - C. Sign the member out of the org via "Sign out of Slack" in the admin dashboard.
 > - D. Notify Workspace Owners to temporarily remove the user from workspaces.
 
+**섹션:** Governance, Security and Compliance
 **핵심 개념:** Org Admin은 대시보드에서 **멤버를 전 세션에서 원격 로그아웃**해 즉시 접근을 차단(비활성화 없이).
 **덤프 정답:** C → ✅ 재판정 일치 *(확신도: 중-높음)*
 **정답 근거(C):** 원격 세션 종료로 데스크톱/모바일/웹 접근을 즉시 막는다.
@@ -229,6 +243,7 @@
 > - C. Deactivate the members utilizing the SCIM API.
 > - D. Request the Primary Org Owner, as only they can do this.
 
+**섹션:** User Lifecycle Management
 **핵심 개념:** 대량·자동 비활성화는 **SCIM API/IdP 동기화**로 처리하는 것이 확장적.
 **덤프 정답:** C → ✅ 재판정 일치 *(A도 유효 — 확신도: 중)*
 **정답 근거(C):** SCIM으로 IdP 데이터와 동기화하여 계정 비활성화를 자동화.
@@ -244,6 +259,7 @@
 > - C. Restrict @here/@channel usage to Owners and Admins only.
 > - D. Restrict public channel posting to Owners and Admins.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** Slack은 **@channel/@here/@everyone 사용을 Owner/Admin으로 제한**하는 설정을 제공.
 **덤프 정답:** C → ✅ 재판정 일치 *(확신도: 중-높음)*
 **정답 근거(C):** 대규모 공개 채널의 오남용을 막으면서 구조적 커뮤니케이션은 유지.
@@ -259,6 +275,7 @@
 > - C. Show the admin console depth of settings/policies.
 > - D. Display weekly active members trending from launch.
 
+**섹션:** Enabling Slack Success (Analytics and Adoption)
 **핵심 개념:** 성공 정의는 **사용을 비즈니스 성과·생산성에 연결**하는 것 — 기술 셋업/활성 수만이 아님.
 **덤프 정답:** B → ✅ 재판정 일치
 **정답 근거(B):** 비즈니스 유닛과 함께 Slack이 개선한 워크플로우·협업을 파악·측정해야 가치 중심 대화가 된다.
@@ -274,6 +291,7 @@
 > - C. The workspace requires the member to request to join.
 > - D. The workspace requires an invitation from the Workspace Admin.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** **Invite Only** 워크스페이스는 검색엔 보여도 참여하려면 Workspace Admin의 초대가 필요하다.
 **덤프 정답:** D → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거(D):** 검색에 뜨지만 "가입 옵션이 없다"는 것은 초대 전용을 의미(By Request라면 '요청' 버튼이 보임).
@@ -289,6 +307,7 @@
 > - C. Members use SSO to handle usernames/passwords.
 > - D. Members must submit a verification code along with their password each sign-in.
 
+**섹션:** Governance, Security and Compliance
 **핵심 개념:** 2FA는 로그인 시 **비밀번호 + 인증 코드(앱/SMS)** 를 함께 요구한다.
 **덤프 정답:** D → ✅ 재판정 일치 *(확신도: 높음)*
 **정답 근거(D):** 비밀번호가 유출돼도 두 번째 요소(코드) 없이는 접근 불가.
@@ -304,6 +323,7 @@
 > - C. Pin messages in a multi-workspace channel.
 > - D. Direct members to a #help-slack channel to ask questions.
 
+**섹션:** Enabling Slack Success (Analytics and Adoption)
 **핵심 개념:** 전사 지속 안내는 **org-wide 채널 + 학습 자료 북마크**로 능동 전달.
 **덤프 정답:** A → ✅ 재판정 일치
 **정답 근거(A):** org-wide 채널은 모든 워크스페이스 멤버에게 도달하며 자료 접근도 쉽다.
@@ -316,6 +336,7 @@
 > **Q.** A user with a claimed email domain tries to create a new workspace. The user is redirected to the Enterprise Grid org's workspace directory and is asked to join an existing workspace or contact the Grid Org Owners for more details. True or False: Claiming relevant domains for your Enterprise ensures that all workspaces are subject to the organization's Grid policies, such as message retention, SSO/security settings, and eDiscovery/archiving.
 > - A. True · B. False
 
+**섹션:** Governance, Security and Compliance
 **핵심 개념:** 도메인 클레임은 해당 도메인 사용자가 만든 워크스페이스를 조직으로 유입시켜 **중앙 거버넌스(보안·컴플라이언스·리텐션)** 아래 두게 한다.
 **덤프 정답:** A (True) → ✅ 재판정 일치 *(확신도: 중-높음)*
 **정답 근거:** 도메인 클레임으로 미관리 워크스페이스 난립을 막고 일관된 정책을 강제한다.
@@ -331,6 +352,7 @@
 > - C. Add external users to your IdP for SAML SSO.
 > - D. Set up a jointly-owned separate workspace.
 
+**섹션:** User Lifecycle Management
 **핵심 개념:** 조직 대 조직 협업은 **Slack Connect**가 게스트/신규 워크스페이스보다 안전·확장적. (NO.81과 동일.)
 **덤프 정답:** B → ✅ 재판정 일치
 **정답 근거(B):** 외부인을 게스트로 들이지 않고 공유 채널로 협업.
@@ -343,6 +365,7 @@
 > **Q.** You're a Slack admin creating a list of default prefixes. You want to provide employees with standard naming conventions to use when they create new channels. After reviewing existing channels, you determine that there are three types of channels most often created: * Slack Connect channels for collaborating with partners. * Channels for groups within a line of business. * Channels to support collaboration on specific engagements. What are the three best prefixes to add to your default list? (Select the THREE best answers.)
 > - A. #team- · B. announce · C. #help · D. #proj- · E. #slack · F. #ext-
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** #team-(부서/기능 그룹), #proj-(프로젝트/엔게이지먼트), #ext-(외부/Slack Connect).
 **덤프 정답:** A, D, F → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거:** A LOB 내 그룹, D 특정 엔게이지먼트 협업, F Slack Connect 외부 파트너.
@@ -358,6 +381,7 @@
 > - C. File upload permissions to Slack Connect channels can't be restricted.
 > - D. In a public channel, only admins can create an external link for a file.
 
+**섹션:** Governance, Security and Compliance
 **핵심 개념:** 이 문항은 **소거법**으로 푼다. Slack Connect 파일 문서 기준으로 A·C·D가 모두 명백히 틀리므로 B가 남는다. ⚠️ B의 "한 조직 설정이 참여 250개 조직의 모든 파일에 적용"이라는 서술 **자체는 공식 문서로 직접 확인되지 않는다** — 실제 문서는 **조직별 통제 모델**(각 조직이 자기 멤버 업로드를 관리, Org는 외부 조직별 업로드 권한을 개별 설정)을 기술한다.
 **덤프 정답:** B → ✅ 재판정 일치(소거법) *(단 B 서술은 문서 미확인 — 확신도: 중-낮음)*
 **정답 근거:** A·C·D가 문서상 오답이라 소거로 B가 최선. B 문장을 문서가 적극 뒷받침하지는 않지만 나머지 셋보다 덜 틀리다.
@@ -376,6 +400,7 @@
 > - C. Share files with guests.
 > - D. Share files externally via Slack Connect channels.
 
+**섹션:** Governance, Security and Compliance
 **핵심 개념:** 관리자 설정 **"Public File Sharing"** 은 파일의 **외부 링크(external link) 생성 → Slack 밖 공유**를 허용한다. (현재 UI 용어는 "external link"; "public URL/public link"는 동일 개념의 옛/API 용어 `files.sharedPublicURL`.)
 **덤프 정답:** A → ✅ 재판정 일치 *(공식 문서로 확인, 확신도: 높음)*
 **정답 근거(A):** 문서: "share it outside of Slack by creating an external link" — 외부 링크로 Slack 밖에서도 파일을 열람하게 한다.
@@ -391,6 +416,7 @@
 > - C. Use a third-party eDiscovery app to delete it and use data exports.
 > - D. Use EKM to revoke key access and review EKM logs.
 
+**섹션:** Governance, Security and Compliance
 **핵심 개념:** 민감 파일 **삭제는 DLP**, **다운로드 행위 추적은 Audit Logs API**.
 **덤프 정답:** A → ✅ 재판정 일치
 **정답 근거(A):** DLP로 파일을 제거하고 Audit Logs API로 다운로드 사용자를 확인.
@@ -406,6 +432,7 @@
 > - C. Who can create and archive channels.
 > - D. Who can invite new members.
 
+**섹션:** Governance, Security and Compliance
 **핵심 개념:** 외부 접근·서드파티 노출과 직결되는 **앱 승인(A)** 과 **멤버 초대 권한(D)** 이 보안상 핵심.
 **덤프 정답:** A, D → ✅ 재판정 일치
 **정답 근거:** A 서드파티 앱 통제, D 외부/신규 사용자 유입 통제.
@@ -421,6 +448,7 @@
 > - C. Any member from any workspace can notify new hires with one @mention.
 > - D. Admins can create a group-only DM to foster community.
 
+**섹션:** User Lifecycle Management
 **핵심 개념:** 사용자 그룹을 **온보딩 채널들에 일괄 추가**하면 누구도 누락되지 않고 온보딩이 단순해진다.
 **덤프 정답:** B → ✅ 재판정 일치
 **정답 근거(B):** 그룹을 여러 채널에 추가해 멤버십 관리를 간소화.
@@ -433,6 +461,7 @@
 > **Q.** Which of the following scenarios would best justify creating a channel in your company's existing workspace, rather than starting a direct message?
 > - A. Confirm meeting times. · B. A new line of business at your company. · C. A few quick questions. · D. Tell your manager you're not feeling well.
 
+**섹션:** Fundamentals
 **핵심 개념:** 지속적·투명한 주제/팀/프로젝트 공간이 필요할 때(예: 신규 사업부) 채널을 만든다.
 **덤프 정답:** B → ✅ 재판정 일치
 **정답 근거(B):** 신규 사업부는 전용·투명한 상시 공간이 필요.
@@ -448,6 +477,7 @@
 > - C. Remove all members from #bread-buds and invite them to the new channel.
 > - D. Post a redirect message in #bread-buds and archive it.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** 은퇴 채널은 **전환 안내 게시 후 아카이브** — 읽기 전용·검색 가능으로 히스토리 보존.
 **덤프 정답:** D → ✅ 재판정 일치
 **정답 근거(D):** 아카이브는 새 게시를 막고 히스토리를 검색·참조 가능하게 유지 — Britt의 목표에 정확히 부합.
@@ -463,6 +493,7 @@
 > - C. Send to all department-specific channels.
 > - D. Send to #general with @channel.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** 공식 전사 공지는 **관리자만 게시 가능한 org-wide #announcements 채널**.
 **덤프 정답:** A → ✅ 재판정 일치
 **정답 근거(A):** 전원 가시성 + 관리자 전용 게시로 깔끔한 공지 채널.
@@ -478,6 +509,7 @@
 > - C. Member role to invite/approve; Multi-Channel Guest for the vendor.
 > - D. Member role to invite/approve; Single-Channel Guest for the vendor.
 
+**섹션:** User Lifecycle Management
 **핵심 개념:** 초대 승인·역할 관리는 **Admin** 권한이 필요하고, "다양한 채널"이 필요한 벤더는 **Multi-Channel Guest**.
 **덤프 정답:** B → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거(B):** Admin이 초대/승인 가능, 벤더는 여러 채널 접근 → Multi-Channel Guest.
@@ -493,6 +525,7 @@
 > - C. Export public channels from Tidepool, then import into Hurricane.
 > - D. Copy channels via Copy Channels on the Channel Management page.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** 표준 워크스페이스 간(Pro→Business+) 통합은 **공개 채널 수출 → 대상 워크스페이스로 임포트**. Move Channels는 Enterprise Grid 전용.
 **덤프 정답:** C → ✅ 재판정 일치 *(확신도: 중-높음)*
 **정답 근거(C):** 수출/임포트로 히스토리를 보존하며 이전.
@@ -508,6 +541,7 @@
 > - C. Search Slack Connect channels in the channel management dashboard.
 > - D. Export the list of Slack Connect channels from analytics.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** **Org Admin 대시보드의 Slack Connect connections** 섹션에서 연결된 조직 목록을 확인.
 **덤프 정답:** B → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거(B):** 대시보드가 연결된 조직 전체를 보여준다.
@@ -523,6 +557,7 @@
 > - C. A cross-functional team explores new product ideas.
 > - D. A globally distributed org creates a channel for HQ events.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** **민감·기밀 논의(채용·보상·후보자 정보)** 는 private 채널.
 **덤프 정답:** A → ✅ 재판정 일치
 **정답 근거(A):** 보상·후보자 정보는 전 멤버에게 노출되면 안 되는 민감 정보.
@@ -538,6 +573,7 @@
 > - C. Use the Audit Logs API to export public channel data.
 > - D. Use the Import/Export Data tool to export public channel data.
 
+**섹션:** Governance, Security and Compliance
 **핵심 개념:** 파일 다운로드 같은 **행위 추적은 Audit Logs API**.
 **덤프 정답:** B → ✅ 재판정 일치 *(확신도: 중-높음)*
 **정답 근거(B):** Audit Logs API가 특정 파일의 다운로드 행위와 사용자를 기록.
@@ -553,6 +589,7 @@
 > - C. Upgrade to Enterprise Grid, enable domain claiming.
 > - D. Ask the Org Owner to enable 2FA.
 
+**섹션:** Governance, Security and Compliance
 **핵심 개념:** **도메인 클레임은 Enterprise Grid 전용** — 조직 도메인으로 독립 워크스페이스 생성을 차단.
 **덤프 정답:** C → ✅ 재판정 일치 *(확신도: 중-높음)*
 **정답 근거(C):** Grid + 도메인 클레임으로 회사 이메일 기반 워크스페이스 난립을 막는다.
@@ -568,6 +605,7 @@
 > - C. They model best practices and rally the team toward common goals.
 > - D. They identify key use cases and modify them over time.
 
+**섹션:** Enabling Slack Success (Analytics and Adoption)
 **핵심 개념:** Champion은 **관리자일 필요가 없고**, 모범을 보이며 투명성·활용 사례를 이끄는 문화 옹호자.
 **덤프 정답:** B, C, D → ✅ 재판정 일치
 **정답 근거:** B 투명성 촉진, C 모범·팀 결집, D 활용 사례 발굴·개선.
@@ -580,6 +618,7 @@
 > **Q.** You're a Slack admin at a nonprofit organization. You need to add a new workspace to your Slack Enterprise Grid. This workspace needs to support the fundraising efforts of the development team. It should be a place for the team to collaborate on upcoming campaigns, events, and conduct retrospectives on past efforts. You can't devote significant admin energy to managing this workspace, and most members of your org participate in fundraising efforts in some capacity. What visibility setting should you select for this new workspace? (Select the best answer.)
 > - A. Open · B. Invite Only · C. By Request · D. Hidden
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** 폭넓게 참여하고 관리 부담을 줄이려면 **Open**(누구나 초대/승인 없이 참여).
 **덤프 정답:** A → ✅ 재판정 일치 *(확신도: 중-높음)*
 **정답 근거(A):** Open 워크스페이스는 승인 없이 조직 누구나 참여 — 전사 참여형 활동에 이상적.
@@ -595,6 +634,7 @@
 > - C. Search for their email in the "Slack Connect" section of your sidebar.
 > - D. Search for their email in the "People" section of your sidebar.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** 사이드바 **Slack Connect** 섹션에서 이메일을 검색하면 상대 조직의 Slack 사용 여부를 확인할 수 있다.
 **덤프 정답:** C → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거(C):** Slack Connect 검색으로 외부 사용자 존재를 확인.
@@ -610,6 +650,7 @@
 > - C. Direct employees to access Slack through your IdP.
 > - D. Enable employees to sign up using the company's email domain.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** Free 플랜에서 **회사 이메일 도메인 가입**을 켜면 도메인 사용자만 자동 가입하고 외부인은 차단된다.
 **덤프 정답:** D → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거(D):** 지정 도메인(@company.com) 사용자만 초대 없이 가입 가능하게 해 요건 충족.
@@ -625,6 +666,7 @@
 > - C. Train managers to add new hires to the channels.
 > - D. Add the important channels to your workspace's default channels.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** **기본 채널(default channels)** 은 신규 멤버가 최초 로그인 시 자동 참여하는 채널.
 **덤프 정답:** D → ✅ 재판정 일치
 **정답 근거(D):** 기본 채널로 지정하면 자동 참여가 보장된다.
@@ -640,6 +682,7 @@
 > - C. Create a #customer-feedback channel to convey concerns to Product/Engineering.
 > - D. Create an org-wide #help-sales channel for cross-functional questions.
 
+**섹션:** Enabling Slack Success (Analytics and Adoption)
 **핵심 개념:** 핵심 채널을 **비공개로 만드는 것은 투명성·발견성을 해쳐** 크로스펑셔널 협업 목적에 반한다 → 피해야 할 전략.
 **덤프 정답:** A → ✅ 재판정 일치
 **정답 근거(A):** 채널을 Global로 옮기고 private로 바꾸면 발견성·협업이 줄어 Slack의 연결·투명성 목표와 배치.
@@ -655,6 +698,7 @@
 > - C. Consolidate the two sales workspaces, rename as "Sales," update the URL to match branding. Leave marketing as-is.
 > - D. Export all workspace data and import into a single consolidated workspace.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** 불필요한 혼란 없이 **가능한 곳만 통합** — 잘 작동하는 marketing은 그대로 두고 sales 둘을 하나로 합쳐 이름/URL 정리.
 **덤프 정답:** C → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거(C):** sales 두 워크스페이스를 통합·리브랜딩하고 marketing은 유지 — 최소 disruption.
@@ -671,6 +715,7 @@
 > - D. Add payroll team members to #help-benefits to respond.
 > - E. Encourage payroll to create their own public #help channel.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** 채널 목적을 **명확히(토픽·핀 게시)** 하고, **전용 채널(#help-payroll)** 로 유도하면 구조적으로 해결된다.
 **덤프 정답:** B, E → ✅ 재판정 일치
 **정답 근거:** B 범위 명시로 오게시 감소. E 전용 채널로 올바른 곳 안내.
@@ -686,6 +731,7 @@
 > - C. Post Clips in team channels for troubleshooting demos.
 > - D. Ask for help in the team channel and troubleshoot in thread.
 
+**섹션:** Enabling Slack Success (Analytics and Adoption)
 **핵심 개념:** 실시간 경량 협업은 **Huddles** — 회의를 잡지 않고 즉석에서 문제 해결.
 **덤프 정답:** B → ✅ 재판정 일치
 **정답 근거(B):** Huddle로 실시간 트러블슈팅해 회의 부담을 줄인다.
@@ -701,6 +747,7 @@
 > - C. Create a new Social workspace and move the relevant channels there.
 > - D. Delete social channels inactive for 90+ days.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** 소셜 채널이 업무 발견성을 해치면 **별도 Social 워크스페이스로 분리·이동**해 초점을 유지.
 **덤프 정답:** C → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거(C):** 소셜·커뮤니티 논의를 별도 워크스페이스로 옮기면 업무 콘텐츠 발견성이 개선된다.
@@ -716,6 +763,7 @@
 > - C. A channel for an office-location event not needed by other offices.
 > - D. Finance/execs' quarterly-planning discussion evolves to require unreleased quarterly earnings.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** **민감·기밀 정보(미공개 실적, M&A)** 가 오가기 시작하면 접근을 제한하기 위해 비공개로 전환.
 **덤프 정답:** D → ✅ 재판정 일치
 **정답 근거(D):** 아직 공개되지 않은 분기 실적은 제한된 그룹만 접근해야 하는 민감 정보.
@@ -731,6 +779,7 @@
 > - C. Member with 6-month deactivation.
 > - D. Multi-Channel Guest with 6-month deactivation.
 
+**섹션:** User Lifecycle Management
 **핵심 개념:** 여러 채널 접근 + 기간 한정 = **Multi-Channel Guest + 만료일**.
 **덤프 정답:** D → ✅ 재판정 일치 *(확신도: 중-높음)*
 **정답 근거(D):** 여러 채널이 필요하나 정식 멤버 접근은 과하므로 Multi-Channel Guest에 6개월 만료 설정.
@@ -743,6 +792,7 @@
 > **Q.** You've been working among a small group of experienced Slack admins. Your company is beginning to grow exponentially, and admin responsibilities such as channel administration, legal holds, and user management are overwhelming your small team. Your team decides to assign a few system roles to support the admin team. Which role will be responsible for assigning admin responsibilities? (Select the best answer.)
 > - A. Compliance Admin · B. Roles Admin · C. Channels Admin · D. Users Admin
 
+**섹션:** User Lifecycle Management
 **핵심 개념:** **Roles Admin**이 조직 전반의 시스템 역할을 배정·관리한다.
 **덤프 정답:** B → ✅ 재판정 일치 *(확신도: 중-높음)*
 **정답 근거(B):** Roles Admin은 멤버에게 시스템 역할을 부여·관리하는 권한을 가진다.

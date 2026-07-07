@@ -12,6 +12,7 @@
 > - C. Alpha users cannot DM anyone from Beta since Slack Connect DMs are disabled.
 > - D. Workspace Admins can give specific Alpha users access to DM with Beta.
 
+**섹션:** Governance, Security and Compliance
 **핵심 개념:** **Slack Connect DM이 비활성화**되면, 공유 채널을 함께 쓰더라도 외부 조직과 DM을 시작/수신할 수 없다.
 **덤프 정답:** C → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거(C):** Connect DM이 꺼져 있으면 외부 DM 자체가 불가.
@@ -27,6 +28,7 @@
 > - C. Create the minimum number of workspaces to meet users' needs, limiting context switching.
 > - D. Create new workspaces instead of multi-workspace channels to reduce noise.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** **필요한 최소 수의 워크스페이스**로 설계 — 컨텍스트 전환↓, 거버넌스 단순화, 발견성↑.
 **덤프 정답:** C → ✅ 재판정 일치
 **정답 근거(C):** 워크스페이스가 적을수록 전환·관리 부담이 줄고 정보 발견이 쉬워진다.
@@ -42,6 +44,7 @@
 > - C. Create a process to request public channel creation through admins.
 > - D. Create and communicate a channel naming and creation policy (structure + convention).
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** 발견성·중복 문제는 **네이밍·생성 정책의 수립·공지**로 해결하되 생성 속도는 유지.
 **덤프 정답:** D → ✅ 재판정 일치
 **정답 근거(D):** 문서화·공지된 네이밍 규칙은 admin 개입 없이도 중복을 줄이고 발견성을 높인다.
@@ -57,6 +60,7 @@
 > - C. To see all workflows in a workspace, you must be an Owner or Admin.
 > - D. Org Owners/Admins can view all workflows created in an Enterprise Grid org.
 
+**섹션:** App and AI Administration and Automations
 **핵심 개념:** Workspace Owner/Admin은 자기 워크스페이스의 **모든 게시된 워크플로우를 조회**하고, Grid에서는 Org Owner/Admin이 **전 워크스페이스의 워크플로우를 조회**할 수 있다.
 **덤프 정답:** B, D → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거:** B 워크스페이스 게시 워크플로우 관리 가시성, D Grid 전역 가시성.
@@ -72,6 +76,7 @@
 > - C. Take action from each channel's settings.
 > - D. Request each channel owner take action.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** 1,000개 규모의 혼합 작업(아카이브·삭제·이동)은 **API 자동화**가 가장 효과적.
 **덤프 정답:** B → ✅ 재판정 일치 *(A(관리자 채널 관리 도구)도 대량 아카이브/삭제엔 유효 — 확신도: 중)*
 **정답 근거(B):** `conversations.archive`·`conversations.rename` 등 API로 대량 정리를 자동화.
@@ -87,6 +92,7 @@
 > - C. Thread in the existing team channel, @mention committee.
 > - D. New private channel; add committee + friends.
 
+**섹션:** Fundamentals
 **핵심 개념:** 기밀·서프라이즈 계획은 **비공개 채널**로 특정 인원에 한정.
 **덤프 정답:** D → ✅ 재판정 일치
 **정답 근거(D):** private 채널이 서프라이즈를 보호하며 인원 추가도 유연.
@@ -102,6 +108,7 @@
 > - C. Admin control and user management challenges.
 > - D. Context switching and scalability challenges.
 
+**섹션:** Workspace and Org Management
 **핵심 개념:** 워크스페이스가 지나치게 많으면 **컨텍스트 전환·확장성** 문제가 가장 두드러진다.
 **덤프 정답:** D → ✅ 재판정 일치 *(확신도: 중)*
 **정답 근거(D):** 다중 워크스페이스는 사용자가 정보를 찾으려 잦은 전환을 하게 해 효율을 떨어뜨리고 확장성에도 부담.
@@ -117,6 +124,7 @@
 > - C. Public retention "Keep Everything"; DM retention delete after 1 day; restrict channel creation to Owners.
 > - D. Public retention "Keep Everything"; DM retention delete after 1 day; allow everyone to create channels.
 
+**섹션:** Governance, Security and Compliance
 **핵심 개념:** 공개 소통 촉진 = **공개 채널 보존 극대화 + DM 보존 최소화 + 채널 생성 개방**.
 **덤프 정답:** D → ✅ 재판정 일치 *(확신도: 중-높음)*
 **정답 근거(D):** 공개 채널은 "Keep Everything"으로 투명성을 살리고, DM 보존을 1일로 줄여 사일로를 억제하며, 채널 생성을 개방해 병목을 없앤다.
@@ -132,6 +140,7 @@
 > - C. You use Azure for all key management.
 > - D. Your company is in the public sector.
 
+**섹션:** Governance, Security and Compliance
 **핵심 개념:** **EKM은 PII/PHI/금융 등 민감 데이터를 자주 다루는** 조직에 적합(자체 키로 접근 통제·폐기).
 **덤프 정답:** B → ✅ 재판정 일치
 **정답 근거(B):** 민감 데이터(PII)를 다루면 자체 암호화 키 통제/폐기 능력이 가치 있음.
@@ -147,6 +156,7 @@
 > - C. Allow social apps like Giphy.
 > - D. Connect tools they already use (Google Calendar, Box) to Slack.
 
+**섹션:** Enabling Slack Success (Analytics and Adoption)
 **핵심 개념:** 이미 쓰는 도구를 Slack에 연결하면 추가 학습 없이 즉시 가치를 체감한다.
 **덤프 정답:** D → ✅ 재판정 일치
 **정답 근거(D):** 친숙한 도구 연동이 워크플로우와 생산성을 즉시 향상시킨다.
@@ -159,6 +169,7 @@
 > **Q.** How many integrations can be installed on a workspace on the Standard plan?
 > - A. 25 · B. 10 · C. Unlimited · D. 5
 
+**섹션:** Fundamentals
 **핵심 개념:** 유료 플랜(Standard=Pro 이상)은 **무제한 앱 통합**. (무료 플랜만 10개 제한.)
 **덤프 정답:** C → ✅ 재판정 일치 *(확신도: 중-높음)*
 **정답 근거(C):** Standard 이상에서는 App Directory·커스텀 앱을 제한 없이 설치 가능.
@@ -174,6 +185,7 @@
 > - C. Integrate with a DLP solution using Slack's Discovery API.
 > - D. Use Workflow Builder to let people report policy violations.
 
+**섹션:** Governance, Security and Compliance
 **핵심 개념:** 민감 데이터의 채널 공유를 **선제적으로 탐지·차단**하려면 **DLP 통합**(Discovery API 기반).
 **덤프 정답:** C → ✅ 재판정 일치
 **정답 근거(C):** DLP는 메시지·파일에서 카드번호 등 패턴을 탐지해 차단·경고 등 자동 조치.
